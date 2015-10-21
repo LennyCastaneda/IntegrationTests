@@ -56,7 +56,6 @@
     <Compile Include="Generators\WebDriverFactory.cs" />
     <Compile Include="Interfaces\WebDriver.cs" />
     <Compile Include="Interfaces\WebElement.cs" />
-    <Compile Include="SeleniumInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
