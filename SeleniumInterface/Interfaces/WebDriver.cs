@@ -1,21 +1,23 @@
 ﻿using OpenQA.Selenium;
+using SeleniumInterface.Interfaces;
+using System.Collections.Generic;
 
 namespace ReloadedInterface.Interfaces
 {
 	public class WebDriver
 	{
-		private IWebDriver webDriver;
+		private IWebDriver _driver;
 
 		public WebDriver(IWebDriver driver)
 		{
-			webDriver = driver;
+			_driver = driver;
 		}
 
 		public string CurrentWindowHandle
 		{
 			get
 			{
-				return webDriver.CurrentWindowHandle;
+				return _driver.CurrentWindowHandle;
 			}
 		}
 
@@ -23,7 +25,7 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webDriver.PageSource;
+				return _driver.PageSource;
 			}
 		}
 
@@ -31,7 +33,7 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webDriver.Title;
+				return _driver.Title;
 			}
 		}
 
@@ -39,38 +41,49 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webDriver.Url;
+				return _driver.Url;
 			}
 
 			set
 			{
-				webDriver.Url = value;
+				_driver.Url = value;
 			}
 		}
 
 		public void Close()
 		{
-			webDriver.Close();
+			_driver.Close();
 		}
 
 		public void Dispose()
 		{
-			webDriver.Dispose();
+			_driver.Dispose();
 		}
 
-		public WebElement FindElement(By by)
+		public List<WebElement> FindElements(ByMethod method, string selector)
 		{
-			return webDriver.FindElement(by) as WebElement;
+			return Common.FindElements(_driver, method, selector);
+        }
+
+		public WebElement FindElement(ByMethod method, string selector)
+		{
+			return Common.FindElement(_driver, method, selector);
 		}
 
 		public void Navigate(string url)
 		{
-			webDriver.Navigate().GoToUrl(url);
+			_driver.Navigate().GoToUrl(url);
 		}
 
 		public void Quit()
 		{
-			webDriver.Quit();
+			_driver.Quit();
+		}
+
+		public void OpenMenu()
+		{
+			var button = _driver.FindElement(By.XPath("//div[class='navbar-left']/a[1]"));
+			button.Click();
 		}
 	}
 }

@@ -11,16 +11,17 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace IntegrationTests.Tests.Feature
+namespace IntegrationTests.Tests.Feature.OpenGoogle
 {
     using TechTalk.SpecFlow;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("OpenGoogleInEdgefeature", new string[] {
-            "Edge"}, Description="In order to browse the web\r\nAs a user\r\nI want to go to Google using a browser", SourceFile="Tests\\Feature\\OpenGoogleInEdge.feature", SourceLine=1)]
-    public partial class OpenGoogleInEdgefeatureFeature
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("OpenGoogleInEdge")]
+    [NUnit.Framework.CategoryAttribute("Edge")]
+    public partial class OpenGoogleInEdgeFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,27 +29,28 @@ namespace IntegrationTests.Tests.Feature
 #line 1 "OpenGoogleInEdge.feature"
 #line hidden
         
-        [TechTalk.SpecRun.FeatureInitialize()]
+        [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenGoogleInEdgefeature", "In order to browse the web\r\nAs a user\r\nI want to go to Google using a browser", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenGoogleInEdge", "In order to browse the web\r\nAs a user\r\nI want to go to Google using a browser", ProgrammingLanguage.CSharp, new string[] {
                         "Edge"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [TechTalk.SpecRun.FeatureCleanup()]
+        [NUnit.Framework.TestFixtureTearDownAttribute()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
+        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [TechTalk.SpecRun.ScenarioCleanup()]
+        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -64,10 +66,11 @@ namespace IntegrationTests.Tests.Feature
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Open the index in a browser", SourceLine=6)]
-        public virtual void OpenTheIndexInABrowser()
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Open Google in Edge")]
+        public virtual void OpenGoogleInEdge()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open the index in a browser", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Google in Edge", ((string[])(null)));
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
@@ -78,12 +81,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("the title should be \'Google\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.TestRunCleanup()]
-        public virtual void TestRunCleanup()
-        {
-TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

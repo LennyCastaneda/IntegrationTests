@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generators\WebDriverFactory.cs" />
+    <Compile Include="Interfaces\Common.cs" />
     <Compile Include="Interfaces\WebDriver.cs" />
     <Compile Include="Interfaces\WebElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,23 +1,24 @@
 ﻿using OpenQA.Selenium;
-using System.Collections.ObjectModel;
+using SeleniumInterface.Interfaces;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace ReloadedInterface.Interfaces
 {
 	public class WebElement
 	{
-		private IWebElement webElement;
+		private IWebElement _element;
 
 		public WebElement(IWebElement element)
 		{
-			webElement = element;
+			_element = element;
 		}
 
 		public bool Displayed
 		{
 			get
 			{
-				return webElement.Displayed;
+				return _element.Displayed;
 			}
 		}
 
@@ -25,7 +26,7 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webElement.Enabled;
+				return _element.Enabled;
 			}
 		}
 
@@ -33,7 +34,7 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webElement.Location;
+				return _element.Location;
 			}
 		}
 
@@ -41,7 +42,7 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webElement.Selected;
+				return _element.Selected;
 			}
 		}
 
@@ -49,7 +50,7 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webElement.Size;
+				return _element.Size;
 			}
 		}
 
@@ -57,7 +58,7 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webElement.TagName;
+				return _element.TagName;
 			}
 		}
 
@@ -65,49 +66,48 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webElement.Text;
+				return _element.Text;
 			}
 		}
 
 		public void Clear()
 		{
-			webElement.Clear();
+			_element.Clear();
 		}
 
 		public void Click()
 		{
-			webElement.Click();
+			_element.Click();
 		}
 
-		public WebElement FindElement(By by)
+		public List<WebElement> FindElements(ByMethod method, string selector)
 		{
-			return new WebElement(webElement.FindElement(by));
+			return Common.FindElements(_element, method, selector);
 		}
 
-		// Need to edit to return a collection of WebElement not IWebElement. (if we ever want to use it).
-		public ReadOnlyCollection<IWebElement> FindElements(By by)
+		public WebElement FindElement(ByMethod method, string selector)
 		{
-			return webElement.FindElements(by);
+			return Common.FindElement(_element, method, selector);
 		}
 
 		public string GetAttribute(string attributeName)
 		{
-			return webElement.GetAttribute(attributeName);
+			return _element.GetAttribute(attributeName);
 		}
 
 		public string GetCssValue(string propertyName)
 		{
-			return webElement.GetCssValue(propertyName);
+			return _element.GetCssValue(propertyName);
 		}
 
 		public void SendKeys(string text)
 		{
-			webElement.SendKeys(text);
+			_element.SendKeys(text);
 		}
 
 		public void Submit()
 		{
-			webElement.Submit();
+			_element.Submit();
 		}
 	}
 }
