@@ -1,8 +1,8 @@
-﻿@Chrome
-Feature: OpenHomePage
-	In order to ensure the website works
+﻿@Edge
+Feature: OpenGoogleInEdgefeature
+	In order to browse the web
 	As a user
-	I want to goto the website using a browser
+	I want to go to Google using a browser
 
 Scenario: Open the index in a browser
 	Given a browser

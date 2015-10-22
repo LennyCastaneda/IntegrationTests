@@ -1,4 +1,5 @@
-﻿using ReloadedFramework;
+﻿using NUnit.Framework;
+using ReloadedFramework;
 using ReloadedFramework.Model;
 using TechTalk.SpecFlow;
 
@@ -10,7 +11,15 @@ namespace IntegrationTests.Tests
 		[Given(@"a browser")]
 		public void GivenScenario()
 		{
-			Page.GoTo("http://www.bing.com/");
+			Assert.NotNull(Page);
+			WhenItPointsTo("http://www.bing.com/");
+		}
+
+		[When(@"the browser points to '(.*)'")]
+		public void WhenItPointsTo(string url)
+		{
+			Page.GoTo(url);
+			Assert.That(Page.Url.Contains(url));
 		}
 	}
 }

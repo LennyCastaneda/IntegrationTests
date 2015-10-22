@@ -67,6 +67,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Tests\Feature\OpenGoogleInEdge.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OpenGoogleInEdge.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Steps.cs" />
     <Compile Include="Tests\Feature\OpenHomePage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -84,6 +89,10 @@
     <None Include="runtests.cmd" />
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Tests\Feature\OpenGoogleInEdge.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OpenGoogleInEdge.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\OpenHomePage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

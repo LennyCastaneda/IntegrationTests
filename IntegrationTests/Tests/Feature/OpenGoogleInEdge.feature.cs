@@ -18,24 +18,22 @@ namespace IntegrationTests.Tests.Feature
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("OpenHomePage", new string[] {
-            "Chrome"}, Description="In order to ensure the website works\r\nAs a user\r\nI want to goto the website using" +
-        " a browser", SourceFile="Tests\\Feature\\OpenHomePage.feature", SourceLine=1)]
-    public partial class OpenHomePageFeature
+    [TechTalk.SpecRun.FeatureAttribute("OpenGoogleInEdgefeature", new string[] {
+            "Edge"}, Description="In order to browse the web\r\nAs a user\r\nI want to go to Google using a browser", SourceFile="Tests\\Feature\\OpenGoogleInEdge.feature", SourceLine=1)]
+    public partial class OpenGoogleInEdgefeatureFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "OpenHomePage.feature"
+#line 1 "OpenGoogleInEdge.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenHomePage", "In order to ensure the website works\r\nAs a user\r\nI want to goto the website using" +
-                    " a browser", ProgrammingLanguage.CSharp, new string[] {
-                        "Chrome"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenGoogleInEdgefeature", "In order to browse the web\r\nAs a user\r\nI want to go to Google using a browser", ProgrammingLanguage.CSharp, new string[] {
+                        "Edge"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
