@@ -1,11 +1,10 @@
 ﻿using OpenQA.Selenium;
-using SeleniumInterface.Interfaces;
 using System.Collections.Generic;
 using System.Drawing;
 
 namespace ReloadedInterface.Interfaces
 {
-	public class WebElement
+	public class WebElement : Common
 	{
 		private IWebElement _element;
 
@@ -77,17 +76,7 @@ namespace ReloadedInterface.Interfaces
 
 		public void Click()
 		{
-			_element.Click();
-		}
-
-		public List<WebElement> FindElements(ByMethod method, string selector)
-		{
-			return Common.FindElements(_element, method, selector);
-		}
-
-		public WebElement FindElement(ByMethod method, string selector)
-		{
-			return Common.FindElement(_element, method, selector);
+			Wait(() => { _element.Click(); });
 		}
 
 		public string GetAttribute(string attributeName)
@@ -108,6 +97,25 @@ namespace ReloadedInterface.Interfaces
 		public void Submit()
 		{
 			_element.Submit();
+		}
+
+		public WebElement FindElement(ByMethod method, string selector)
+		{
+			if(_element.FindElements(GetBy(method, selector)).Count > 0)
+			{
+				return new WebElement(_element.FindElement(GetBy(method, selector)));
+			}
+			return null;
+		}
+
+		public List<WebElement> FindElements(ByMethod method, string selector)
+		{
+			var result = new List<WebElement>();
+			foreach (IWebElement element in _element.FindElements(GetBy(method, selector)))
+			{
+				result.Add(new WebElement(element));
+			}
+			return result;
 		}
 	}
 }

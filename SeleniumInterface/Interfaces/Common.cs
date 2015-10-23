@@ -1,8 +1,7 @@
 ﻿using OpenQA.Selenium;
-using ReloadedInterface.Interfaces;
-using System.Collections.Generic;
+using System;
 
-namespace SeleniumInterface.Interfaces
+namespace ReloadedInterface.Interfaces
 {
 	public enum ByMethod
 	{
@@ -12,23 +11,8 @@ namespace SeleniumInterface.Interfaces
 		XPath
 	}
 
-	public static class Common
+	public class Common
 	{
-		public static WebElement FindElement(ISearchContext context, ByMethod method, string selector)
-		{
-			return context.FindElement(GetBy(method, selector)) as WebElement;
-		}
-
-		public static List<WebElement> FindElements(this ISearchContext context, ByMethod method, string selector)
-		{
-			var result = new List<WebElement>();
-			foreach (IWebElement element in context.FindElements(GetBy(method, selector)))
-			{
-				result.Add(element as WebElement);
-			}
-			return result;
-		}
-
 		public static OpenQA.Selenium.By GetBy(ByMethod method, string selector)
 		{
 			switch (method)
@@ -44,6 +28,31 @@ namespace SeleniumInterface.Interfaces
 				default:
 					return null;
 			}
+		}
+
+		/// <summary>
+		/// Returns true if the method was completed without firing an Exception. Iterations defines how many times the method should attempt to suceed. Seconds denotes the amount of time to wait between attempts.
+		/// </summary>
+		/// <param name="method"></param>
+		/// <param name="seconds"></param>
+		/// <returns></returns>
+		public static bool Wait(Action method, int iterations = 0, int seconds = 0)
+		{
+			int counter = 0;
+			do
+			{
+				try
+				{
+					method();
+					return true;
+				}
+				catch
+				{
+					System.Threading.Thread.Sleep(TimeSpan.FromSeconds(seconds));
+				}
+				counter++;
+			} while (counter < iterations);
+            return true;
 		}
 	}
 }

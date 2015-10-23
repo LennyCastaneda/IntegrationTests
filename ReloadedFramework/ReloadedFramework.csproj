@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Model\Browser.cs" />
     <Compile Include="Model\Menu.cs" />
+    <Compile Include="Model\MenuItem.cs" />
     <Compile Include="Model\Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
