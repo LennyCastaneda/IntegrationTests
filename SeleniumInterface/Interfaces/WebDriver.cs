@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace ReloadedInterface.Interfaces
 		public WebDriver(IWebDriver driver)
 		{
 			_driver = driver;
-			_driver.Manage().Window.Maximize();
+			Maximize();
 			//_driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 			//_driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
 			//_driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));
@@ -23,6 +24,14 @@ namespace ReloadedInterface.Interfaces
 			get
 			{
 				return _driver.CurrentWindowHandle;
+			}
+		}
+
+		private void Maximize()
+		{
+			if (!(_driver is EdgeDriver))
+			{
+				_driver.Manage().Window.Maximize();
 			}
 		}
 

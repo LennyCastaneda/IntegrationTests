@@ -19,23 +19,20 @@ namespace IntegrationTests.Tests.Feature.OpenGoogle
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("OpenGoogleInChrome")]
-    [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class OpenGoogleInChromeFeature
+    [NUnit.Framework.DescriptionAttribute("OpenGoogleOutline")]
+    public partial class OpenGoogleOutlineFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "OpenGoogleInChrome.feature"
+#line 1 "OpenGoogleOutline.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenGoogleInChrome", "In order to ensure the website works\r\nAs a user\r\nI want to goto the website using" +
-                    " a browser", ProgrammingLanguage.CSharp, new string[] {
-                        "Chrome"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenGoogleOutline", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -68,17 +65,20 @@ namespace IntegrationTests.Tests.Feature.OpenGoogle
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Open Google in Chrome")]
-        public virtual void OpenGoogleInChrome()
+        [NUnit.Framework.DescriptionAttribute("Open Google (Outline)")]
+        [NUnit.Framework.TestCaseAttribute("Chrome", null)]
+        [NUnit.Framework.TestCaseAttribute("Edge", null)]
+        [NUnit.Framework.TestCaseAttribute("Firefox", null)]
+        public virtual void OpenGoogleOutline(string browser, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Google in Chrome", ((string[])(null)));
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Google (Outline)", exampleTags);
+#line 3
 this.ScenarioSetup(scenarioInfo);
-#line 8
- testRunner.Given("a browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
+#line 4
+ testRunner.Given(string.Format("a browser \'{0}\'", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 5
  testRunner.When("the browser points to \'https://www.google.co.uk/\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
+#line 6
  testRunner.Then("the title should be \'Google\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

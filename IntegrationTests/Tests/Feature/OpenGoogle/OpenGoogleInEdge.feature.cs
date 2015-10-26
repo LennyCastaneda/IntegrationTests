@@ -20,7 +20,6 @@ namespace IntegrationTests.Tests.Feature.OpenGoogle
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("OpenGoogleInEdge")]
-    [NUnit.Framework.CategoryAttribute("Edge")]
     public partial class OpenGoogleInEdgeFeature
     {
         
@@ -33,8 +32,7 @@ namespace IntegrationTests.Tests.Feature.OpenGoogle
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenGoogleInEdge", "In order to browse the web\r\nAs a user\r\nI want to go to Google using a browser", ProgrammingLanguage.CSharp, new string[] {
-                        "Edge"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenGoogleInEdge", "In order to browse the web\r\nAs a user\r\nI want to go to Google using a browser", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,13 +69,13 @@ namespace IntegrationTests.Tests.Feature.OpenGoogle
         public virtual void OpenGoogleInEdge()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Google in Edge", ((string[])(null)));
-#line 7
+#line 6
 this.ScenarioSetup(scenarioInfo);
+#line 7
+ testRunner.Given("Multiple browsers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.Given("a browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
  testRunner.When("the browser points to \'https://www.google.co.uk/\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
+#line 9
  testRunner.Then("the title should be \'Google\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

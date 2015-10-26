@@ -13,7 +13,7 @@ namespace IntegrationTests.Tests.Workflow
 		[StepDefinition(@"I have opened Reloaded")]
 		public static void ReloadedIsOpen()
 		{
-			BrowserSteps.GivenABrowser();
+			BrowserSteps.GivenABrowser("Chrome");
 			BrowserSteps.WhenItPointsTo("http://durell.co.uk:1024/#/config/1");
 			BrowserSteps.ThenTheTitleShouldBe("Reloaded");
         }

@@ -8,8 +8,25 @@ namespace IntegrationTests.Tests
 	[Binding]
 	public class BrowserSteps : TestBase
 	{
+
+		[StepDefinition(@"a specific browser '(.*)'")]
+		public static void GivenASpecificBrowser(string browser)
+		{
+			Init(browser);
+			Assert.NotNull(Page);
+			WhenItPointsTo("http://www.bing.com/");
+		}
+
+		[StepDefinition(@"a browser '(.*)'")]
+        public static void GivenABrowser(string browser)
+		{
+			Init(browser);
+			Assert.NotNull(Page);
+			WhenItPointsTo("http://www.bing.com/");
+		}
+
 		[StepDefinition(@"a browser")]
-        public static void GivenABrowser()
+		public static void GivenABrowser()
 		{
 			Assert.NotNull(Page);
 			WhenItPointsTo("http://www.bing.com/");
