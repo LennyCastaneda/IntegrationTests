@@ -2,14 +2,9 @@
 
 namespace ReloadedFramework.Model
 {
-	public class Page
+	public class Page : Driver
 	{
-		private WebDriver _driver;
-
-		public Page(ref WebDriver driver)
-		{
-			_driver = driver;
-		}
+		public Page(ref WebDriver driver) : base(ref driver) { }
 
 		public string Title
 		{
@@ -24,6 +19,14 @@ namespace ReloadedFramework.Model
 			get
 			{
 				return _driver.Url;
+			}
+		}
+
+		public string PageSource
+		{
+			get
+			{
+				return _driver.PageSource;
 			}
 		}
 

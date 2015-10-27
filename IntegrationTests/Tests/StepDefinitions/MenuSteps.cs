@@ -26,30 +26,30 @@ namespace IntegrationTests.Tests.StepDefinitions
 		[StepDefinition(@"I click a tab called '(.*)'")]
 		public static void MenuIsOpen(string tabname)
 		{
-			//Menu.GetMenuItems();
+			
 			Assert.That(tabname == "individual clients");
 		}
 
 		[StepDefinition(@"menu option '(.*)' exists")]
 		public static void SelectMenuItem(string name)
 		{
-			Menu.GetMenuItems();
-			Assert.NotNull(Menu.Item(name));
+			Menu.GetSubItems();
+			Assert.NotNull(Menu.SubItem(name));
 		}
 
 		[StepDefinition(@"I click menu item '(.*)'")]
 		public static void ClickMenuItem(string name)
 		{
-			Assert.NotNull(Menu.Item(name));
-			Menu.Item(name).Click();
+			Assert.NotNull(Menu.SubItem(name));
+			Menu.SubItem(name).Click();
 		}
 
 		[StepDefinition(@"I click expandable menu item '(.*)'")]
 		public static void ClickExpandableMenuItem(string name)
 		{
-			Assert.NotNull(Menu.Item(name));
-			Menu.Item(name).Click();
-			Assert.That(Menu.Item(name).Expanded);
+			Assert.NotNull(Menu.SubItem(name));
+			Menu.SubItem(name).Click();
+			Assert.That(Menu.SubItem(name).Expanded);
 		}
 
 		[StepDefinition(@"I click subitem '(.*)'")]

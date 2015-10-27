@@ -19,14 +19,6 @@ namespace ReloadedInterface.Interfaces
 			//_driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));
 		}
 
-		public string CurrentWindowHandle
-		{
-			get
-			{
-				return _driver.CurrentWindowHandle;
-			}
-		}
-
 		private void Maximize()
 		{
 			if (!(_driver is EdgeDriver))
