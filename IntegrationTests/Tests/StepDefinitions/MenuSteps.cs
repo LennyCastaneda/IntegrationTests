@@ -32,7 +32,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 
 		[StepDefinition(@"the MenuItem '(.*)' is clicked")]
 		public static void ClickMenuItem(string name)
-		{
+		{ 
 			Assert.True(Menu.SubItemExists(name));
 			Assert.NotNull(Menu.SubItem(name));
 			Menu.SubItem(name).Click();
@@ -57,7 +57,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void ClickSubItem(string name)
 		{
 			Assert.NotNull(Menu.SelectedItem.SubItem(name));
-			Menu.SelectedItem.SubItem(name).Click();			
+			Menu.SelectedItem.SubItem(name).Click();	
 		}
     }
 }

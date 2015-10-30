@@ -11,7 +11,7 @@ namespace ReloadedFramework.Model
 		private FindBy CloseBy = new FindBy(ByMethod.ClassName, "mdi-keyboard-backspace");
 		private FindBy SubItemsBy = new FindBy(ByMethod.XPath, "ul/li");
 
-		public Menu(ref WebDriver driver) : base(ref driver) {
+		public Menu(ref WebDriver driver, string name) : base(ref driver, name) {
 			if (_driver.Title == "Reloaded")
 			{
 				if (_driver.FindElements(MenuBy.Method, MenuBy.Selector + ".visible").Count > 0)
@@ -65,12 +65,15 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public override void GetSubItems()
 		{
-			_subItems = new Dictionary<string, MenuItem>();
+			var temp = new Dictionary<string, MenuItem>();
 			var items = _element.FindElements(SubItemsBy);
 			foreach(var item in items.FindAll(x => !string.IsNullOrEmpty(x.Text)))
 			{
-				_subItems.Add(item.FindElement(ByMethod.XPath, "a").Text, new MenuItem(_driver, item));
+				var name = item.FindElement(ByMethod.XPath, "a").Text;
+                temp.Add(name, new MenuItem(_driver, name, item));
 			}
+
+			_subItems = temp;
 		}
 	}
 }

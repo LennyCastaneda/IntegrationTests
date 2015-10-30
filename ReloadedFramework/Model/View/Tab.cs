@@ -4,7 +4,7 @@ namespace ReloadedFramework.Model
 {
 	public class Tab : ClickableControl
 	{
-		public Tab(ref WebDriver driver) : base(ref driver) { }
+		public Tab(ref WebDriver driver, string name) : base(ref driver, name) { }
 
 		public bool Active
 		{

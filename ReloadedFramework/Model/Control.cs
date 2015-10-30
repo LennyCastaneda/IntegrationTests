@@ -22,13 +22,16 @@ namespace ReloadedFramework.Model
 	public abstract class Control : Driver
 	{
 		protected WebElement _element;
+		public string Name { get; set; }
 
-		public Control(ref WebDriver driver) : base(ref driver) { }
+		public Control(ref WebDriver driver, string name) : base(ref driver) {
+			Name = name;
+		}
 	}
 
 	public abstract class ClickableControl : Control
 	{
-		public ClickableControl(ref WebDriver driver) : base(ref driver) { }
+		public ClickableControl(ref WebDriver driver, string name) : base(ref driver, name) { }
 
 		public abstract void Click();
 	}
@@ -37,12 +40,12 @@ namespace ReloadedFramework.Model
 	/// Derived class contains a Dictionary of type T sub-objects and controls to access them.
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public abstract class SubController<T> : Control
+	public abstract class SubController<T> : Control where T : Control
 	{
-		protected static Dictionary<string, T> _subItems;
+		protected Dictionary<string, T> _subItems;
 		public T SelectedItem { get; set; }
 
-		public SubController(ref WebDriver driver) : base(ref driver) { }
+		public SubController(ref WebDriver driver, string name) : base(ref driver, name) { }
 		
 		/// <summary>
 		/// All derived classes must define a method to store every relevant Control within the _subItems Dictionary.
@@ -69,6 +72,10 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public bool SubItemExists(string name)
 		{
+			if(SelectedItem.Name == name)
+			{
+				return true;
+			}
 			return (Any() ? _subItems.ContainsKey(name) : false);
 		}
 
@@ -77,6 +84,11 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public T SubItem(string key)
 		{
+			if (SelectedItem.Name == key)
+			{
+				return SelectedItem;
+			}
+
 			if (Any())
 			{
 				if (!_subItems.ContainsKey(key))
@@ -86,7 +98,7 @@ namespace ReloadedFramework.Model
 				SelectedItem = _subItems[key];
 				return (T)SelectedItem;
 			}
-			return default(T);
+			return null;
 		}
 
 		/// <summary>

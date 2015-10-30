@@ -9,6 +9,6 @@ namespace ReloadedFramework.Model
 {
 	class ToolBar : Control
 	{
-		public ToolBar(ref WebDriver driver) : base(ref driver) { }		
+		public ToolBar(ref WebDriver driver, string name) : base(ref driver, name) { }
 	}
 }

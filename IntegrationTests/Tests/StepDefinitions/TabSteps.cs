@@ -33,7 +33,6 @@ namespace IntegrationTests.Tests.StepDefinitions
 		[StepDefinition(@"the Tab count should be '(.*)'")]
 		public static void NumberOfTabs(int count)
 		{
-			View.GetSubItems();
 			Assert.That(View.SubItemCount == count);
 		}
 	}

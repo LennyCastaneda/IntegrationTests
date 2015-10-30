@@ -18,12 +18,12 @@ namespace ReloadedFramework.Model
 		public static WebElement ActiveTab { get; private set; }
 		public static WebElement ToolBar { get; private set; }
 
-		public View(ref WebDriver driver) : base(ref driver)
+		public View(ref WebDriver driver, string name) : base(ref driver, name)
 		{
 			if (_driver.Title == "Reloaded")
 			{
 				SelectElement();
-				GetSubItems();
+				//GetSubItems();
 			}
 		}
 
@@ -39,7 +39,7 @@ namespace ReloadedFramework.Model
 			items.ForEach((element) => {
 				if (element != null)
 				{
-					result.Add(element.Text, new Tab(ref _driver));
+					result.Add(element.Text, new Tab(ref _driver, element.Text));
 				}
 			});
 			_subItems = result;

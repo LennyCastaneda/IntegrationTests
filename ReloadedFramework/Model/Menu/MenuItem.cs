@@ -9,9 +9,10 @@ namespace ReloadedFramework.Model
 		private FindBy SubItemsBy = new FindBy(ByMethod.XPath, "ul/li");
 		private FindBy LinkBy = new FindBy(ByMethod.XPath, "a");
 
-		public MenuItem(WebDriver driver, WebElement element) : base(ref driver)
+		public MenuItem(WebDriver driver, string name, WebElement element) : base(ref driver, name)
 		{
 			_element = element;
+			GetSubItems();
         }
 
 		/// <summary>
@@ -42,7 +43,8 @@ namespace ReloadedFramework.Model
 			var items = _element.FindElements(SubItemsBy);
 			foreach (var item in items.FindAll(x => !string.IsNullOrEmpty(x.Text)))
 			{
-				_subItems.Add(item.FindElement(ByMethod.XPath, "a").Text, new MenuItem(_driver, item));
+				var name = item.FindElement(ByMethod.XPath, "a").Text;
+				_subItems.Add(name, new MenuItem(_driver, name, item));
 			}
 		}
 

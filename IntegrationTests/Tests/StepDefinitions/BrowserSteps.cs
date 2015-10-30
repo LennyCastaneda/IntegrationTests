@@ -20,7 +20,6 @@ namespace IntegrationTests.Tests
 		public static void GivenABrowser()
 		{
 			Assert.NotNull(Page);
-
 			WhenItPointsTo("http://www.bing.com/");
 		}
 

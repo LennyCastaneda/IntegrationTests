@@ -28,9 +28,9 @@ namespace ReloadedFramework.Model
 
 		private static void Refresh()
 		{
-			Menu = new Menu(ref _driver);
-			View = new View(ref _driver);
-			Modal = new Modal(ref _driver);
+			Menu = new Menu(ref _driver, "Menu");
+			View = new View(ref _driver, "View");
+			Modal = new Modal(ref _driver, "Modal");
 		}
 	}
 }
