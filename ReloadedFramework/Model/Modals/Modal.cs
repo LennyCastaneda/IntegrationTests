@@ -1,4 +1,5 @@
-﻿using ReloadedInterface.Interfaces;
+﻿using System;
+using ReloadedInterface.Interfaces;
 
 namespace ReloadedFramework.Model
 {

@@ -51,7 +51,8 @@
     <Compile Include="Model\Menu\MenuItem.cs" />
     <Compile Include="Model\Modals\Modal.cs" />
     <Compile Include="Model\Page\Page.cs" />
-    <Compile Include="Model\View\Tabs.cs" />
+    <Compile Include="Model\View\Tab.cs" />
+    <Compile Include="Model\View\ToolBar.cs" />
     <Compile Include="Model\View\View.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

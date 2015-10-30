@@ -33,7 +33,8 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenReloaded", "In order to go to the home page\nAs a user\nI want to open a browser and navigate", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenReloaded", "In order to go to the home page\r\nAs a user\r\nI want to open a browser and navigate" +
+                    "", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -74,11 +75,11 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("a browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the Browser exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.When("the browser points to \'http://durell.co.uk:1024/#/config/1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the Browser is pointed to \'http://durell.co.uk:1024/#/config/1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.Then("the title should be \'Reloaded\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the Browser title should be \'Reloaded\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -8,16 +8,7 @@ namespace IntegrationTests.Tests
 	[Binding]
 	public class BrowserSteps : TestBase
 	{
-
-		[StepDefinition(@"a specific browser '(.*)'")]
-		public static void GivenASpecificBrowser(string browser)
-		{
-			Init(browser);
-			Assert.NotNull(Page);
-			WhenItPointsTo("http://www.bing.com/");
-		}
-
-		[StepDefinition(@"a browser '(.*)'")]
+		[StepDefinition(@"the Browser '(.*)'")]
         public static void GivenABrowser(string browser)
 		{
 			Init(browser);
@@ -25,21 +16,23 @@ namespace IntegrationTests.Tests
 			WhenItPointsTo("http://www.bing.com/");
 		}
 
-		[StepDefinition(@"a browser")]
+		[StepDefinition(@"the Browser exists")]
 		public static void GivenABrowser()
 		{
 			Assert.NotNull(Page);
+
 			WhenItPointsTo("http://www.bing.com/");
 		}
 
-		[StepDefinition(@"the browser points to '(.*)'")]
+		[StepDefinition(@"the Browser is pointed to '(.*)'")]
 		public static void WhenItPointsTo(string url)
 		{
 			Page.GoTo(url);
 			Assert.That(Page.Url.Contains(url));
 		}
 
-		[StepDefinition(@"the title should be '(.*)'")]
+		[StepDefinition(@"the Browser title is '(.*)'")]
+		[StepDefinition(@"the Browser title should be '(.*)'")]
 		public static void ThenTheTitleShouldBe(string title)
 		{
 			Assert.That(Page.Title == title);

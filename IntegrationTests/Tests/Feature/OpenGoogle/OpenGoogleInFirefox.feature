@@ -5,6 +5,6 @@ Feature: OpenGoogleInFirefox
 	I want to open google in a browser
 
 Scenario: Open Google in Firefox
-	Given a browser
-	When the browser points to 'https://www.google.co.uk/'
-	Then the title should be 'Google'
+	Given the Browser exists
+	When the Browser is pointed to 'https://www.google.co.uk/'
+	Then the Browser title should be 'Google'

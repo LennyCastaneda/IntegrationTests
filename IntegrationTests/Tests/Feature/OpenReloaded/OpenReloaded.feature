@@ -5,6 +5,6 @@ Feature: OpenReloaded
 	I want to open a browser and navigate
 
 Scenario: Open Reloaded in Chrome
-	Given a browser
-	When the browser points to 'http://durell.co.uk:1024/#/config/1'
-	Then the title should be 'Reloaded'
+	Given the Browser exists
+	When the Browser is pointed to 'http://durell.co.uk:1024/#/config/1'
+	Then the Browser title should be 'Reloaded'

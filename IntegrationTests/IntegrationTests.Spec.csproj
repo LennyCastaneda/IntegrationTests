@@ -91,10 +91,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OpenReloaded.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\OpenTheMenu.feature.cs">
+    <Compile Include="Tests\Feature\OpenReloaded\OpenConfigurations.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OpenTheMenu.feature</DependentUpon>
+      <DependentUpon>OpenConfigurations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\OpenReloaded\OpenContactManager.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OpenContactManager.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
     <Compile Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature.cs">
@@ -104,6 +109,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\StepDefinitions\MenuSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Tests\Workflow\OpenReloaded.cs" />
   </ItemGroup>
@@ -128,9 +134,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OpenReloaded.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\OpenReloaded\OpenTheMenu.feature">
+    <None Include="Tests\Feature\OpenReloaded\OpenConfigurations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenTheMenu.feature.cs</LastGenOutput>
+      <LastGenOutput>OpenConfigurations.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\OpenReloaded\OpenContactManager.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OpenContactManager.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

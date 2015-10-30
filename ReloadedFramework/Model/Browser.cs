@@ -1,5 +1,6 @@
 ﻿using ReloadedInterface.Generators;
 using ReloadedInterface.Interfaces;
+using System;
 
 namespace ReloadedFramework.Model
 {
@@ -15,11 +16,21 @@ namespace ReloadedFramework.Model
 		public static void Init(string driverName)
 		{
 			_driver = WebDriverFactory.CreateDriver(driverName);
+			_driver.Tick += new WebDriver.TickHandler(Refresh);
 			Page = new Page(ref _driver);
+			Type = driverName;
+		}
+
+		private static void Refresh(WebDriver driver, EventArgs e)
+		{
+			Refresh();
+		}
+
+		private static void Refresh()
+		{
 			Menu = new Menu(ref _driver);
 			View = new View(ref _driver);
 			Modal = new Modal(ref _driver);
-			Type = driverName;
 		}
 	}
 }

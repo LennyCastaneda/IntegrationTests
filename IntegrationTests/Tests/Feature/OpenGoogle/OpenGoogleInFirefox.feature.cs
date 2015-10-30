@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.OpenGoogle
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenGoogleInFirefox", "In order to browse the web\nAs a user\nI want to open google in a browser", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenGoogleInFirefox", "In order to browse the web\r\nAs a user\r\nI want to open google in a browser", ProgrammingLanguage.CSharp, new string[] {
                         "Firefox"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -74,11 +74,11 @@ namespace IntegrationTests.Tests.Feature.OpenGoogle
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("a browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the Browser exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.When("the browser points to \'https://www.google.co.uk/\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the Browser is pointed to \'https://www.google.co.uk/\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.Then("the title should be \'Google\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the Browser title should be \'Google\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

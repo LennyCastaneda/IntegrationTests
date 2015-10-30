@@ -33,7 +33,7 @@ namespace ReloadedFramework.Model
 		public void GoTo(string url)
 		{
 			_driver.Navigate(url);
-		}
+        }
 
 		public void ClosePage()
 		{

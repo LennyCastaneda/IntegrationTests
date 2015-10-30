@@ -1,14 +1,31 @@
 ﻿using OpenQA.Selenium;
-using System;
 
 namespace ReloadedInterface.Interfaces
 {
+	/// <summary>
+	/// List of Selenium By methods implemented.
+	/// </summary>
 	public enum ByMethod
 	{
 		Id,
 		ClassName,
 		CssSelector,
 		XPath
+	}
+
+	/// <summary>
+	/// Holds two variables: the method of an element search, and the selector used. Designed to keep all search strings in one place per class.
+	/// </summary>
+	public struct FindBy
+	{
+		public ByMethod Method { get; private set; }
+		public string Selector { get; private set; }
+
+		public FindBy(ByMethod method, string selector)
+		{
+			Method = method;
+			Selector = selector;
+		}
 	}
 
 	public class Common
@@ -28,31 +45,6 @@ namespace ReloadedInterface.Interfaces
 				default:
 					return null;
 			}
-		}
-
-		/// <summary>
-		/// Returns true if the method was completed without firing an Exception. Iterations defines how many times the method should attempt to suceed. Seconds denotes the amount of time to wait between attempts.
-		/// </summary>
-		/// <param name="method"></param>
-		/// <param name="seconds"></param>
-		/// <returns></returns>
-		public static bool Wait(Action method, int iterations = 0, int seconds = 0)
-		{
-			int counter = 0;
-			do
-			{
-				try
-				{
-					method();
-					return true;
-				}
-				catch
-				{
-					System.Threading.Thread.Sleep(TimeSpan.FromSeconds(seconds));
-				}
-				counter++;
-			} while (counter < iterations);
-            return true;
 		}
 	}
 }

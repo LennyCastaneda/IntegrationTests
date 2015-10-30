@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
-using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 
@@ -8,15 +7,19 @@ namespace ReloadedInterface.Interfaces
 {
 	public class WebDriver : Common
 	{
+		public event TickHandler Tick;
+		public EventArgs e = null;
+		public delegate void TickHandler(WebDriver m, EventArgs e);
 		private IWebDriver _driver;
 
 		public WebDriver(IWebDriver driver)
 		{
 			_driver = driver;
 			Maximize();
-			//_driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-			//_driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
-			//_driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));
+			var secs = 5;
+			_driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(secs));
+			_driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(secs));
+			_driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(secs));
 		}
 
 		private void Maximize()
@@ -68,8 +71,8 @@ namespace ReloadedInterface.Interfaces
 
 		public void Navigate(string url)
 		{
-			_driver.Navigate().GoToUrl(url);		
-			System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2));
+			_driver.Navigate().GoToUrl(url);
+			Tick(this, e);
 		}
 
 		public void Quit()
@@ -77,23 +80,20 @@ namespace ReloadedInterface.Interfaces
 			_driver.Quit();
 		}
 
-		public void OpenMenu()
-		{
-			var button = _driver.FindElement(By.XPath("//div[class='navbar-left']/a[1]"));
-			button.Click();
-		}
-
 		public WebElement FindElement(ByMethod method, string selector)
 		{
-			WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
-			WebElement result = wait.Until<WebElement>((_driver) => {
-				//wait.Until(ExpectedConditions.ElementIsVisible(GetBy(method, selector)));
-				//wait.Until(ExpectedConditions.ElementToBeClickable(GetBy(method, selector)));
-				//wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(GetBy(method, selector)));
-				return new WebElement(wait.Until(ExpectedConditions.ElementToBeClickable(GetBy(method, selector))));
-			});
+			if (_driver.FindElements(GetBy(method, selector)).Count > 0)
+			{
+				WebElement result = default(WebElement);
+				result = new WebElement(_driver.FindElement(GetBy(method, selector)));
+				return result;
+			}
+			return null;
+		}
 
-			return result;
+		public WebElement FindElement(FindBy findby)
+		{
+			return FindElement(findby.Method, findby.Selector);
 		}
 
 		public List<WebElement> FindElements(ByMethod method, string selector)
@@ -104,6 +104,11 @@ namespace ReloadedInterface.Interfaces
 				result.Add(new WebElement(element));
 			}
 			return result;
+		}
+
+		public List<WebElement> FindElements(FindBy findby)
+		{
+			return FindElements(findby.Method, findby.Selector);
 		}
 	}
 }

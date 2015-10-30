@@ -1,9 +1,10 @@
 ﻿Feature: OpenGoogleOutline
 
 Scenario Outline: Open Google (Outline)
-	Given a browser '<browser>'
-	When the browser points to 'https://www.google.co.uk/'
-	Then the title should be 'Google'
+	Given the Browser '<browser>'
+	When the Browser is pointed to 'https://www.google.co.uk/'
+	Then the Browser title should be 'Google'
+
 
 Examples:
 	| browser |

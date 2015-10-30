@@ -4,6 +4,6 @@
 	I want to go to Google using a browser
 
 Scenario: Open Google in Edge
-	Given Multiple browsers
-	When the browser points to 'https://www.google.co.uk/'
-	Then the title should be 'Google'
+	Given the Browser 'Edge'
+	When the Browser is pointed to 'https://www.google.co.uk/'
+	Then the Browser title should be 'Google'

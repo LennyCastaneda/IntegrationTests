@@ -76,7 +76,7 @@ namespace ReloadedInterface.Interfaces
 
 		public void Click()
 		{
-			Wait(() => { _element.Click(); });
+			_element.Click();
 		}
 
 		public string GetAttribute(string attributeName)
@@ -101,11 +101,18 @@ namespace ReloadedInterface.Interfaces
 
 		public WebElement FindElement(ByMethod method, string selector)
 		{
-			if(_element.FindElements(GetBy(method, selector)).Count > 0)
+			if (_element.FindElements(GetBy(method, selector)).Count > 0)
 			{
-				return new WebElement(_element.FindElement(GetBy(method, selector)));
+				WebElement result = default(WebElement);
+				result = new WebElement(_element.FindElement(GetBy(method, selector)));
+				return result;
 			}
 			return null;
+		}
+
+		public WebElement FindElement(FindBy findby)
+		{
+			return FindElement(findby.Method, findby.Selector);
 		}
 
 		public List<WebElement> FindElements(ByMethod method, string selector)
@@ -116,6 +123,11 @@ namespace ReloadedInterface.Interfaces
 				result.Add(new WebElement(element));
 			}
 			return result;
+		}
+
+		public List<WebElement> FindElements(FindBy findby)
+		{
+			return FindElements(findby.Method, findby.Selector);
 		}
 	}
 }

@@ -6,31 +6,49 @@ namespace ReloadedFramework.Model
 {
 	public class MenuItem : SubController<MenuItem>
 	{
+		private FindBy SubItemsBy = new FindBy(ByMethod.XPath, "ul/li");
+		private FindBy LinkBy = new FindBy(ByMethod.XPath, "a");
+
 		public MenuItem(WebDriver driver, WebElement element) : base(ref driver)
 		{
 			_element = element;
         }
 
+		/// <summary>
+		/// Returns true if this MenuItem is expandable.
+		/// </summary>
+		public bool IsExpandable
+		{
+			get
+			{
+				return _element.GetAttribute("class").Contains("expandable");
+			}
+		}
+
+		/// <summary>
+		/// Returns true if the current MenuItem is expanded.
+		/// </summary>
 		public bool Expanded
 		{
 			get
 			{
-				return _element.GetAttribute("class") == "expandable expanded";
-            }
+				return (IsExpandable ? (_element.GetAttribute("class") == "expandable expanded") : false);
+			}
 		}
 
 		public override void GetSubItems()
 		{
-			var items = _element.FindElements(ByMethod.XPath, @"//*[@id='ngBody']/div[1]/nav[2]/ul/li");
-			var result = new Dictionary<string, MenuItem>();
-			items.ForEach((s) => {
-				var element = s.FindElement(ByMethod.CssSelector, "a");
-				if (element != null)
-				{
-					result.Add(element.Text, new MenuItem(_driver, s));
-				}
-			});
-			_subItems = result;
+			_subItems = new Dictionary<string, MenuItem>();
+			var items = _element.FindElements(SubItemsBy);
+			foreach (var item in items.FindAll(x => !string.IsNullOrEmpty(x.Text)))
+			{
+				_subItems.Add(item.FindElement(ByMethod.XPath, "a").Text, new MenuItem(_driver, item));
+			}
+		}
+
+		public void Click()
+		{
+			_element.FindElement(LinkBy).Click();
 		}
 	}
 }

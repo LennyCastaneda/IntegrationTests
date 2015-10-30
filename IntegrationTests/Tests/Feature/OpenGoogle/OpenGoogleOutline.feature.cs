@@ -75,11 +75,11 @@ namespace IntegrationTests.Tests.Feature.OpenGoogle
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
- testRunner.Given(string.Format("a browser \'{0}\'", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("the Browser \'{0}\'", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
- testRunner.When("the browser points to \'https://www.google.co.uk/\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the Browser is pointed to \'https://www.google.co.uk/\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
- testRunner.Then("the title should be \'Google\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the Browser title should be \'Google\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
