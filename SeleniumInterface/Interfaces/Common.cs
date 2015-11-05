@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using System;
+using System.Threading;
 
 namespace ReloadedInterface.Interfaces
 {
@@ -30,6 +32,16 @@ namespace ReloadedInterface.Interfaces
 
 	public class Common
 	{
+		private static TimeSpan Sleep = TimeSpan.FromMilliseconds(500);
+
+		/// <summary>
+		/// Calls Thread.Sleep() for a set amount of time, set in the Common parent class.
+		/// </summary>
+		public static void Wait()
+		{
+			Thread.Sleep(Sleep);
+		}
+
 		public static OpenQA.Selenium.By GetBy(ByMethod method, string selector)
 		{
 			switch (method)
@@ -44,6 +56,24 @@ namespace ReloadedInterface.Interfaces
 					return By.XPath(selector);
 				default:
 					return null;
+			}
+		}
+
+		public bool ElementExists(Action action)
+		{
+			WebDriver.SetImplicitWait(TimeSpan.FromSeconds(0));
+			try
+			{
+				action();
+				return true;
+            }
+			catch
+			{
+				return false;
+			}
+			finally
+			{
+				WebDriver.SetImplicitWait(TimeSpan.FromSeconds(5));
 			}
 		}
 	}

@@ -4,7 +4,7 @@ namespace ReloadedFramework.Model
 {
 	public class Page : Driver
 	{
-		public Page(ref WebDriver driver) : base(ref driver) { }
+		public Page(WebDriver driver) : base(driver) { }
 
 		public string Title
 		{
@@ -43,6 +43,11 @@ namespace ReloadedFramework.Model
 		public void Quit()
 		{
 			_driver.Quit();
+		}
+
+		public void Wait()
+		{
+			WebDriver.Wait();
 		}
 	}
 }

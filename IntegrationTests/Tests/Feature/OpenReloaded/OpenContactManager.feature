@@ -1,26 +1,23 @@
 ﻿@Chrome
-Feature: OpenSpecificTabsFromMenu
-	A user should be able to open specific Tabs/Modules by clicking on the respective menu items.
+Feature: OpenContactManager
 
-Background:
-	Given the Browser exists
-	When the Browser is pointed to 'http://durell.co.uk:1024/#/config/1'
-	And the Browser title is 'Reloaded'
-	Then the Menu icon is clicked
+Background: 
+	Given Reloaded is open
+	And the Menu icon is clicked
+	When the Menu is open
+	And the MenuItem 'Contact Manager' is clicked
+	Then the MenuItem 'Contact Manager' is currently expanded
 
-Scenario: Expand Contact Manager
-	Given the Menu is open
-	When the MenuItem 'Contact Manager' is clicked
-	Then the MenuItem 'Contact Manager' should be expanded
+Scenario Outline: Open each Contact Manager tab	
+	Given the MenuItem SubItem '<client>' is clicked
+	And the Tab '<client>' exists
+	Then the Tab '<client>' should be active
 
-Scenario: Open Home
-	Given the Menu is open
-	And the MenuItem 'Home' exists
-	When the MenuItem 'Home' is clicked
-	Then the Tab 'Home' should be active
-
-Scenario: Open Individual Clients
-	Given the Menu is open
-	And the Tab 'Individual Clients' exists
-	When the Tab 'Individual Clients' is clicked
-	Then the Tab 'Individual Clients' should be active
+Examples: 
+	| client             |
+	| Individual Clients |
+	| Business Clients   |
+	| Prospects          |
+	| Factfind           |
+	| Mailshotting       |
+ 

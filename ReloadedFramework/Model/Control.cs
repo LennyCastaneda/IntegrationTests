@@ -10,7 +10,7 @@ namespace ReloadedFramework.Model
 	{
 		protected WebDriver _driver;
 
-		public Driver(ref WebDriver driver)
+		public Driver(WebDriver driver)
 		{
 			_driver = driver;
 		}
@@ -22,16 +22,20 @@ namespace ReloadedFramework.Model
 	public abstract class Control : Driver
 	{
 		protected WebElement _element;
+		private WebDriver driver;
+
 		public string Name { get; set; }
 
-		public Control(ref WebDriver driver, string name) : base(ref driver) {
+		public Control(WebDriver driver, string name) : base(driver) {
 			Name = name;
 		}
 	}
 
 	public abstract class ClickableControl : Control
 	{
-		public ClickableControl(ref WebDriver driver, string name) : base(ref driver, name) { }
+		public ClickableControl(WebDriver driver, WebElement element, string name) : base(driver, name) {
+			_element = element;
+		}
 
 		public abstract void Click();
 	}
@@ -45,7 +49,7 @@ namespace ReloadedFramework.Model
 		protected Dictionary<string, T> _subItems;
 		public T SelectedItem { get; set; }
 
-		public SubController(ref WebDriver driver, string name) : base(ref driver, name) { }
+		public SubController(WebDriver driver, string name) : base(driver, name) { }
 		
 		/// <summary>
 		/// All derived classes must define a method to store every relevant Control within the _subItems Dictionary.
@@ -72,7 +76,7 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public bool SubItemExists(string name)
 		{
-			if(SelectedItem.Name == name)
+			if(SelectedItem != null && SelectedItem.Name == name)
 			{
 				return true;
 			}
@@ -84,7 +88,7 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public T SubItem(string key)
 		{
-			if (SelectedItem.Name == key)
+			if (SelectedItem != null && SelectedItem.Name == key)
 			{
 				return SelectedItem;
 			}

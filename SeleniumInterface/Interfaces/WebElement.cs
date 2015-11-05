@@ -1,6 +1,8 @@
 ﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 
 namespace ReloadedInterface.Interfaces
 {
@@ -72,11 +74,13 @@ namespace ReloadedInterface.Interfaces
 		public void Clear()
 		{
 			_element.Clear();
+			Wait();
 		}
 
 		public void Click()
 		{
 			_element.Click();
+			Wait();
 		}
 
 		public string GetAttribute(string attributeName)
@@ -92,16 +96,19 @@ namespace ReloadedInterface.Interfaces
 		public void SendKeys(string text)
 		{
 			_element.SendKeys(text);
+			Wait();
 		}
 
 		public void Submit()
 		{
 			_element.Submit();
+			Wait();
 		}
 
 		public WebElement FindElement(ByMethod method, string selector)
 		{
-			if (_element.FindElements(GetBy(method, selector)).Count > 0)
+			
+            if (_element.FindElements(GetBy(method, selector)).Count > 0)
 			{
 				WebElement result = default(WebElement);
 				result = new WebElement(_element.FindElement(GetBy(method, selector)));

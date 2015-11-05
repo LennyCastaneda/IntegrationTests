@@ -1,4 +1,5 @@
-﻿using ReloadedInterface.Generators;
+﻿using ReloadedFramework.Model.Modals;
+using ReloadedInterface.Generators;
 using ReloadedInterface.Interfaces;
 using System;
 
@@ -17,7 +18,7 @@ namespace ReloadedFramework.Model
 		{
 			_driver = WebDriverFactory.CreateDriver(driverName);
 			_driver.Tick += new WebDriver.TickHandler(Refresh);
-			Page = new Page(ref _driver);
+			Page = new Page(_driver);
 			Type = driverName;
 		}
 
@@ -28,9 +29,9 @@ namespace ReloadedFramework.Model
 
 		private static void Refresh()
 		{
-			Menu = new Menu(ref _driver, "Menu");
-			View = new View(ref _driver, "View");
-			Modal = new Modal(ref _driver, "Modal");
+			Menu = new Menu(_driver, "Menu");
+			View = new View(_driver, "View");
+			Modal = new Modal(_driver, "Modal");
 		}
 	}
 }

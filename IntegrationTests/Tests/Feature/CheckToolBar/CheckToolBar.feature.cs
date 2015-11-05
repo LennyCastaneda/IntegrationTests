@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace IntegrationTests.Tests.Feature.OpenReloaded
+namespace IntegrationTests.Tests.Feature.CheckToolBar
 {
     using TechTalk.SpecFlow;
     
@@ -19,21 +19,21 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("OpenContactManager")]
+    [NUnit.Framework.DescriptionAttribute("CheckToolBar")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class OpenContactManagerFeature
+    public partial class CheckToolBarFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "OpenContactManager.feature"
+#line 1 "CheckToolBar.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenContactManager", "", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CheckToolBar", "As a user I would like to open the toolbar.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -68,40 +68,41 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         
         public virtual void FeatureBackground()
         {
-#line 4
 #line 5
- testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
- testRunner.And("the Menu icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.When("the Menu is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the Menu is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
  testRunner.And("the MenuItem \'Contact Manager\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.Then("the MenuItem \'Contact Manager\' is currently expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the MenuItem SubItem \'Individual Clients\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.And("the Tab \'Individual Clients\' exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.Then("the Tab \'Individual Clients\' is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Open each Contact Manager tab")]
-        [NUnit.Framework.TestCaseAttribute("Individual Clients", null)]
-        [NUnit.Framework.TestCaseAttribute("Business Clients", null)]
-        [NUnit.Framework.TestCaseAttribute("Prospects", null)]
-        [NUnit.Framework.TestCaseAttribute("Factfind", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailshotting", null)]
-        public virtual void OpenEachContactManagerTab(string client, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Help opens Help Window")]
+        [NUnit.Framework.TestCaseAttribute("Help", null)]
+        [NUnit.Framework.TestCaseAttribute("Search", null)]
+        [NUnit.Framework.TestCaseAttribute("Setup", null)]
+        [NUnit.Framework.TestCaseAttribute("Overflow", null)]
+        public virtual void HelpOpensHelpWindow(string button, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open each Contact Manager tab", exampleTags);
-#line 11
-this.ScenarioSetup(scenarioInfo);
-#line 4
-this.FeatureBackground();
-#line 12
- testRunner.Given(string.Format("the MenuItem SubItem \'{0}\' is clicked", client), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Help opens Help Window", exampleTags);
 #line 13
- testRunner.And(string.Format("the Tab \'{0}\' exists", client), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
+#line 5
+this.FeatureBackground();
 #line 14
- testRunner.Then(string.Format("the Tab \'{0}\' should be active", client), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("the ToolBar exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 15
+ testRunner.When(string.Format("the ToolBar \'{0}\' button is clicked", button), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+ testRunner.Then("wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

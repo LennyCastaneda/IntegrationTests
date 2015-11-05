@@ -1,10 +1,10 @@
 ﻿using System;
 using ReloadedInterface.Interfaces;
 
-namespace ReloadedFramework.Model
+namespace ReloadedFramework.Model.Modals
 {
 	public class Modal : Control
 	{
-		public Modal(ref WebDriver driver, string name) : base(ref driver, name) { }
+		public Modal(WebDriver driver, string name) : base(driver, name) { }
 	}
 }

@@ -10,16 +10,13 @@ namespace ReloadedInterface.Interfaces
 		public event TickHandler Tick;
 		public EventArgs e = null;
 		public delegate void TickHandler(WebDriver m, EventArgs e);
-		private IWebDriver _driver;
+		private static IWebDriver _driver;
 
 		public WebDriver(IWebDriver driver)
 		{
 			_driver = driver;
 			Maximize();
-			var secs = 5;
-			_driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(secs));
-			_driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(secs));
-			_driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(secs));
+			SetImplicitWait(TimeSpan.FromMilliseconds(3000));
 		}
 
 		private void Maximize()
@@ -78,6 +75,13 @@ namespace ReloadedInterface.Interfaces
 		public void Quit()
 		{
 			_driver.Quit();
+		}
+
+		public static void SetImplicitWait(TimeSpan span)
+		{
+			_driver.Manage().Timeouts().ImplicitlyWait(span);
+			//_driver.Manage().Timeouts().SetPageLoadTimeout(span);
+			//_driver.Manage().Timeouts().SetScriptTimeout(span);
 		}
 
 		public WebElement FindElement(ByMethod method, string selector)

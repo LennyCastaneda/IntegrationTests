@@ -16,11 +16,27 @@ namespace IntegrationTests.Tests.StepDefinitions
 			Menu.Open();
 		}
 
+		[StepDefinition(@"the Menu is closed")]
+		[StepDefinition(@"the Menu close icon is clicked")]
+		[StepDefinition(@"the Menu back icon is clicked")]
+		public static void CloseMenuBar()
+		{
+			Menu.Close();
+			//Menu.CloseByClickingOffMenuBar();
+		}
+
 		[StepDefinition(@"the Menu is open")]
 		public static void MenuIsOpen()
 		{
 			Assert.IsNotNull(Menu);
 			Assert.That(Menu.IsOpen);
+		}
+
+		[StepDefinition(@"the Menu is not open")]
+		public static void MenuIsClosed()
+		{
+			Assert.IsNotNull(Menu);
+			Assert.That(!Menu.IsOpen);
 		}
 
 		[StepDefinition(@"the MenuItem '(.*)' exists")]
@@ -36,14 +52,6 @@ namespace IntegrationTests.Tests.StepDefinitions
 			Assert.True(Menu.SubItemExists(name));
 			Assert.NotNull(Menu.SubItem(name));
 			Menu.SubItem(name).Click();
-
-			if (Menu.SubItem(name).IsExpandable)
-			{
-				while(!Menu.SubItem(name).Expanded)
-				{
-					Menu.SubItem(name).Click();
-				}
-			}
 		}
 
 		[StepDefinition(@"the MenuItem '(.*)' is currently expanded")]
@@ -59,5 +67,5 @@ namespace IntegrationTests.Tests.StepDefinitions
 			Assert.NotNull(Menu.SelectedItem.SubItem(name));
 			Menu.SelectedItem.SubItem(name).Click();	
 		}
-    }
+	}
 }

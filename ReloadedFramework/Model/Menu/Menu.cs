@@ -1,6 +1,5 @@
 ﻿using ReloadedInterface.Interfaces;
 using System.Collections.Generic;
-using System;
 
 namespace ReloadedFramework.Model
 {
@@ -11,7 +10,7 @@ namespace ReloadedFramework.Model
 		private FindBy CloseBy = new FindBy(ByMethod.ClassName, "mdi-keyboard-backspace");
 		private FindBy SubItemsBy = new FindBy(ByMethod.XPath, "ul/li");
 
-		public Menu(ref WebDriver driver, string name) : base(ref driver, name) {
+		public Menu(WebDriver driver, string name) : base(driver, name) {
 			if (_driver.Title == "Reloaded")
 			{
 				if (_driver.FindElements(MenuBy.Method, MenuBy.Selector + ".visible").Count > 0)
@@ -39,7 +38,12 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public void Close()
 		{
-			_element.FindElement(CloseBy.Method, CloseBy.Selector).Click();
+			_element.FindElement(CloseBy).Click();
+		}
+
+		public void CloseByClickingOffMenuBar()
+		{
+			_element.FindElement(ByMethod.Id, "tab_holder");
 		}
 
 		/// <summary>
@@ -65,15 +69,15 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public override void GetSubItems()
 		{
-			var temp = new Dictionary<string, MenuItem>();
-			var items = _element.FindElements(SubItemsBy);
-			foreach(var item in items.FindAll(x => !string.IsNullOrEmpty(x.Text)))
+			_element.ElementExists(() =>
 			{
-				var name = item.FindElement(ByMethod.XPath, "a").Text;
-                temp.Add(name, new MenuItem(_driver, name, item));
-			}
-
-			_subItems = temp;
+				_subItems = new Dictionary<string, MenuItem>();
+				foreach (var item in _element.FindElements(SubItemsBy).FindAll(x => !string.IsNullOrEmpty(x.Text)))
+				{
+					var name = item.FindElement(ByMethod.XPath, "a").Text;
+					_subItems.Add(name, new MenuItem(_driver, name, item));
+				}
+			});
 		}
 	}
 }

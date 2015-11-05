@@ -9,7 +9,7 @@ namespace ReloadedFramework.Model
 		private FindBy SubItemsBy = new FindBy(ByMethod.XPath, "ul/li");
 		private FindBy LinkBy = new FindBy(ByMethod.XPath, "a");
 
-		public MenuItem(WebDriver driver, string name, WebElement element) : base(ref driver, name)
+		public MenuItem(WebDriver driver, string name, WebElement element) : base(driver, name)
 		{
 			_element = element;
 			GetSubItems();
@@ -33,19 +33,21 @@ namespace ReloadedFramework.Model
 		{
 			get
 			{
-				return (IsExpandable ? (_element.GetAttribute("class") == "expandable expanded") : false);
+				return (IsExpandable ? (_element.GetAttribute("class").Contains("expanded")) : false);
 			}
 		}
 
 		public override void GetSubItems()
 		{
-			_subItems = new Dictionary<string, MenuItem>();
-			var items = _element.FindElements(SubItemsBy);
-			foreach (var item in items.FindAll(x => !string.IsNullOrEmpty(x.Text)))
+			_element.ElementExists(() => 
 			{
-				var name = item.FindElement(ByMethod.XPath, "a").Text;
-				_subItems.Add(name, new MenuItem(_driver, name, item));
-			}
+				_subItems = new Dictionary<string, MenuItem>();
+				foreach (var item in _element.FindElements(SubItemsBy).FindAll(x => !string.IsNullOrEmpty(x.Text)))
+				{
+					var name = item.FindElement(ByMethod.XPath, "a").Text;
+					_subItems.Add(name, new MenuItem(_driver, name, item));
+				}
+			});
 		}
 
 		public void Click()

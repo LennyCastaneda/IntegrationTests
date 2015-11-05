@@ -12,28 +12,28 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void ClickTab(string name)
 		{
 			TabExists(name);
-			View.SubItem(name).Click();
+			View.Tab(name).Click();
 		}
 
+		[StepDefinition(@"the Tab '(.*)' is active")]
 		[StepDefinition(@"the Tab '(.*)' should be active")]
 		public static void TabIsActive(string name)
 		{
-			TabExists(name);
-			Assert.That(View.SubItem(name).Active);
+			View.Tab(name).Click();
+			Assert.That(View.Tab(name).Active);
 		}
 
 		[StepDefinition(@"the Tab '(.*)' exists")]
 		public static void TabExists(string name)
 		{
 			Assert.NotNull(View);
-			Assert.True(View.SubItemExists(name));
-			Assert.NotNull(View.SubItem(name));
+			Assert.NotNull(View.Tab(name));
 		}
 
 		[StepDefinition(@"the Tab count should be '(.*)'")]
 		public static void NumberOfTabs(int count)
 		{
-			Assert.That(View.SubItemCount == count);
+			Assert.That(View.TabCount == count);
 		}
 	}
 }

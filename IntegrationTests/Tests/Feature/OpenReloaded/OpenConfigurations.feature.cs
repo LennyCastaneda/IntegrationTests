@@ -33,8 +33,8 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Open Configurations", "A user should be able to open configurations, which is a specific list of Tabs th" +
-                    "at open.", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Open Configurations", "A user should be able to expand the \'Configurations\' option in the Menu \r\nWhen a " +
+                    "user clicks a subitem, a corresponding list of Tabs should open.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -69,55 +69,51 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         
         public virtual void FeatureBackground()
         {
-#line 5
 #line 6
- testRunner.Given("the Browser exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.When("the Browser is pointed to \'http://durell.co.uk:1024/#/config/1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.And("the Browser title should be \'Reloaded\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
  testRunner.When("the Menu icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
+#line 9
  testRunner.And("the Menu is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
+#line 10
  testRunner.Then("the MenuItem \'Configurations\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Open Configurations: Default")]
-        public virtual void OpenConfigurationsDefault()
+        [NUnit.Framework.DescriptionAttribute("Open Config: Default")]
+        public virtual void OpenConfigDefault()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Configurations: Default", ((string[])(null)));
-#line 13
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Config: Default", ((string[])(null)));
+#line 12
 this.ScenarioSetup(scenarioInfo);
-#line 5
+#line 6
 this.FeatureBackground();
-#line 14
+#line 13
  testRunner.Given("the MenuItem \'Configurations\' is currently expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 15
+#line 14
  testRunner.When("the MenuItem SubItem \'Default\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 16
+#line 15
  testRunner.Then("the Tab count should be \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Open Configurations : Dumble")]
-        public virtual void OpenConfigurationsDumble()
+        [NUnit.Framework.DescriptionAttribute("Open Config: Dumble")]
+        public virtual void OpenConfigDumble()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Configurations : Dumble", ((string[])(null)));
-#line 18
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Config: Dumble", ((string[])(null)));
+#line 17
 this.ScenarioSetup(scenarioInfo);
-#line 5
+#line 6
 this.FeatureBackground();
-#line 19
+#line 18
  testRunner.Given("the MenuItem \'Configurations\' is currently expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
+#line 19
  testRunner.When("the MenuItem SubItem \'Dumble\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 21
+#line 20
  testRunner.Then("the Tab count should be \'7\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -2,7 +2,7 @@
 Feature: OpenReloaded
 	In order to go to the home page
 	As a user
-	I want to open a browser and navigate
+	I want to open a browser and navigate to 
 
 Scenario: Open Reloaded in Chrome
 	Given the Browser exists

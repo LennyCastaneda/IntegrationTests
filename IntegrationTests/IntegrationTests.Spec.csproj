@@ -76,15 +76,20 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Tests\Feature\browow.cs" />
-    <Compile Include="Tests\Feature\OpenGoogle\OpenGoogleInEdge.feature.cs">
+    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBar.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OpenGoogleInEdge.feature</DependentUpon>
+      <DependentUpon>CheckToolBar.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\OpenGoogle\OpenGoogleInFirefox.feature.cs">
+    <Compile Include="Tests\Feature\OpenReloaded\OpenContactManager.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OpenGoogleInFirefox.feature</DependentUpon>
+      <DependentUpon>OpenContactManager.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\OpenReloaded\OpenMenuBar.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OpenMenuBar.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\Feature\OpenReloaded\OpenReloaded.feature.cs">
       <AutoGen>True</AutoGen>
@@ -96,10 +101,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OpenConfigurations.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\OpenContactManager.feature.cs">
+    <Compile Include="Tests\Feature\OpenReloaded\CheckMenu.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OpenContactManager.feature</DependentUpon>
+      <DependentUpon>CheckMenu.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
     <Compile Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature.cs">
@@ -110,25 +115,30 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\StepDefinitions\MenuSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ToolBarSteps.cs" />
     <Compile Include="Tests\TestBase.cs" />
-    <Compile Include="Tests\Workflow\OpenReloaded.cs" />
+    <Compile Include="Tests\Workflow\WorkFlow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Tests\Feature\OpenGoogle\OpenGoogleInEdge.feature">
+    <None Include="Tests\Feature\CheckToolBar\CheckToolBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenGoogleInEdge.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\OpenGoogle\OpenGoogleInFirefox.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenGoogleInFirefox.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckToolBar.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OpenGoogleOutline.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\OpenReloaded\OpenContactManager.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OpenContactManager.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\OpenReloaded\OpenMenuBar.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OpenMenuBar.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\OpenReloaded\OpenReloaded.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -138,9 +148,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OpenConfigurations.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\OpenReloaded\OpenContactManager.feature">
+    <None Include="Tests\Feature\OpenReloaded\CheckMenu.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenContactManager.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckMenu.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

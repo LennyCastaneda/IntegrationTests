@@ -49,11 +49,13 @@
     <Compile Include="Model\Control.cs" />
     <Compile Include="Model\Menu\Menu.cs" />
     <Compile Include="Model\Menu\MenuItem.cs" />
+    <Compile Include="Model\Modals\Help.cs" />
     <Compile Include="Model\Modals\Modal.cs" />
     <Compile Include="Model\Page\Page.cs" />
-    <Compile Include="Model\View\Tab.cs" />
-    <Compile Include="Model\View\ToolBar.cs" />
-    <Compile Include="Model\View\View.cs" />
+    <Compile Include="Model\Tabs\Tab.cs" />
+    <Compile Include="Model\Tabs\ToolBar\Setup.cs" />
+    <Compile Include="Model\Tabs\ToolBar\ToolBar.cs" />
+    <Compile Include="Model\Tabs\View.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

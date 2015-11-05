@@ -1,10 +1,16 @@
 ﻿using ReloadedInterface.Interfaces;
+using System.Threading;
 
 namespace ReloadedFramework.Model
 {
 	public class Tab : ClickableControl
 	{
-		public Tab(ref WebDriver driver, string name) : base(ref driver, name) { }
+		View _view;
+
+		public Tab(WebDriver driver, WebElement element, string name, View view) : base(driver, element, name)
+		{
+			_view = view;
+		}
 
 		public bool Active
 		{
@@ -17,6 +23,7 @@ namespace ReloadedFramework.Model
 		public override void Click()
 		{
 			_element.Click();
+			_view.SetActiveTab(this);
 		}
-	}
+    }
 }

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using ReloadedFramework;
 using ReloadedFramework.Model;
 using TechTalk.SpecFlow;
@@ -35,6 +36,12 @@ namespace IntegrationTests.Tests
 		public static void ThenTheTitleShouldBe(string title)
 		{
 			Assert.That(Page.Title == title);
+		}
+
+		[StepDefinition(@"wait")]
+		public static void Pause()
+		{
+			Page.Wait();
 		}
 	}
 }
