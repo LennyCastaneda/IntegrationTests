@@ -18,7 +18,7 @@ namespace ReloadedFramework.Model
 		Dictionary<string, Tab> Tabs;
 		public static WebElement ActiveView { get; private set; }
 		public static Tab ActiveTab { get; private set; }
-		public static ToolBar ToolBar { get; private set; }
+		public static ToolBar2 ToolBar { get; private set; }
 
 		public View(WebDriver driver, string name) : base(driver, name)
 		{
@@ -37,7 +37,7 @@ namespace ReloadedFramework.Model
 				var temp = _driver.FindElement(ToolBarBy);
 				if (temp != null)
 				{
-					ToolBar = new ToolBar(_driver, "ToolBar", temp, this);
+					ToolBar = new ToolBar2(_driver, "ToolBar", temp);
 				}
 			});
 		}

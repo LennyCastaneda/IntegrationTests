@@ -107,7 +107,6 @@ namespace ReloadedInterface.Interfaces
 
 		public WebElement FindElement(ByMethod method, string selector)
 		{
-			
             if (_element.FindElements(GetBy(method, selector)).Count > 0)
 			{
 				WebElement result = default(WebElement);

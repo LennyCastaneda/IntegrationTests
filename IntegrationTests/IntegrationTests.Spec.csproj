@@ -76,10 +76,20 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Tests\Feature\browow.cs" />
+    <Compile Include="Tests\Feature\CheckHelp\CheckHelp.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckHelp.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Feature\CheckToolBar\CheckToolBar.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckToolBar.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBarSetup.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckToolBarSetup.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\Feature\OpenReloaded\OpenContactManager.feature.cs">
       <AutoGen>True</AutoGen>
@@ -113,6 +123,7 @@
       <DependentUpon>OpenGoogleOutline.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\StepDefinitions\HelpSteps.cs" />
     <Compile Include="Tests\StepDefinitions\MenuSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ToolBarSteps.cs" />
@@ -124,9 +135,17 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Tests\Feature\CheckHelp\CheckHelp.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckHelp.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\Feature\CheckToolBar\CheckToolBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckToolBar.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckToolBar\CheckToolBarSetup.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckToolBarSetup.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

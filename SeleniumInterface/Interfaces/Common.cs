@@ -59,6 +59,10 @@ namespace ReloadedInterface.Interfaces
 			}
 		}
 
+		/// <summary>
+		/// <para> Overrides the Global ImplicitWait and runs the Action. If there is an exception it returns false. Otherwise, true is returned. </para>
+		/// <para> To return false deliberately, throw new Exception("") when a certain condition is true. </para>
+		/// </summary>
 		public bool ElementExists(Action action)
 		{
 			WebDriver.SetImplicitWait(TimeSpan.FromSeconds(0));

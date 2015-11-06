@@ -19,21 +19,22 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CheckToolBar")]
+    [NUnit.Framework.DescriptionAttribute("CheckToolBarSetup")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class CheckToolBarFeature
+    public partial class CheckToolBarSetupFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "CheckToolBar.feature"
+#line 1 "CheckToolBarSetup.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CheckToolBar", "As a user I would like to open the toolbar.", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CheckToolBarSetup", "The ToolBar has a Setup icon. Once pressed the icon shows a dropdown menu.\nEach o" +
+                    "f these items should be clickable.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -68,34 +69,51 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
         
         public virtual void FeatureBackground()
         {
-#line 5
 #line 6
- testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.When("Individual Clients is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.Then("the ToolBar exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("Individual Clients is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Click each ToolBar button")]
-        [NUnit.Framework.TestCaseAttribute("Help", null)]
-        [NUnit.Framework.TestCaseAttribute("Search", null)]
-        [NUnit.Framework.TestCaseAttribute("Setup", null)]
-        [NUnit.Framework.TestCaseAttribute("Overflow", null)]
-        public virtual void ClickEachToolBarButton(string button, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("The Setup dropdown menu is navigable")]
+        public virtual void TheSetupDropdownMenuIsNavigable()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click each ToolBar button", exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Setup dropdown menu is navigable", ((string[])(null)));
 #line 10
 this.ScenarioSetup(scenarioInfo);
-#line 5
+#line 6
 this.FeatureBackground();
 #line 11
- testRunner.Given("the ToolBar exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the ToolBar \'Setup\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
- testRunner.When(string.Format("the ToolBar \'{0}\' button is clicked", button), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("the ToolBar \'Setup\' menu is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
+ testRunner.When("the ToolBar \'Setup\' DropDown button \'Filter\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.Then("wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("The Overflow dropdown menu is navigable")]
+        public virtual void TheOverflowDropdownMenuIsNavigable()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Overflow dropdown menu is navigable", ((string[])(null)));
+#line 16
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 17
+ testRunner.Given("the ToolBar \'Overflow\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 18
+ testRunner.And("the ToolBar \'Overflow\' menu is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.When("the ToolBar \'Overflow\' DropDown button \'Share\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
  testRunner.Then("wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

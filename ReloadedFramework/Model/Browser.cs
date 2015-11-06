@@ -1,4 +1,4 @@
-﻿using ReloadedFramework.Model.Modals;
+﻿using ReloadedFramework.Model;
 using ReloadedInterface.Generators;
 using ReloadedInterface.Interfaces;
 using System;
@@ -11,7 +11,8 @@ namespace ReloadedFramework.Model
 		public static Page Page { get; private set; }
 		public static Menu Menu { get; private set; }
 		public static View View { get; private set; }
-		public static Modal Modal { get; private set; }
+		public static Manual Manual { get; private set; }
+		//public static Modals Modals { get; private set; }
 		public static string Type { get; private set; }
 
 		public static void Init(string driverName)
@@ -20,6 +21,7 @@ namespace ReloadedFramework.Model
 			_driver.Tick += new WebDriver.TickHandler(Refresh);
 			Page = new Page(_driver);
 			Type = driverName;
+			Manual = new Manual(_driver, "Manual");
 		}
 
 		private static void Refresh(WebDriver driver, EventArgs e)
@@ -31,7 +33,7 @@ namespace ReloadedFramework.Model
 		{
 			Menu = new Menu(_driver, "Menu");
 			View = new View(_driver, "View");
-			Modal = new Modal(_driver, "Modal");
+			//Modals = new Modals(_driver, "Modals");
 		}
 	}
 }

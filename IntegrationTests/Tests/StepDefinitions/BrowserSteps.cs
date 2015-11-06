@@ -35,6 +35,7 @@ namespace IntegrationTests.Tests
 		[StepDefinition(@"the Browser title should be '(.*)'")]
 		public static void ThenTheTitleShouldBe(string title)
 		{
+
 			Assert.That(Page.Title == title);
 		}
 

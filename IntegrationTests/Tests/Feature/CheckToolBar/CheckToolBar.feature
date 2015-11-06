@@ -4,13 +4,10 @@ Feature: CheckToolBar
 
 Background: 
 	Given Reloaded is open
-	When the Menu is opened
-	And the MenuItem 'Contact Manager' is clicked
-	When the MenuItem SubItem 'Individual Clients' is clicked
-	And the Tab 'Individual Clients' exists
-	Then the Tab 'Individual Clients' is active
+	When Individual Clients is opened
+	Then the ToolBar exists
 
-Scenario Outline: Help opens Help Window
+Scenario Outline: Click each ToolBar button
 	Given the ToolBar exists
 	When the ToolBar '<button>' button is clicked
 	Then wait
