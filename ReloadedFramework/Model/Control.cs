@@ -97,6 +97,7 @@ namespace ReloadedFramework.Model
 			{
 				if (!_subItems.ContainsKey(key))
 				{
+					
 					GetSubItems();
 				}
 				SelectedItem = _subItems[key];

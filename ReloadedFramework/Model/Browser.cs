@@ -1,5 +1,4 @@
-﻿using ReloadedFramework.Model;
-using ReloadedInterface.Generators;
+﻿using ReloadedInterface.Generators;
 using ReloadedInterface.Interfaces;
 using System;
 
@@ -12,7 +11,7 @@ namespace ReloadedFramework.Model
 		public static Menu Menu { get; private set; }
 		public static View View { get; private set; }
 		public static Manual Manual { get; private set; }
-		//public static Modals Modals { get; private set; }
+		public static ThemePicker ThemePicker { get; private set; }
 		public static string Type { get; private set; }
 
 		public static void Init(string driverName)
@@ -22,6 +21,7 @@ namespace ReloadedFramework.Model
 			Page = new Page(_driver);
 			Type = driverName;
 			Manual = new Manual(_driver, "Manual");
+			ThemePicker = new ThemePicker(_driver, "ThemePicker");
 		}
 
 		private static void Refresh(WebDriver driver, EventArgs e)
@@ -33,7 +33,6 @@ namespace ReloadedFramework.Model
 		{
 			Menu = new Menu(_driver, "Menu");
 			View = new View(_driver, "View");
-			//Modals = new Modals(_driver, "Modals");
 		}
 	}
 }

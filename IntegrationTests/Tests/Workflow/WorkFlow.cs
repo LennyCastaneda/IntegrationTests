@@ -23,5 +23,12 @@ namespace IntegrationTests.Tests.Workflow
 			And("the Tab 'Individual Clients' exists");
 			When("the Tab 'Individual Clients' is active");
 		}
+
+		[Given(@"ThemePicker is open")]
+		public void OpenThemePicker()
+		{
+			Given("the Browser is sent the keys 'F6'");
+			Then("the ThemePicker should be open");
+        }
 	}
 }

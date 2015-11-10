@@ -75,7 +75,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Tests\Feature\browow.cs" />
     <Compile Include="Tests\Feature\CheckHelp\CheckHelp.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,10 +85,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckToolBar.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBarSetup.feature.cs">
+    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CheckToolBarSetup.feature</DependentUpon>
+      <DependentUpon>CheckToolBarDropDowns.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\Feature\OpenReloaded\OpenContactManager.feature.cs">
       <AutoGen>True</AutoGen>
@@ -116,6 +115,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckMenu.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Feature\CheckThemePicker\ThemePicker.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThemePicker.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
     <Compile Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature.cs">
       <AutoGen>True</AutoGen>
@@ -126,7 +130,9 @@
     <Compile Include="Tests\StepDefinitions\HelpSteps.cs" />
     <Compile Include="Tests\StepDefinitions\MenuSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ThemePickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ToolBarSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ViewSteps.cs" />
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Tests\Workflow\WorkFlow.cs" />
   </ItemGroup>
@@ -143,9 +149,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckToolBar.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\CheckToolBar\CheckToolBarSetup.feature">
+    <None Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckToolBarSetup.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckToolBarDropDowns.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -170,6 +176,10 @@
     <None Include="Tests\Feature\OpenReloaded\CheckMenu.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckMenu.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckThemePicker\ThemePicker.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ThemePicker.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

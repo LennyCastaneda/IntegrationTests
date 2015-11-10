@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 
@@ -75,6 +76,17 @@ namespace ReloadedInterface.Interfaces
 		public void Quit()
 		{
 			_driver.Quit();
+		}
+
+		/// <summary>
+		/// Send a sequence of keystrokes to the browser.
+		/// </summary>
+		/// <param name="keys"></param>
+		public void SendKeys(string keys)
+		{
+			string translated = typeof(Keys).GetField(keys).GetValue(null) as string;
+			new Actions(_driver).SendKeys(translated).Perform();
+			Wait();
 		}
 
 		public static void SetImplicitWait(TimeSpan span)

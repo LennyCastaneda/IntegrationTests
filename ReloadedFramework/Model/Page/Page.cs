@@ -45,6 +45,15 @@ namespace ReloadedFramework.Model
 			_driver.Quit();
 		}
 
+		/// <summary>
+		/// Send a sequence of keystrokes to the browser.
+		/// </summary>
+		/// <param name="keys"></param>
+		public void SendKeys(string keys)
+		{
+			_driver.SendKeys(keys);
+		}
+
 		public void Wait()
 		{
 			WebDriver.Wait();

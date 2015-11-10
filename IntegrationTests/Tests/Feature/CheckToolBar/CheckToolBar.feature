@@ -8,7 +8,7 @@ Background:
 	Then the ToolBar exists
 
 Scenario Outline: Click each ToolBar button
-	Given the ToolBar exists
+	Given the ToolBar '<button>' button exists
 	When the ToolBar '<button>' button is clicked
 	Then wait
 

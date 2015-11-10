@@ -92,7 +92,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line 11
- testRunner.Given("the ToolBar exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("the ToolBar \'{0}\' button exists", button), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
  testRunner.When(string.Format("the ToolBar \'{0}\' button is clicked", button), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13

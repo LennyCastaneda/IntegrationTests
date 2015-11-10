@@ -39,6 +39,16 @@ namespace IntegrationTests.Tests
 			Assert.That(Page.Title == title);
 		}
 
+		[StepDefinition(@"the keyboard key '(.*)' is pressed")]
+		[StepDefinition(@"the Browser is sent the keys '(.*)'")]
+		public static void PressKeys(string keys)
+		{
+			Assert.DoesNotThrow(() =>
+			{
+				Page.SendKeys(keys);
+			});
+		}
+
 		[StepDefinition(@"wait")]
 		public static void Pause()
 		{
