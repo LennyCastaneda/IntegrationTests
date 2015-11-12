@@ -10,8 +10,7 @@ Background:
 Scenario Outline: The Toolbar dropdown menus are clickable
 	Given the ToolBar '<ToolBar>' button is clicked
 	And the ToolBar '<ToolBar>' menu is visible
-	When the ToolBar '<ToolBar>' DropDown button '<Options>' is clicked
-	Then wait
+	Then the ToolBar '<ToolBar>' DropDown button '<Options>' is clicked
 
 Examples: 
 	| ToolBar  | Options        |

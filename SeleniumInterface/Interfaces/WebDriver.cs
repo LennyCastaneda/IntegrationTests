@@ -17,7 +17,6 @@ namespace ReloadedInterface.Interfaces
 		{
 			_driver = driver;
 			Maximize();
-			SetImplicitWait(TimeSpan.FromMilliseconds(3000));
 		}
 
 		private void Maximize()
@@ -54,6 +53,7 @@ namespace ReloadedInterface.Interfaces
 			set
 			{
 				_driver.Url = value;
+				Tick(this, e);
 			}
 		}
 
@@ -89,20 +89,18 @@ namespace ReloadedInterface.Interfaces
 			Wait();
 		}
 
-		public static void SetImplicitWait(TimeSpan span)
+		public void RemoveAnimationDelay()
 		{
-			_driver.Manage().Timeouts().ImplicitlyWait(span);
-			//_driver.Manage().Timeouts().SetPageLoadTimeout(span);
-			//_driver.Manage().Timeouts().SetScriptTimeout(span);
+			IJavaScriptExecutor js = _driver as IJavaScriptExecutor;
+			js.ExecuteScript(@"var style = document.createElement('style'); style.type = 'text/css'; style.innerHTML = '* {transition-property: none !important; -o-transition-property: none !important; -moz-transition-property: none !important; -ms-transition-property: none !important;-webkit-transition-property: none !important; transform: none !important; -o-transform: none !important; -moz-transform: none !important; -ms-transform: none !important; -webkit-transform: none !important; animation: none !important; -o-animation: none !important; -moz-animation: none !important; -ms-animation: none !important; -webkit-animation: none !important; }'; document.body.appendChild(style);");
+			js.ExecuteScript(@"$.fx.off = true;");
 		}
 
 		public WebElement FindElement(ByMethod method, string selector)
 		{
 			if (_driver.FindElements(GetBy(method, selector)).Count > 0)
 			{
-				WebElement result = default(WebElement);
-				result = new WebElement(_driver.FindElement(GetBy(method, selector)));
-				return result;
+				return new WebElement(_driver.FindElement(GetBy(method, selector)));
 			}
 			return null;
 		}

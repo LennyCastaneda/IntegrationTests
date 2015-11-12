@@ -7,7 +7,7 @@ Feature: Check Menu Controls
 Background:
 	Given Reloaded is open
 	When the Menu icon is clicked
-	Then the Menu is open
+	Then the Menu is open	
 
 Scenario Outline: Open Tabs from Menu main
 	Given the MenuItem '<MenuItem>' exists

@@ -1,10 +1,9 @@
-﻿using System;
-using ReloadedFramework.Model;
+﻿using ReloadedFramework.Model.AbstractClasses;
+using ReloadedFramework.Model.ViewObjects.ToolBarObjects;
 using ReloadedInterface.Interfaces;
 using System.Collections.Generic;
-using ReloadedFramework.Model.Tabs.ToolBar;
 
-namespace ReloadedFramework.Model
+namespace ReloadedFramework.Model.ViewObjects
 {
 	public class View : Control
 	{
@@ -16,9 +15,9 @@ namespace ReloadedFramework.Model
 		private FindBy ToolBarBy = new FindBy(ByMethod.CssSelector, "#tab_holder > div.toolbar.col-xs-12.ng-scope > div");
 
 		Dictionary<string, Tab> Tabs;
-		public static WebElement ActiveView { get; private set; }
-		public static Tab ActiveTab { get; private set; }
-		public static ToolBar ToolBar { get; private set; }
+		public WebElement ActiveView { get; private set; }
+		public Tab ActiveTab { get; private set; }
+		public ToolBar ToolBar { get; private set; }
 
 		public View(WebDriver driver, string name) : base(driver, name)
 		{
@@ -32,14 +31,11 @@ namespace ReloadedFramework.Model
 
 		private void InitiateToolBar()
 		{
-			_driver.ElementExists(() =>
+			var temp = _driver.FindElement(ToolBarBy);
+			if (temp != null)
 			{
-				var temp = _driver.FindElement(ToolBarBy);
-				if (temp != null)
-				{
-					ToolBar = new ToolBar(_driver, "ToolBar", temp);
-				}
-			});
+				ToolBar = new ToolBar(_driver, "ToolBar", temp);
+			}
 		}
 
 		public void SetActiveTab(Tab tab)
@@ -55,11 +51,12 @@ namespace ReloadedFramework.Model
 			_element = _driver.FindElement(ThisBy);
 		}
 
-		// Will have to call this from the Toolbar on Close and the Menu on opening a new tab.
 		public void GetTabs()
 		{
-			List<WebElement> items = new List<WebElement>();
-            if (_element.ElementExists(() => { items = _element.FindElements(SubItemsBy); }))
+			var items = new List<WebElement>();
+            items = _element.FindElements(SubItemsBy);
+
+			if(items.Count > 0)
 			{
 				var result = new Dictionary<string, Tab>();
 				items.ForEach((element) =>
@@ -76,19 +73,37 @@ namespace ReloadedFramework.Model
 		public Tab Tab(string key)
 		{
 			key = key.ToLower();
-			if (!Tabs.ContainsKey(key))
+
+			if (ActiveTab != null && ActiveTab.Name == key)
 			{
-				GetTabs();
+				return ActiveTab;
 			}
-			ActiveTab = Tabs[key];
-			return ActiveTab;
+
+			if (TabCount > 0)
+			{
+				if (!Tabs.ContainsKey(key))
+				{
+					GetTabs();
+				}
+
+				ActiveTab = Tabs[key];
+				return ActiveTab;
+			}
+			return null;
 		}
 
 		public int TabCount
 		{
 			get
 			{
-				GetTabs();
+				if (Tabs == null || Tabs.Count == 0)
+				{
+					GetTabs();
+				}
+				if(Tabs == null)
+				{
+					return 0;
+				}
 				return Tabs.Count;
 			}
 		}

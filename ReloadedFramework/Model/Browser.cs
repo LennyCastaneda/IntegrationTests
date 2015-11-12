@@ -1,4 +1,8 @@
-﻿using ReloadedInterface.Generators;
+﻿using ReloadedFramework.Model.MenuObjects;
+using ReloadedFramework.Model.ModalObjects;
+using ReloadedFramework.Model.PageObjects;
+using ReloadedFramework.Model.ViewObjects;
+using ReloadedInterface.Generators;
 using ReloadedInterface.Interfaces;
 using System;
 
@@ -20,8 +24,6 @@ namespace ReloadedFramework.Model
 			_driver.Tick += new WebDriver.TickHandler(Refresh);
 			Page = new Page(_driver);
 			Type = driverName;
-			Manual = new Manual(_driver, "Manual");
-			ThemePicker = new ThemePicker(_driver, "ThemePicker");
 		}
 
 		private static void Refresh(WebDriver driver, EventArgs e)
@@ -32,7 +34,9 @@ namespace ReloadedFramework.Model
 		private static void Refresh()
 		{
 			Menu = new Menu(_driver, "Menu");
-			View = new View(_driver, "View");
+			View = new ViewObjects.View(_driver, "View");
+			Manual = new Manual(_driver, "Manual");
+			ThemePicker = new ThemePicker(_driver, "ThemePicker");
 		}
 	}
 }

@@ -1,7 +1,7 @@
-﻿using ReloadedInterface.Interfaces;
-using System.Threading;
+﻿using ReloadedFramework.Model.AbstractClasses;
+using ReloadedInterface.Interfaces;
 
-namespace ReloadedFramework.Model
+namespace ReloadedFramework.Model.ViewObjects
 {
 	public class Tab : ClickableControl
 	{

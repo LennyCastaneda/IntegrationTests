@@ -1,7 +1,8 @@
-﻿using ReloadedInterface.Interfaces;
+﻿using ReloadedFramework.Model.AbstractClasses;
+using ReloadedInterface.Interfaces;
 using System.Collections.Generic;
 
-namespace ReloadedFramework.Model
+namespace ReloadedFramework.Model.MenuObjects
 {
 	public class Menu : SubController<MenuItem>
 	{
@@ -29,7 +30,7 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public void Open()
 		{
-			var button = _driver.FindElement(OpenBy.Method, OpenBy.Selector);
+			var button = _driver.FindElement(OpenBy);
 			button.Click();
 		}
 
@@ -69,15 +70,12 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public override void GetSubItems()
 		{
-			_element.ElementExists(() =>
+			_subItems = new Dictionary<string, MenuItem>();
+			foreach (var item in _element.FindElements(SubItemsBy).FindAll(x => !string.IsNullOrEmpty(x.Text)))
 			{
-				_subItems = new Dictionary<string, MenuItem>();
-				foreach (var item in _element.FindElements(SubItemsBy).FindAll(x => !string.IsNullOrEmpty(x.Text)))
-				{
-					var name = item.FindElement(ByMethod.XPath, "a").Text;
-					_subItems.Add(name, new MenuItem(_driver, name, item));
-				}
-			});
+				var name = item.FindElement(ByMethod.XPath, "a").Text;
+				_subItems.Add(name, new MenuItem(_driver, name, item));
+			}
 		}
 	}
 }

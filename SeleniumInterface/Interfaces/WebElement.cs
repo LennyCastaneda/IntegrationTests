@@ -1,8 +1,6 @@
 ﻿using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Threading;
 
 namespace ReloadedInterface.Interfaces
 {
@@ -73,45 +71,73 @@ namespace ReloadedInterface.Interfaces
 
 		public void Clear()
 		{
-			_element.Clear();
-			Wait();
+			ExplicitWait(() =>
+			{
+				_element.Clear();
+			});
 		}
 
 		public void Click()
 		{
-			_element.Click();
-			Wait();
+			ExplicitWait(() =>
+			{
+				_element.Click();
+			});
+			Wait(200);
+		}
+
+		/// <summary>
+		/// Clicks element then waits for the designated amount of milliseconds before continiuing.
+		/// </summary>
+		/// <param name="milliseconds"></param>
+		public void Click(double milliseconds)
+		{
+			ExplicitWait(() =>
+			{
+				_element.Click();
+			});
+			Wait(milliseconds);
 		}
 
 		public string GetAttribute(string attributeName)
 		{
-			return _element.GetAttribute(attributeName);
+			string result = "";
+			ExplicitWait(() => { 
+				result =  _element.GetAttribute(attributeName);
+			});
+			return result;
 		}
 
 		public string GetCssValue(string propertyName)
 		{
-			return _element.GetCssValue(propertyName);
+			string result = "";
+			ExplicitWait(() => {
+				result = _element.GetCssValue(propertyName);
+			});
+			return result;
 		}
 
 		public void SendKeys(string text)
 		{
-			_element.SendKeys(text);
-			Wait();
+			ExplicitWait(() =>
+			{
+				_element.SendKeys(text);
+			});
 		}
 
 		public void Submit()
 		{
-			_element.Submit();
-			Wait();
+			ExplicitWait(() =>
+			{
+				_element.Submit();
+			});
 		}
 
 		public WebElement FindElement(ByMethod method, string selector)
 		{
             if (_element.FindElements(GetBy(method, selector)).Count > 0)
 			{
-				WebElement result = default(WebElement);
-				result = new WebElement(_element.FindElement(GetBy(method, selector)));
-				return result;
+				return new WebElement(_element.FindElement(GetBy(method, selector)));
 			}
 			return null;
 		}

@@ -1,45 +1,8 @@
 ﻿using ReloadedInterface.Interfaces;
 using System.Collections.Generic;
 
-namespace ReloadedFramework.Model
+namespace ReloadedFramework.Model.AbstractClasses
 {
-	/// <summary>
-	/// Derived class contains a reference to a WebDriver passed by the constructor.
-	/// </summary>
-	public abstract class Driver
-	{
-		protected WebDriver _driver;
-
-		public Driver(WebDriver driver)
-		{
-			_driver = driver;
-		}
-    }
-
-	/// <summary>
-	/// Derived class contains an uninstantiated WebElement and a Click() method.
-	/// </summary>
-	public abstract class Control : Driver
-	{
-		protected WebElement _element;
-		private WebDriver driver;
-
-		public string Name { get; set; }
-
-		public Control(WebDriver driver, string name) : base(driver) {
-			Name = name;
-		}
-	}
-
-	public abstract class ClickableControl : Control
-	{
-		public ClickableControl(WebDriver driver, WebElement element, string name) : base(driver, name) {
-			_element = element;
-		}
-
-		public abstract void Click();
-	}
-
 	/// <summary>
 	/// Derived class contains a Dictionary of type T sub-objects and controls to access them.
 	/// </summary>
@@ -50,7 +13,7 @@ namespace ReloadedFramework.Model
 		public T SelectedItem { get; set; }
 
 		public SubController(WebDriver driver, string name) : base(driver, name) { }
-		
+
 		/// <summary>
 		/// All derived classes must define a method to store every relevant Control within the _subItems Dictionary.
 		/// </summary>
@@ -76,7 +39,7 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public bool SubItemExists(string name)
 		{
-			if(SelectedItem != null && SelectedItem.Name == name)
+			if (SelectedItem != null && SelectedItem.Name == name)
 			{
 				return true;
 			}
@@ -97,7 +60,7 @@ namespace ReloadedFramework.Model
 			{
 				if (!_subItems.ContainsKey(key))
 				{
-					
+
 					GetSubItems();
 				}
 				SelectedItem = _subItems[key];

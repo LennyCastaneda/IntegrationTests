@@ -1,10 +1,8 @@
-﻿using System;
-using NUnit.Framework;
-using ReloadedFramework;
-using ReloadedFramework.Model;
+﻿using NUnit.Framework;
+using ReloadedFramework.Tests;
 using TechTalk.SpecFlow;
 
-namespace IntegrationTests.Tests
+namespace IntegrationTests.Tests.StepDefinitions
 {
 	[Binding]
 	public class BrowserSteps : TestBase
@@ -29,13 +27,13 @@ namespace IntegrationTests.Tests
 		{
 			Page.GoTo(url);
 			Assert.That(Page.Url.Contains(url));
+			Page.RemoveDelay();
 		}
 
 		[StepDefinition(@"the Browser title is '(.*)'")]
 		[StepDefinition(@"the Browser title should be '(.*)'")]
 		public static void ThenTheTitleShouldBe(string title)
 		{
-
 			Assert.That(Page.Title == title);
 		}
 
@@ -52,7 +50,7 @@ namespace IntegrationTests.Tests
 		[StepDefinition(@"wait")]
 		public static void Pause()
 		{
-			Page.Wait();
+			Page.Wait_FORINTERNALUSEONLY();
 		}
 	}
 }

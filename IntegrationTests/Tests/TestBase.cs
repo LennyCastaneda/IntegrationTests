@@ -1,7 +1,7 @@
 ﻿using ReloadedFramework.Model;
 using TechTalk.SpecFlow;
 
-namespace ReloadedFramework
+namespace ReloadedFramework.Tests
 {
 	[Binding]
 	public class TestBase : Browser

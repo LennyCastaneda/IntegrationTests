@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using ReloadedFramework;
 using ReloadedFramework.Model;
+using ReloadedFramework.Tests;
 using TechTalk.SpecFlow;
 
 namespace IntegrationTests.Tests.StepDefinitions
@@ -26,7 +27,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		[StepDefinition(@"the Tab '(.*)' exists")]
 		public static void TabExists(string name)
 		{
-			Assert.NotNull(View);
+			Assert.NotNull((object)View);
 			Assert.NotNull(View.Tab(name));
 		}
 

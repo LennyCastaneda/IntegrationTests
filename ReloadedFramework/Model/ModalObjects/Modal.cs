@@ -1,7 +1,8 @@
 ﻿using System;
 using ReloadedInterface.Interfaces;
+using ReloadedFramework.Model.AbstractClasses;
 
-namespace ReloadedFramework.Model
+namespace ReloadedFramework.Model.ModalObjects
 {
 	public abstract class Modal : Control
 	{

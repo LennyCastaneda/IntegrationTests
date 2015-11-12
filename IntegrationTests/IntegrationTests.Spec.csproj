@@ -80,6 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckHelp.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Feature\CheckHome\CheckHome.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckHome.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Feature\CheckToolBar\CheckToolBar.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,10 +120,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckMenu.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckThemePicker\ThemePicker.feature.cs">
+    <Compile Include="Tests\Feature\CheckThemePicker\CheckThemePicker.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ThemePicker.feature</DependentUpon>
+      <DependentUpon>CheckThemePicker.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
     <Compile Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature.cs">
@@ -128,6 +133,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\StepDefinitions\HelpSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\HomeSteps.cs" />
     <Compile Include="Tests\StepDefinitions\MenuSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ThemePickerSteps.cs" />
@@ -144,6 +150,10 @@
     <None Include="Tests\Feature\CheckHelp\CheckHelp.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckHelp.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckHome\CheckHome.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckHome.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\CheckToolBar\CheckToolBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -177,9 +187,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckMenu.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\CheckThemePicker\ThemePicker.feature">
+    <None Include="Tests\Feature\CheckThemePicker\CheckThemePicker.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ThemePicker.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckThemePicker.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

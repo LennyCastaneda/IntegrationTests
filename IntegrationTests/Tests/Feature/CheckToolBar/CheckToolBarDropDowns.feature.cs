@@ -98,9 +98,7 @@ this.FeatureBackground();
 #line 12
  testRunner.And(string.Format("the ToolBar \'{0}\' menu is visible", toolBar), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.When(string.Format("the ToolBar \'{0}\' DropDown button \'{1}\' is clicked", toolBar, options), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
- testRunner.Then("wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the ToolBar \'{0}\' DropDown button \'{1}\' is clicked", toolBar, options), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

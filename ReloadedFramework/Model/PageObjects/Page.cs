@@ -1,6 +1,8 @@
-﻿using ReloadedInterface.Interfaces;
+﻿using ReloadedFramework.Model.AbstractClasses;
+using ReloadedInterface.Interfaces;
+using System.Threading;
 
-namespace ReloadedFramework.Model
+namespace ReloadedFramework.Model.PageObjects
 {
 	public class Page : Driver
 	{
@@ -33,7 +35,15 @@ namespace ReloadedFramework.Model
 		public void GoTo(string url)
 		{
 			_driver.Navigate(url);
-        }
+
+			if (url == "http://durell.co.uk:1024/#/config/1")
+			{
+				Common.ExplicitWait(() =>
+				{
+					_driver.FindElement(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar > div.container-fluid > div > a.reloaded-icon-button.btn.btn-flat");
+				}, 3000);
+			}
+		}
 
 		public void ClosePage()
 		{
@@ -54,9 +64,17 @@ namespace ReloadedFramework.Model
 			_driver.SendKeys(keys);
 		}
 
-		public void Wait()
+		public void Wait_FORINTERNALUSEONLY()
 		{
 			WebDriver.Wait();
+        }
+
+		public void RemoveDelay()
+		{
+			if (Title == "Reloaded")
+			{
+				_driver.RemoveAnimationDelay();
+			}
 		}
 	}
 }

@@ -1,6 +1,8 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
+using System.Diagnostics;
 
 namespace ReloadedInterface.Interfaces
 {
@@ -32,7 +34,7 @@ namespace ReloadedInterface.Interfaces
 
 	public class Common
 	{
-		private static TimeSpan Sleep = TimeSpan.FromMilliseconds(500);
+		public static TimeSpan Sleep = TimeSpan.FromMilliseconds(1000);
 
 		/// <summary>
 		/// Calls Thread.Sleep() for a set amount of time, set in the Common parent class.
@@ -42,6 +44,49 @@ namespace ReloadedInterface.Interfaces
 			Thread.Sleep(Sleep);
 		}
 
+		public static void Wait(TimeSpan span)
+		{
+			Thread.Sleep(span);
+		}
+
+		public static void Wait(double milliseconds)
+		{
+			Thread.Sleep(TimeSpan.FromMilliseconds(milliseconds));
+		}
+
+		public static bool ExplicitWait(Action action)
+		{
+			return ExplicitWait(action, Sleep);
+		}
+
+		public static bool ExplicitWait(Action action, double milliseconds)
+		{
+			return ExplicitWait(action, TimeSpan.FromMilliseconds(milliseconds));
+		}
+
+		public static bool ExplicitWait(Action action, TimeSpan timespan)
+		{
+			Stopwatch sw = new Stopwatch();
+			sw.Start();
+
+			while (sw.ElapsedMilliseconds < timespan.TotalMilliseconds)
+			{
+				try
+				{
+					action();
+					return true;
+				}
+				catch (Exception ex)
+				{
+					if (sw.ElapsedMilliseconds > timespan.TotalMilliseconds)
+					{
+						throw ex;
+					}
+				}
+			}
+			return false;
+		}
+		
 		public static OpenQA.Selenium.By GetBy(ByMethod method, string selector)
 		{
 			switch (method)
@@ -56,28 +101,6 @@ namespace ReloadedInterface.Interfaces
 					return By.XPath(selector);
 				default:
 					return null;
-			}
-		}
-
-		/// <summary>
-		/// <para> Overrides the Global ImplicitWait and runs the Action. If there is an exception it returns false. Otherwise, true is returned. </para>
-		/// <para> To return false deliberately, throw new Exception("") when a certain condition is true. </para>
-		/// </summary>
-		public bool ElementExists(Action action)
-		{
-			WebDriver.SetImplicitWait(TimeSpan.FromSeconds(0));
-			try
-			{
-				action();
-				return true;
-            }
-			catch
-			{
-				return false;
-			}
-			finally
-			{
-				WebDriver.SetImplicitWait(TimeSpan.FromSeconds(5));
 			}
 		}
 	}

@@ -1,5 +1,4 @@
-﻿using ReloadedFramework;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 
 namespace IntegrationTests.Tests.Workflow
 {
