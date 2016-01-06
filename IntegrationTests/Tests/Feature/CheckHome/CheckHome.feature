@@ -2,7 +2,7 @@
 Feature: CheckHome
 	Check the System Messages UI works.		
 
-Scenario: Thth
+Scenario: Home View
 	Given Reloaded is open
 	And the Tab 'Home' is active
 

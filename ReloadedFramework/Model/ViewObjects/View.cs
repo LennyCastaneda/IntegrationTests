@@ -1,6 +1,7 @@
 ﻿using ReloadedFramework.Model.AbstractClasses;
 using ReloadedFramework.Model.ViewObjects.ToolBarObjects;
 using ReloadedInterface.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace ReloadedFramework.Model.ViewObjects
@@ -9,10 +10,10 @@ namespace ReloadedFramework.Model.ViewObjects
 	{
 		// SubItems are the Tab list.
 		// Always find active tabs by their tabs (not the body).
-		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar > div.container.z1 > div > div");
+		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar > durell-tabs > div > div > div");
 		private FindBy SubItemsBy = new FindBy(ByMethod.CssSelector, "a");
 		private FindBy ActiveViewBy = new FindBy(ByMethod.CssSelector, "#tab_holder > div[style*='display: block']");
-		private FindBy ToolBarBy = new FindBy(ByMethod.CssSelector, "#tab_holder > div.toolbar.col-xs-12.ng-scope > div");
+		private FindBy ToolBarBy = new FindBy(ByMethod.CssSelector, "#tab_holder > div.toolbar.col-xs-12.ng-scope");
 
 		Dictionary<string, Tab> Tabs;
 		public WebElement ActiveView { get; private set; }
@@ -53,6 +54,11 @@ namespace ReloadedFramework.Model.ViewObjects
 
 		public void GetTabs()
 		{
+			if (_element == null)
+			{
+				SelectElement();
+			}
+
 			var items = new List<WebElement>();
             items = _element.FindElements(SubItemsBy);
 
@@ -61,7 +67,7 @@ namespace ReloadedFramework.Model.ViewObjects
 				var result = new Dictionary<string, Tab>();
 				items.ForEach((element) =>
 				{
-					if (element != null)
+					if (element != null && !String.IsNullOrEmpty(element.Text.ToLower()))
 					{
 						result.Add(element.Text.ToLower(), new Tab(_driver, element, element.Text, this));
 					}

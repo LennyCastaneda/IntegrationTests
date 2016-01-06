@@ -69,10 +69,6 @@ namespace IntegrationTests.Tests.Feature.OpenGoogle
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check Browsers open Google")]
         [NUnit.Framework.TestCaseAttribute("Chrome", null)]
-        [NUnit.Framework.TestCaseAttribute("Edge", null)]
-        [NUnit.Framework.TestCaseAttribute("Firefox", null)]
-        [NUnit.Framework.TestCaseAttribute("IE32", null)]
-        [NUnit.Framework.TestCaseAttribute("IE64", null)]
         public virtual void CheckBrowsersOpenGoogle(string browser, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Browsers open Google", exampleTags);

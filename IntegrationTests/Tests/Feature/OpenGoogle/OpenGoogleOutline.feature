@@ -10,7 +10,7 @@ Scenario Outline: Check Browsers open Google
 Examples:
 	| browser |
 	| Chrome  |
-	| Edge    |
-	| Firefox |
-	| IE32    |
-	| IE64    |
+	#| Edge    |
+	#| Firefox |
+	#| IE32    |
+	#| IE64    |

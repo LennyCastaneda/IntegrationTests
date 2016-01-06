@@ -24,7 +24,7 @@ namespace ReloadedFramework.Model.ViewObjects.ToolBarObjects
 		{
 			get
 			{
-				return _element.GetAttribute("class").Contains("btn-group open");
+				return _element.GetAttribute("class").Contains("open");
 			}
 		}
 

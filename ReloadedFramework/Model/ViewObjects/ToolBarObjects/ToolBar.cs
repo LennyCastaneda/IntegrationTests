@@ -16,22 +16,12 @@ namespace ReloadedFramework.Model.ViewObjects.ToolBarObjects
 		{
 			try
 			{
-				_subItems.Add("Help", new Button(_driver, "Help", _element.FindElement(ByMethod.CssSelector, "a i.mdi-help-circle").FindElement(ByMethod.XPath, "..")));
+				_subItems.Add("Settings", new Button(_driver, "Settings", _element.FindElement(ByMethod.CssSelector, "div.toolbar-buttons.navbar-right > div > a > i.mdi-settings").FindElement(ByMethod.XPath, "../..")));
 			}
 			catch { }
 			try
 			{
-				_subItems.Add("Search", new Button(_driver, "Search", _element.FindElement(ByMethod.CssSelector, "a i.mdi-magnify").FindElement(ByMethod.XPath, "..")));
-			}
-			catch { }
-			try
-			{
-				_subItems.Add("Setup", new Button(_driver, "Setup", _element.FindElement(ByMethod.CssSelector, "a i.mdi-settings").FindElement(ByMethod.XPath, "../..")));
-			}
-			catch { }
-			try
-			{
-				_subItems.Add("Overflow", new Button(_driver, "Overflow", _element.FindElement(ByMethod.CssSelector, "a i.mdi-dots-vertical").FindElement(ByMethod.XPath, "../..")));
+				_subItems.Add("Back", new Button(_driver, "Back", _element.FindElement(ByMethod.CssSelector, "div.toolbar-buttons.navbar-left > div > a > i.mdi-keyboard-backspace").FindElement(ByMethod.XPath, "../..")));
 			}
 			catch { }
 		}

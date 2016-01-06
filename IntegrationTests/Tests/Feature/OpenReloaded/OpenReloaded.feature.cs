@@ -76,9 +76,9 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
 this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given("the Browser exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
- testRunner.When("the Browser is pointed to \'http://durell.co.uk:1024/#/config/1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
+ testRunner.When("the Browser is pointed to \'http://localhost:52755/index.html\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
  testRunner.Then("the Browser title should be \'Reloaded\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

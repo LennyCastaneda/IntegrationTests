@@ -13,11 +13,6 @@ Scenario Outline: The Toolbar dropdown menus are clickable
 	Then the ToolBar '<ToolBar>' DropDown button '<Options>' is clicked
 
 Examples: 
-	| ToolBar  | Options        |
-	| Setup    | Filter         |
-	| Setup    | Choose Columns |
-	| Setup    | Choose Theme   |
-	| Setup    | Save View      |
-	| Setup    | Save View As   |
-	| Setup    | Close View     |
-	| Overflow | Share          |
+	| ToolBar  | Options      |
+	| Settings | Choose Theme |
+	| Settings | Close Tab    |

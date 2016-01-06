@@ -83,7 +83,7 @@ namespace ReloadedInterface.Interfaces
 			{
 				_element.Click();
 			});
-			Wait(200);
+			Wait(300);
 		}
 
 		/// <summary>

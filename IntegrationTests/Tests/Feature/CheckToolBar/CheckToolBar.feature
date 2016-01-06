@@ -14,7 +14,5 @@ Scenario Outline: Click each ToolBar button
 
 Examples: 
 	| button   |
-	| Help     |
-	| Search   |
-	| Setup    |
-	| Overflow |
+	| Settings |
+	| Back     |

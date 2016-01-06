@@ -80,10 +80,8 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Click each ToolBar button")]
-        [NUnit.Framework.TestCaseAttribute("Help", null)]
-        [NUnit.Framework.TestCaseAttribute("Search", null)]
-        [NUnit.Framework.TestCaseAttribute("Setup", null)]
-        [NUnit.Framework.TestCaseAttribute("Overflow", null)]
+        [NUnit.Framework.TestCaseAttribute("Settings", null)]
+        [NUnit.Framework.TestCaseAttribute("Back", null)]
         public virtual void ClickEachToolBarButton(string button, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click each ToolBar button", exampleTags);

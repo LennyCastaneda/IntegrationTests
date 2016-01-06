@@ -7,7 +7,7 @@ namespace ReloadedFramework.Model.ModalObjects
 	{
 		FindBy IsOpenBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-body > div.themes-holder");
 		FindBy CloseBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-footer > button[ng-click='revertTheme()']");
-		FindBy ApplyBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-footer > button[ng-click='applySelectedTheme()']");
+		FindBy ApplyBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-footer > button[ng-click='applySelectedTheme(\\'view\\')']");
 		FindBy ColoursBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-body > div > div > p");
 		FindBy AddNewBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-body > div > a > p");
 

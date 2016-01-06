@@ -75,11 +75,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Tests\Feature\CheckHelp\CheckHelp.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckHelp.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\Feature\CheckHome\CheckHome.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,10 +90,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckToolBarDropDowns.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\OpenContactManager.feature.cs">
+    <Compile Include="Tests\Feature\OpenReloaded\CheckMenu.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OpenContactManager.feature</DependentUpon>
+      <DependentUpon>CheckMenu.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\Feature\OpenReloaded\OpenMenuBar.feature.cs">
       <AutoGen>True</AutoGen>
@@ -114,11 +109,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OpenConfigurations.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\CheckMenu.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckMenu.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\Feature\CheckThemePicker\CheckThemePicker.feature.cs">
       <AutoGen>True</AutoGen>
@@ -147,10 +137,6 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Tests\Feature\CheckHelp\CheckHelp.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckHelp.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\Feature\CheckHome\CheckHome.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckHome.feature.cs</LastGenOutput>
@@ -167,9 +153,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OpenGoogleOutline.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\OpenReloaded\OpenContactManager.feature">
+    <None Include="Tests\Feature\OpenReloaded\CheckMenu.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenContactManager.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckMenu.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\OpenReloaded\OpenMenuBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -183,10 +169,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OpenConfigurations.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\OpenReloaded\CheckMenu.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckMenu.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\Feature\CheckThemePicker\CheckThemePicker.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckThemePicker.feature.cs</LastGenOutput>
@@ -198,6 +180,7 @@
       <Name>ReloadedFramework</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

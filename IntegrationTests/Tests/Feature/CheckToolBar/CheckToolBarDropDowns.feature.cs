@@ -79,13 +79,8 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("The Toolbar dropdown menus are clickable")]
-        [NUnit.Framework.TestCaseAttribute("Setup", "Filter", null)]
-        [NUnit.Framework.TestCaseAttribute("Setup", "Choose Columns", null)]
-        [NUnit.Framework.TestCaseAttribute("Setup", "Choose Theme", null)]
-        [NUnit.Framework.TestCaseAttribute("Setup", "Save View", null)]
-        [NUnit.Framework.TestCaseAttribute("Setup", "Save View As", null)]
-        [NUnit.Framework.TestCaseAttribute("Setup", "Close View", null)]
-        [NUnit.Framework.TestCaseAttribute("Overflow", "Share", null)]
+        [NUnit.Framework.TestCaseAttribute("Settings", "Choose Theme", null)]
+        [NUnit.Framework.TestCaseAttribute("Settings", "Close Tab", null)]
         public virtual void TheToolbarDropdownMenusAreClickable(string toolBar, string options, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Toolbar dropdown menus are clickable", exampleTags);

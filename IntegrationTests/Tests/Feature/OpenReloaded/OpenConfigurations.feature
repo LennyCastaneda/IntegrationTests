@@ -9,12 +9,12 @@ Background:
 	And the Menu is open
 	Then the MenuItem 'Configurations' is clicked
 
-Scenario: Open Config: Default
+Scenario Outline: Open Configurations
 	Given the MenuItem 'Configurations' is currently expanded
-	When the MenuItem SubItem 'Default' is clicked
-	Then the Tab count should be '1'
-
-Scenario: Open Config: Dumble
-	Given the MenuItem 'Configurations' is currently expanded
-	When the MenuItem SubItem 'Dumble' is clicked
-	Then the Tab count should be '7'
+	When the MenuItem SubItem '<Config>' is clicked
+	Then the Tab count should be '<TabCount>'
+	
+Examples: 
+	| Config  | TabCount |
+	| Default | 1        |
+	| Dumble  | 2        |

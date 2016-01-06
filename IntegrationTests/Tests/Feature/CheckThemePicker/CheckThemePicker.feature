@@ -9,9 +9,9 @@ Background:
 	Then the ToolBar exists
 	
 Scenario: Open ThemePicker by ToolBar
-	Given the ToolBar 'Setup' button exists
-	When the ToolBar 'Setup' button is clicked
-	And the ToolBar 'Setup' DropDown button 'Choose Theme' is clicked
+	Given the ToolBar 'Settings' button exists
+	When the ToolBar 'Settings' button is clicked
+	And the ToolBar 'Settings' DropDown button 'Choose Theme' is clicked
 	Then the ThemePicker should be open
 
 Scenario: Open ThemePicker by Shortcut

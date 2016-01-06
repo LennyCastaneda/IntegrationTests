@@ -36,12 +36,16 @@ namespace ReloadedFramework.Model.PageObjects
 		{
 			_driver.Navigate(url);
 
-			if (url == "http://durell.co.uk:1024/#/config/1")
+			if (url == "http://durell.co.uk:1024/#/config/1" || url == "http://localhost:52755/index.html#/config/1")
 			{
 				Common.ExplicitWait(() =>
 				{
 					_driver.FindElement(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar > div.container-fluid > div > a.reloaded-icon-button.btn.btn-flat");
-				}, 3000);
+					if(!_driver.FindElement(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar > durell-tabs > div > div > div > a.tab.ng-binding.ng-scope.locked.active").Displayed)
+					{
+						throw new System.Exception();
+					}
+				}, 5000);
 			}
 		}
 
