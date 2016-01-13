@@ -1,0 +1,17 @@
+﻿using NUnit.Framework;
+using ReloadedFramework.Model;
+using ReloadedFramework.Tests;
+using TechTalk.SpecFlow;
+
+namespace IntegrationTests.Tests.StepDefinitions
+{
+	[Binding]
+	public sealed class ViewSteps : TestBase
+	{
+		[StepDefinition(@"the Background colour is '(.*)'")]
+		public static void CheckBackgroundColour(string colour)
+		{
+			Assert.That(Colour.RBGToColourName(View.BackgroundColour()) == colour);
+		}
+	}
+}

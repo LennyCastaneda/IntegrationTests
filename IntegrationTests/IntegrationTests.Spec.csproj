@@ -75,7 +75,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Tests\Feature\CheckHome\CheckHome.feature.cs">
+    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckHome.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckHome.feature</DependentUpon>
@@ -142,7 +142,7 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Tests\Feature\CheckHome\CheckHome.feature">
+    <None Include="Tests\Feature\CheckViews\CheckHome\CheckHome.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckHome.feature.cs</LastGenOutput>
     </None>
@@ -187,6 +187,10 @@
     <ProjectReference Include="..\ReloadedFramework\ReloadedFramework.csproj">
       <Project>{8fee914b-00c7-4cfa-8c85-6aad2a2e1dab}</Project>
       <Name>ReloadedFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeleniumInterface\ReloadedInterface.csproj">
+      <Project>{CF7CE627-D02D-42C4-93C5-E41C06F7FB2B}</Project>
+      <Name>ReloadedInterface</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

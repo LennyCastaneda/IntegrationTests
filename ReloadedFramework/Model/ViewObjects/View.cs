@@ -1,5 +1,6 @@
 ﻿using ReloadedFramework.Model.AbstractClasses;
 using ReloadedFramework.Model.ViewObjects.ToolBarObjects;
+using ReloadedFramework.Model.ViewObjects.ViewTypes;
 using ReloadedInterface.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,22 @@ namespace ReloadedFramework.Model.ViewObjects
 		public Tab ActiveTab { get; private set; }
 
 		public ToolBar ToolBar { get; private set; }
+
+		public WebElement SystemMessages
+		{
+			get
+			{
+				return Home.SystemMessages(_driver);
+			}
+		}
+
+		public WebElement NewsFeed
+		{
+			get
+			{
+				return Home.NewsFeed(_driver);
+			}
+		}
 
 		public View(WebDriver driver, string name) : base(driver, name)
 		{
