@@ -11,10 +11,8 @@ namespace ReloadedFramework.Model.ViewObjects.ToolBarObjects
 
 		public Button(WebDriver driver, string name, WebElement element) : base(driver, element, name)
 		{
-			IsMenu = _element.GetAttribute("class").Contains("btn-group");
-			IsMenu = !(_element.FindElements(ByMethod.XPath, "ul/li").Count == 0);
-
-			if (IsMenu)
+			if (_element.GetAttribute("class").Contains("btn-group")
+				&& (_element.FindElements(ByMethod.XPath, "ul/li").Count > 0))
 			{
 				DropDown = new ButtonGroup(_driver, Name, _element);
 			}

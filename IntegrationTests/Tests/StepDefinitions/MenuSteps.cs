@@ -15,23 +15,23 @@ namespace IntegrationTests.Tests.StepDefinitions
 			Menu.Open();
 		}
 
-		[StepDefinition(@"the Menu is closed")]
 		[StepDefinition(@"the Menu close icon is clicked")]
 		[StepDefinition(@"the Menu back icon is clicked")]
 		public static void CloseMenuBar()
 		{
 			Menu.Close();
-			//Menu.CloseByClickingOffMenuBar();
 		}
 
-		[StepDefinition(@"the Menu is open")]
+		[StepDefinition(@"the Menu is currently open")]
+		[StepDefinition(@"the Menu should be open")]
 		public static void MenuIsOpen()
 		{
 			Assert.IsNotNull(Menu);
 			Assert.That(Menu.IsOpen);
 		}
 
-		[StepDefinition(@"the Menu is not open")]
+		[StepDefinition(@"the Menu is closed")]
+		[StepDefinition(@"the Menu should be closed")]
 		public static void MenuIsClosed()
 		{
 			Assert.IsNotNull(Menu);

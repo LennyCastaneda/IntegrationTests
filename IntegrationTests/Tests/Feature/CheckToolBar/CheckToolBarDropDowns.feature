@@ -1,11 +1,10 @@
 ﻿@Chrome
-Feature: CheckToolBarOptions
+Feature: CheckGrivViewToolBarOptions
 	The ToolBar has icons. Once pressed some icons show a dropdown menu.
 	Each of these items should be clickable.
 
 Background: 
-	Given Reloaded is open
-	When Individual Clients is opened
+	Given a 'GridView' is open
 
 Scenario Outline: The Toolbar dropdown menus are clickable
 	Given the ToolBar '<ToolBar>' button is clicked
@@ -13,6 +12,8 @@ Scenario Outline: The Toolbar dropdown menus are clickable
 	Then the ToolBar '<ToolBar>' DropDown button '<Options>' is clicked
 
 Examples: 
-	| ToolBar  | Options      |
-	| Settings | Choose Theme |
-	| Settings | Close Tab    |
+	| ToolBar  | Options       |
+	| Settings | Column Picker |
+	| Settings | Sort Order    |
+	| Settings | Choose Theme  |
+	| Settings | Close Tab     |

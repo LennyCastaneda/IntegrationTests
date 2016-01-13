@@ -21,6 +21,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void TabIsActive(string name)
 		{
 			View.Tab(name).Click();
+			while (View.Loading()) { }
 			Assert.That(View.Tab(name).Active);
 		}
 

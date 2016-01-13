@@ -90,10 +90,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckToolBarDropDowns.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\CheckMenu.feature.cs">
+    <Compile Include="Tests\Feature\CheckMenu\CheckMenu.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckMenu.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckWorkflow\CheckWorkflow.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckWorkflow.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\Feature\OpenReloaded\OpenMenuBar.feature.cs">
       <AutoGen>True</AutoGen>
@@ -149,11 +154,15 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckToolBarDropDowns.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\Feature\CheckWorkflow\CheckWorkflow.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckWorkflow.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OpenGoogleOutline.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\OpenReloaded\CheckMenu.feature">
+    <None Include="Tests\Feature\CheckMenu\CheckMenu.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckMenu.feature.cs</LastGenOutput>
     </None>

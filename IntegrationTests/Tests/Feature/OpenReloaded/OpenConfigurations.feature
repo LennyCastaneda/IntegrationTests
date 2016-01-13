@@ -6,7 +6,7 @@ Feature: Open Configurations
 Background:
 	Given Reloaded is open
 	When the Menu icon is clicked
-	And the Menu is open
+	And the Menu is currently open
 	Then the MenuItem 'Configurations' is clicked
 
 Scenario Outline: Open Configurations
@@ -17,4 +17,3 @@ Scenario Outline: Open Configurations
 Examples: 
 	| Config  | TabCount |
 	| Default | 1        |
-	| Dumble  | 2        |

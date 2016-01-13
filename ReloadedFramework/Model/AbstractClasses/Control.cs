@@ -21,6 +21,5 @@ namespace ReloadedFramework.Model.AbstractClasses
 			Name = name;
 			_element = element;
 		}
-
 	}
 }

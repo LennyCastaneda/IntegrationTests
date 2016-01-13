@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace IntegrationTests.Tests.Feature.OpenReloaded
+namespace IntegrationTests.Tests.Feature.CheckMenu
 {
     using TechTalk.SpecFlow;
     
@@ -19,9 +19,9 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Check Menu Controls")]
+    [NUnit.Framework.DescriptionAttribute("Check Menu")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class CheckMenuControlsFeature
+    public partial class CheckMenuFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Check Menu Controls", "A user should see a fully loaded Menu with specific items shown. \r\nThe expandable" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Check Menu", "A user should see a fully loaded Menu with specific items shown. \r\nThe expandable" +
                     " options should expand when clicked.\r\nThe non-expandable root-options should ope" +
                     "n tabs.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
@@ -72,11 +72,7 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         {
 #line 7
 #line 8
- testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
- testRunner.When("the Menu icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
- testRunner.Then("the Menu is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("the Menu is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
@@ -87,15 +83,15 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         public virtual void OpenTabsFromMenuMain(string menuItem, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Tabs from Menu main", exampleTags);
-#line 12
+#line 10
 this.ScenarioSetup(scenarioInfo);
 #line 7
 this.FeatureBackground();
-#line 13
+#line 11
  testRunner.Given(string.Format("the MenuItem \'{0}\' exists", menuItem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 14
+#line 12
  testRunner.When(string.Format("the MenuItem \'{0}\' is clicked", menuItem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
+#line 13
  testRunner.Then(string.Format("the Tab \'{0}\' should be active", menuItem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -104,19 +100,19 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Expand MenuItems")]
         [NUnit.Framework.TestCaseAttribute("Configurations", null)]
-        [NUnit.Framework.TestCaseAttribute("General Views", null)]
+        [NUnit.Framework.TestCaseAttribute("Ungrouped views", null)]
         public virtual void ExpandMenuItems(string expandable, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Expand MenuItems", exampleTags);
-#line 22
+#line 20
 this.ScenarioSetup(scenarioInfo);
 #line 7
 this.FeatureBackground();
-#line 23
+#line 21
  testRunner.Given(string.Format("the MenuItem \'{0}\' exists", expandable), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 24
+#line 22
  testRunner.When(string.Format("the MenuItem \'{0}\' is clicked", expandable), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 25
+#line 23
  testRunner.Then(string.Format("the MenuItem \'{0}\' should be expanded", expandable), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

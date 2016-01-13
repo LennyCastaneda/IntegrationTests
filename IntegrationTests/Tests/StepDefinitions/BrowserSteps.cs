@@ -50,7 +50,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		[StepDefinition(@"wait")]
 		public static void Pause()
 		{
-			Page.Wait_FORINTERNALUSEONLY();
+			Page.Wait();
 		}
 	}
 }

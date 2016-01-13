@@ -3,8 +3,7 @@ Feature: CheckToolBar
 	As a user I would like to open the toolbar.
 
 Background: 
-	Given Reloaded is open
-	When Individual Clients is opened
+	Given a 'GridView' is open
 	Then the ToolBar exists
 
 Scenario Outline: Click each ToolBar button

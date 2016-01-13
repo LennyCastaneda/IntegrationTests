@@ -4,8 +4,7 @@ Feature: ThemePicker
 	Should change the colour scheme of the current page.
 
 Background: 
-	Given Reloaded is open
-	When Individual Clients is opened
+	Given a 'GridView' is open
 	Then the ToolBar exists
 	
 Scenario: Open ThemePicker by ToolBar
@@ -19,17 +18,17 @@ Scenario: Open ThemePicker by Shortcut
 	Then the ThemePicker should be open
 
 Scenario: Close ThemePicker by Cancel
-	Given ThemePicker is open
+	Given the ThemePicker is open
 	When the ThemePicker Cancel button is clicked
 	Then the ThemePicker should not be open
 
 Scenario: Close ThemePicker by Apply
-	Given ThemePicker is open
+	Given the ThemePicker is open
 	When the ThemePicker Apply button is clicked
 	Then the ThemePicker should not be open
 
 Scenario Outline: Apply Colour Scheme
-	Given ThemePicker is open
+	Given the ThemePicker is open
 	And the ThemePicker colour '<Colour>' is clicked
 	When the ThemePicker Apply button is clicked
 	And the ThemePicker should not be open

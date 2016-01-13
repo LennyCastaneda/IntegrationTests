@@ -70,10 +70,8 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
         {
 #line 5
 #line 6
- testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a \'GridView\' is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.When("Individual Clients is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 8
  testRunner.Then("the ToolBar exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
@@ -85,15 +83,15 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
         public virtual void ClickEachToolBarButton(string button, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click each ToolBar button", exampleTags);
-#line 10
+#line 9
 this.ScenarioSetup(scenarioInfo);
 #line 5
 this.FeatureBackground();
-#line 11
+#line 10
  testRunner.Given(string.Format("the ToolBar \'{0}\' button exists", button), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 12
+#line 11
  testRunner.When(string.Format("the ToolBar \'{0}\' button is clicked", button), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 13
+#line 12
  testRunner.Then("wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

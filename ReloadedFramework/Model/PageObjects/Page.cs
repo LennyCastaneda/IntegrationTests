@@ -68,7 +68,7 @@ namespace ReloadedFramework.Model.PageObjects
 			_driver.SendKeys(keys);
 		}
 
-		public void Wait_FORINTERNALUSEONLY()
+		public void Wait()
 		{
 			WebDriver.Wait();
         }

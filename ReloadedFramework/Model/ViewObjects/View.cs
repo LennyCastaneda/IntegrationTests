@@ -13,38 +13,45 @@ namespace ReloadedFramework.Model.ViewObjects
 		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar > durell-tabs > div > div > div");
 		private FindBy SubItemsBy = new FindBy(ByMethod.CssSelector, "a");
 		private FindBy ActiveViewBy = new FindBy(ByMethod.CssSelector, "#tab_holder > div[style*='display: block']");
-		private FindBy ToolBarBy = new FindBy(ByMethod.CssSelector, "#tab_holder > div.toolbar.col-xs-12.ng-scope");
 
 		Dictionary<string, Tab> Tabs;
-		public WebElement ActiveView { get; private set; }
+
+		public WebElement ActiveView
+		{
+			get
+			{
+				return _element.FindElement(ActiveViewBy);
+			}
+		}
+
 		public Tab ActiveTab { get; private set; }
+
 		public ToolBar ToolBar { get; private set; }
 
 		public View(WebDriver driver, string name) : base(driver, name)
 		{
 			if (_driver.Title == "Reloaded")
 			{
-				SelectElement();
-				GetTabs();
-				InitiateToolBar();
-            }
+				Initiate();
+				ToolBar = new ToolBar(_driver, "ToolBar");
+			}
 		}
 
-		private void InitiateToolBar()
+		public bool Loading()
 		{
-			var temp = _driver.FindElement(ToolBarBy);
-			if (temp != null)
-			{
-				ToolBar = new ToolBar(_driver, "ToolBar", temp);
-			}
+			var loaded = _driver.FindElement(new FindBy(ByMethod.CssSelector, "#md-loading-bar")).GetCssValue("display") == "none";
+			return !loaded;
+		}
+
+		private void Initiate()
+		{
+			SelectElement();
+			GetTabs();
 		}
 
 		public void SetActiveTab(Tab tab)
 		{
 			ActiveTab = tab;
-			ActiveView = _element.FindElement(ActiveViewBy);
-			ToolBar = null;
-			InitiateToolBar();
         }
 
 		private void SelectElement()
@@ -91,7 +98,6 @@ namespace ReloadedFramework.Model.ViewObjects
 				{
 					GetTabs();
 				}
-
 				ActiveTab = Tabs[key];
 				return ActiveTab;
 			}

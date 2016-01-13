@@ -71,10 +71,8 @@ namespace IntegrationTests.Tests.Feature.CheckThemePicker
         {
 #line 6
 #line 7
- testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a \'GridView\' is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.When("Individual Clients is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
  testRunner.Then("the ToolBar exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
@@ -84,17 +82,17 @@ namespace IntegrationTests.Tests.Feature.CheckThemePicker
         public virtual void OpenThemePickerByToolBar()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open ThemePicker by ToolBar", ((string[])(null)));
-#line 11
+#line 10
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 12
+#line 11
  testRunner.Given("the ToolBar \'Settings\' button exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
+#line 12
  testRunner.When("the ToolBar \'Settings\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
+#line 13
  testRunner.And("the ToolBar \'Settings\' DropDown button \'Choose Theme\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
+#line 14
  testRunner.Then("the ThemePicker should be open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -105,13 +103,13 @@ this.FeatureBackground();
         public virtual void OpenThemePickerByShortcut()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open ThemePicker by Shortcut", ((string[])(null)));
-#line 17
+#line 16
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 18
+#line 17
  testRunner.Given("the Browser is sent the keys \'F6\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 19
+#line 18
  testRunner.Then("the ThemePicker should be open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -122,15 +120,15 @@ this.FeatureBackground();
         public virtual void CloseThemePickerByCancel()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Close ThemePicker by Cancel", ((string[])(null)));
-#line 21
+#line 20
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
+#line 21
+ testRunner.Given("the ThemePicker is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
- testRunner.Given("ThemePicker is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 23
  testRunner.When("the ThemePicker Cancel button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 24
+#line 23
  testRunner.Then("the ThemePicker should not be open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -141,15 +139,15 @@ this.FeatureBackground();
         public virtual void CloseThemePickerByApply()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Close ThemePicker by Apply", ((string[])(null)));
-#line 26
+#line 25
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
+#line 26
+ testRunner.Given("the ThemePicker is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 27
- testRunner.Given("ThemePicker is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 28
  testRunner.When("the ThemePicker Apply button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
+#line 28
  testRunner.Then("the ThemePicker should not be open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -179,19 +177,19 @@ this.FeatureBackground();
         public virtual void ApplyColourScheme(string colour, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Apply Colour Scheme", exampleTags);
-#line 31
+#line 30
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
+#line 31
+ testRunner.Given("the ThemePicker is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
- testRunner.Given("ThemePicker is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 33
  testRunner.And(string.Format("the ThemePicker colour \'{0}\' is clicked", colour), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 33
  testRunner.When("the ThemePicker Apply button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
+#line 34
  testRunner.And("the ThemePicker should not be open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
+#line 35
  testRunner.Then(string.Format("the Background colour is \'{0}\'", colour), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

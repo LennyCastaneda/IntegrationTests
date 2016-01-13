@@ -75,7 +75,7 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
 #line 8
  testRunner.When("the Menu icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.And("the Menu is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the Menu is currently open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
  testRunner.Then("the MenuItem \'Configurations\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -84,7 +84,6 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Open Configurations")]
         [NUnit.Framework.TestCaseAttribute("Default", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Dumble", "2", null)]
         public virtual void OpenConfigurations(string config, string tabCount, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Configurations", exampleTags);

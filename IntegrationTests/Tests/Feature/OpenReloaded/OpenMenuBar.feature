@@ -7,10 +7,10 @@ Background:
 
 Scenario: Open Menu Bar
 	When the Menu icon is clicked
-	Then the Menu is open
+	Then the Menu is currently open
 
 Scenario: Close Menu Bar
 	Given the Menu icon is clicked
 	And the Menu is open
 	When the Menu close icon is clicked
-	Then the Menu is not open
+	Then the Menu is closed

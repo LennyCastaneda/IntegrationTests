@@ -101,10 +101,13 @@ namespace ReloadedInterface.Interfaces
 
 		public string GetAttribute(string attributeName)
 		{
-			string result = "";
-			ExplicitWait(() => { 
-				result =  _element.GetAttribute(attributeName);
-			});
+			string result = null;
+			ExplicitWait(() => {
+				do
+				{
+					result = _element.GetAttribute(attributeName);
+				} while (result == null);
+			}, 3000);
 			return result;
 		}
 

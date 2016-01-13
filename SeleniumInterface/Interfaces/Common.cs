@@ -34,7 +34,7 @@ namespace ReloadedInterface.Interfaces
 
 	public class Common
 	{
-		public static TimeSpan Sleep = TimeSpan.FromMilliseconds(1000);
+		public static TimeSpan Sleep = TimeSpan.FromMilliseconds(2000);
 
 		/// <summary>
 		/// Calls Thread.Sleep() for a set amount of time, set in the Common parent class.
