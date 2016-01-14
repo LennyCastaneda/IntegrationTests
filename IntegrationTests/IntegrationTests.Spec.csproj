@@ -75,10 +75,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckHome.feature.cs">
+    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CheckHome.feature</DependentUpon>
+      <DependentUpon>CheckNewsFeed.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\Feature\CheckToolBar\CheckToolBar.feature.cs">
       <AutoGen>True</AutoGen>
@@ -94,6 +94,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckMenu.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckSystemMessages.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckSystemMessages.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\Feature\CheckWorkflow\CheckWorkflow.feature.cs">
       <AutoGen>True</AutoGen>
@@ -130,6 +135,7 @@
     <Compile Include="Tests\StepDefinitions\HelpSteps.cs" />
     <Compile Include="Tests\StepDefinitions\HomeSteps.cs" />
     <Compile Include="Tests\StepDefinitions\MenuSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\PaginationSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ThemePickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ToolBarSteps.cs" />
@@ -142,9 +148,9 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Tests\Feature\CheckViews\CheckHome\CheckHome.feature">
+    <None Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckHome.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckNewsFeed.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\CheckToolBar\CheckToolBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -153,6 +159,10 @@
     <None Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckToolBarDropDowns.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckViews\CheckHome\CheckSystemMessages.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckSystemMessages.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\CheckWorkflow\CheckWorkflow.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

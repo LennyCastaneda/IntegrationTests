@@ -57,6 +57,7 @@
     <Compile Include="Model\ModalObjects\Modal.cs" />
     <Compile Include="Model\ModalObjects\ThemePicker.cs" />
     <Compile Include="Model\PageObjects\Page.cs" />
+    <Compile Include="Model\ViewObjects\Paginator.cs" />
     <Compile Include="Model\ViewObjects\ViewTypes\Home.cs" />
     <Compile Include="Model\ViewObjects\ViewTypes\Settings.cs" />
     <Compile Include="Model\ViewObjects\Tab.cs" />

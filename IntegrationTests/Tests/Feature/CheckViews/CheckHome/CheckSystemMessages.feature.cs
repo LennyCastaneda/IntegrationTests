@@ -19,21 +19,21 @@ namespace IntegrationTests.Tests.Feature.CheckViews.CheckHome
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CheckHome")]
+    [NUnit.Framework.DescriptionAttribute("SystemMessages")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class CheckHomeFeature
+    public partial class SystemMessagesFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "CheckHome.feature"
+#line 1 "CheckSystemMessages.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CheckHome", "Check the System Messages UI works.", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SystemMessages", "Check the System Messages UI works.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -95,52 +95,6 @@ this.FeatureBackground();
  testRunner.And("the SystemMessages Message number \'1\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
  testRunner.Then("the SystemMessages Message number \'1\' is not expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Expand a NewsFeed Message")]
-        public virtual void ExpandANewsFeedMessage()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Expand a NewsFeed Message", ((string[])(null)));
-#line 16
-this.ScenarioSetup(scenarioInfo);
-#line 5
-this.FeatureBackground();
-#line 17
- testRunner.Given("the NewsFeed is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 18
- testRunner.And("the NewsFeed Message number \'1\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
- testRunner.When("the NewsFeed Message number \'1\' is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
- testRunner.And("the NewsFeed Message number \'1\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
- testRunner.Then("the NewsFeed Message number \'1\' is not expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Change NewsFeed Options")]
-        [NUnit.Framework.TestCaseAttribute("Oldest first", null)]
-        [NUnit.Framework.TestCaseAttribute("Category", null)]
-        [NUnit.Framework.TestCaseAttribute("Title", null)]
-        [NUnit.Framework.TestCaseAttribute("Newest first", null)]
-        public virtual void ChangeNewsFeedOptions(string newsFeedOption, string[] exampleTags)
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change NewsFeed Options", exampleTags);
-#line 23
-this.ScenarioSetup(scenarioInfo);
-#line 5
-this.FeatureBackground();
-#line 24
- testRunner.Given("the NewsFeed is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 25
- testRunner.And("the NewsFeed Options is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 26
- testRunner.Then(string.Format("the NewsFeed Option: \'{0}\' is clicked", newsFeedOption), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

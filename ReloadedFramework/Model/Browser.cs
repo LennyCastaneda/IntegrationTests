@@ -10,7 +10,7 @@ namespace ReloadedFramework.Model
 {
 	public class Browser
 	{
-		private static WebDriver _driver;
+		public static WebDriver _driver;
 		public static Page Page { get; private set; }
 		public static Menu Menu { get; private set; }
 		public static View View { get; private set; }

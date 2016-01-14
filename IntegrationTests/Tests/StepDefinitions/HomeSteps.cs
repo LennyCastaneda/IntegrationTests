@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using ReloadedFramework.Model.ViewObjects;
 using ReloadedFramework.Model.ViewObjects.ViewTypes;
 using ReloadedFramework.Tests;
 using TechTalk.SpecFlow;
