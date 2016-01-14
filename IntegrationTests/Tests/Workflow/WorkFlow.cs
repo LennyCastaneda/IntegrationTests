@@ -18,67 +18,67 @@ namespace IntegrationTests.Tests.Workflow
 		{
 			Given("Reloaded is open");
 			And("the Menu icon is clicked");
-			Then("the Menu should be open");
+			Then("the Menu should be visible");
 		}
 
-		[Given(@"the SubMenu 'Configurations' is expanded")]
-		[Given(@"the 'Configurations' SubMenu is expanded")]
-		public void OpenConfigMenu()
-		{
-			Given("the Menu is open");
-			When("the MenuItem 'Configurations' is clicked");
-			Then("the MenuItem 'Configurations' should be expanded");
-		}
+		//[Given(@"the SubMenu 'Configurations' is expanded")]
+		//[Given(@"the 'Configurations' SubMenu is expanded")]
+		//public void OpenConfigMenu()
+		//{
+		//	Given("the Menu is open");
+		//	When("the MenuItem 'Configurations' is clicked");
+		//	Then("the MenuItem 'Configurations' should be expanded");
+		//}
 
-		[Given(@"the 'Ungrouped views' SubMenu is open")]
-		[Given(@"the SubMenu 'Ungrouped views' is open")]
-		public void OpenUngroupedViews()
-		{
-			Given("the Menu is open");
-			When("the MenuItem 'Ungrouped views' is clicked");
-			Then("the MenuItem 'Ungrouped views' should be expanded");
-		}
+		//[Given(@"the 'Ungrouped views' SubMenu is open")]
+		//[Given(@"the SubMenu 'Ungrouped views' is open")]
+		//public void OpenUngroupedViews()
+		//{
+		//	Given("the Menu is open");
+		//	When("the MenuItem 'Ungrouped views' is clicked");
+		//	Then("the MenuItem 'Ungrouped views' should be expanded");
+		//}
 
-		[Given(@"the 'Home' Tab is open")]
-		public void OpenHome()
-		{
-			Given("the Menu is open");
-			When("the MenuItem 'Home' is clicked");
-			Then("the Tab 'Home' should be active");
-		}
+		//[Given(@"the 'Home' Tab is open")]
+		//public void OpenHome()
+		//{
+		//	Given("the Menu is open");
+		//	When("the MenuItem 'Home' is clicked");
+		//	Then("the Tab 'Home' should be active");
+		//}
 
-		[Given(@"the 'Settings' Tab is open")]
-		public void OpenSettings()
-		{
-			Given("the Menu is open");
-			And("the MenuItem 'Settings' exists");
-			Then("the MenuItem 'Settings' is clicked");
-		}
+		//[Given(@"the 'Settings' Tab is open")]
+		//public void OpenSettings()
+		//{
+		//	Given("the Menu is open");
+		//	And("the MenuItem 'Settings' exists");
+		//	Then("the MenuItem 'Settings' is clicked");
+		//}
 
-		[Given(@"a 'GridView' is open")]
-		public void OpenAGridView()
-		{
-			Given("the Menu is open");
-			And("the MenuItem 'Ungrouped views' is clicked");
-			When("the MenuItem SubItem 'Grid Views' is clicked");
-			Then("the Tab 'Grid Views' is active");
-		}
+		//[Given(@"a 'GridView' is open")]
+		//public void OpenAGridView()
+		//{
+		//	Given("the Menu is open");
+		//	And("the MenuItem 'Ungrouped views' is clicked");
+		//	When("the MenuItem SubItem 'Grid Views' is clicked");
+		//	Then("the Tab 'Grid Views' is active");
+		//}
 
-		[Given(@"a 'ItemView' is open")]
-		public void OpenAnItemView()
-		{
-			Given("the Menu is open");
-			And("the MenuItem 'Ungrouped views' is clicked");
-			When("the MenuItem SubItem 'Item View' is clicked");
-			Then("the Tab 'Item View' is active");
-		}
+		//[Given(@"a 'ItemView' is open")]
+		//public void OpenAnItemView()
+		//{
+		//	Given("the Menu is open");
+		//	And("the MenuItem 'Ungrouped views' is clicked");
+		//	When("the MenuItem SubItem 'Item View' is clicked");
+		//	Then("the Tab 'Item View' is active");
+		//}
 
-		[Given(@"the ThemePicker is open")]
-		public void OpenThemePicker()
-		{
-			Given("a 'GridView' is open");
-			And("the Browser is sent the keys 'F6'");
-			Then("the ThemePicker should be open");
-		}
+		//[Given(@"the ThemePicker is open")]
+		//public void OpenThemePicker()
+		//{
+		//	Given("a 'GridView' is open");
+		//	And("the Browser is sent the keys 'F6'");
+		//	Then("the ThemePicker should be open");
+		//}
 	}
 }

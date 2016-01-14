@@ -13,19 +13,11 @@ namespace ReloadedInterface.Interfaces
 			_element = element;
 		}
 
-		public bool Displayed
+		public bool IsVisible
 		{
 			get
 			{
-				return _element.Displayed;
-			}
-		}
-
-		public bool Enabled
-		{
-			get
-			{
-				return _element.Enabled;
+				return _element.Displayed && _element.Enabled;
 			}
 		}
 
@@ -37,7 +29,7 @@ namespace ReloadedInterface.Interfaces
 			}
 		}
 
-		public bool Selected
+		public bool IsSelected
 		{
 			get
 			{

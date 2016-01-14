@@ -1,58 +1,75 @@
 ﻿using ReloadedFramework.Model.AbstractClasses;
 using ReloadedInterface.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 {
-	public static class Home
+	public class HomePartial : Driver
 	{
-		private static FindBy SystemMessagesBy = new FindBy(ByMethod.CssSelector, "[id^='tabController'] > div:nth-child(1)");
+		public HomePartial(WebDriver driver) : base(driver) { }
 
-		public static WebElement SystemMessages(WebDriver _driver)
+		public NewsFeedPartial NewsFeed
 		{
-			return _driver.FindElement(SystemMessagesBy);
+			get
+			{
+				return new NewsFeedPartial(_driver);
+			}
 		}
 
-		private static FindBy NewsFeedBy = new FindBy(ByMethod.CssSelector, "[id^='tabController'] > div:nth-child(2)");
-
-		public static WebElement NewsFeed(WebDriver _driver)
+		public SystemMessagesPartial SystemMessages
 		{
-			return _driver.FindElement(NewsFeedBy);
+			get
+			{
+				return new SystemMessagesPartial(_driver);
+			}
 		}
 	}
 
-	public static class Feed
+	public class SystemMessagesPartial : Driver
 	{
-		public static void ClickMessage(WebElement feed, int index)
-		{
-			feed.FindElements(ByMethod.CssSelector, ".list-group > div:not(.list-group-separator)")[index].Click();
+		protected FindBy ThisBy;
+
+		public SystemMessagesPartial(WebDriver driver) : base(driver) {
+			ThisBy = new FindBy(ByMethod.CssSelector, "[id^='tabController'] > div:nth-child(1)");
 		}
 
-		public static bool MessageExpanded(WebElement feed, int index)
+		public bool IsVisible
 		{
-			var item = feed.FindElements(ByMethod.CssSelector, ".list-group > div:not(.list-group-separator)")[index];
+			get
+			{
+				return _driver.FindElement(ThisBy).IsVisible;
+			}
+		}
+
+		public SystemMessagesPartial ClickMessage(int index)
+		{
+			_driver.FindElement(ThisBy).FindElements(ByMethod.CssSelector, ".list-group > div:not(.list-group-separator)")[index].Click();
+			return this;
+		}
+
+		public bool MessageExpanded(int index)
+		{
+			var item = _driver.FindElement(ThisBy).FindElements(ByMethod.CssSelector, ".list-group > div:not(.list-group-separator)")[index];
 			return item.GetAttribute("class").Contains("expanded-view");
 		}
+	}
 
-		public static void ClickOptions(WebElement feed)
-		{
-			feed.FindElement(ByMethod.CssSelector, ".toolbar-buttons > .btn-group").Click();
+	public class NewsFeedPartial : SystemMessagesPartial
+	{
+		public NewsFeedPartial(WebDriver driver) : base(driver) {
+			ThisBy = new FindBy(ByMethod.CssSelector, "[id^='tabController'] > div:nth-child(2)");
 		}
 
-		public static void SelectOption(WebElement feed, string option)
+		public NewsFeedPartial ClickOptions()
 		{
-			var menuOptions = feed.FindElements(ByMethod.CssSelector, ".toolbar-buttons > .btn-group ul li");
-			menuOptions.ForEach(x => {
-				x.FindElement(ByMethod.CssSelector, "a");
-				if(x.Text == option)
-				{
-					x.Click();
-				}
-			});
+			_driver.FindElement(ThisBy).FindElement(ByMethod.CssSelector, ".toolbar-buttons > .btn-group").Click();
+			return this;
+		}
+
+		public NewsFeedPartial SelectOption(string option)
+		{
+			var menuOptions = _driver.FindElement(ThisBy).FindElements(ByMethod.CssSelector, ".toolbar-buttons > .btn-group ul li");
+			menuOptions.Find(x => x.FindElement(ByMethod.CssSelector, "a").Text == option).Click();
+			return this;
 		}
 	}
 }

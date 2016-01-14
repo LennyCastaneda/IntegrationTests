@@ -7,9 +7,9 @@ Feature: Check Menu
 Background:
 	Given the Menu is open
 
-Scenario Outline: Open Tabs from Menu main
-	Given the MenuItem '<MenuItem>' exists
-	When the MenuItem '<MenuItem>' is clicked
+Scenario Outline: Open Tabs from Menu
+	Given the Menu item '<MenuItem>' exists
+	When the Menu item '<MenuItem>' is clicked	
 	Then the Tab '<MenuItem>' should be active
 
 Examples: 
@@ -18,11 +18,11 @@ Examples:
 	| Settings |
 
 Scenario Outline: Expand MenuItems
-	Given the MenuItem '<Expandable>' exists
-	When the MenuItem '<Expandable>' is clicked
-	Then the MenuItem '<Expandable>' should be expanded
+	Given the Menu item '<Expandable>' exists
+	When the Menu item '<Expandable>' is clicked
+	Then the Menu item '<Expandable>' should be expanded
 
 Examples: 
-	| Expandable     |
-	| Configurations |
-	| Ungrouped views  | 
+	| Expandable      |
+	| Configurations  |
+	| Ungrouped views |

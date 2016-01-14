@@ -75,37 +75,58 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckNewsFeed.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBar.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckToolBar.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckToolBarDropDowns.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckMenu\CheckMenu.feature.cs">
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\Feature\CheckMenu\CheckMenu1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckMenu.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckSystemMessages.feature.cs">
+    <Compile Include="Tests\Feature\CheckMenu\Menu.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckThemePicker\CheckThemePicker1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckThemePicker.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBar1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckToolBar.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckToolBarDropDowns.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckNewsFeed.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckSystemMessages1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckSystemMessages.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckWorkflow\CheckWorkflow.feature.cs">
+    <Compile Include="Tests\Feature\CheckWorkflow\CheckWorkflow1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckWorkflow.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\OpenMenuBar.feature.cs">
+    <Compile Include="Tests\Feature\OpenGoogle\OpenGoogleOutline1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OpenGoogleOutline.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\OpenReloaded\OpenConfigurations1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OpenConfigurations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\OpenReloaded\OpenMenuBar1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OpenMenuBar.feature</DependentUpon>
@@ -115,31 +136,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OpenReloaded.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\OpenConfigurations.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OpenConfigurations.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckThemePicker\CheckThemePicker.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckThemePicker.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
-    <Compile Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OpenGoogleOutline.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\StepDefinitions\HelpSteps.cs" />
     <Compile Include="Tests\StepDefinitions\HomeSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\LoginSteps.cs" />
     <Compile Include="Tests\StepDefinitions\MenuSteps.cs" />
-    <Compile Include="Tests\StepDefinitions\PaginationSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
-    <Compile Include="Tests\StepDefinitions\ThemePickerSteps.cs" />
-    <Compile Include="Tests\StepDefinitions\ToolBarSteps.cs" />
-    <Compile Include="Tests\StepDefinitions\ViewSteps.cs" />
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Tests\Workflow\WorkFlow.cs" />
   </ItemGroup>
@@ -148,49 +149,53 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed.feature">
+    <None Include="Tests\Feature\CheckMenu\CheckMenu.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckNewsFeed.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckMenu1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckMenu\Menu.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Menu.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckThemePicker\CheckThemePicker.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckThemePicker1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\CheckToolBar\CheckToolBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckToolBar.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckToolBar1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckToolBarDropDowns.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckToolBarDropDowns1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckNewsFeed1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\CheckViews\CheckHome\CheckSystemMessages.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckSystemMessages.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckSystemMessages1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\CheckWorkflow\CheckWorkflow.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckWorkflow.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckWorkflow1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenGoogleOutline.feature.cs</LastGenOutput>
+      <LastGenOutput>OpenGoogleOutline1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\CheckMenu\CheckMenu.feature">
+    <None Include="Tests\Feature\OpenReloaded\OpenConfigurations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckMenu.feature.cs</LastGenOutput>
+      <LastGenOutput>OpenConfigurations1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\OpenReloaded\OpenMenuBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenMenuBar.feature.cs</LastGenOutput>
+      <LastGenOutput>OpenMenuBar1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\OpenReloaded\OpenReloaded.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OpenReloaded.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\OpenReloaded\OpenConfigurations.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenConfigurations.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckThemePicker\CheckThemePicker.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckThemePicker.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

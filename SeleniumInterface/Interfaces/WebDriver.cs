@@ -8,9 +8,6 @@ namespace ReloadedInterface.Interfaces
 {
 	public class WebDriver : Common
 	{
-		public event TickHandler Tick;
-		public EventArgs e = null;
-		public delegate void TickHandler(WebDriver m, EventArgs e);
 		private static IWebDriver _driver;
 
 		public WebDriver(IWebDriver driver)
@@ -53,7 +50,6 @@ namespace ReloadedInterface.Interfaces
 			set
 			{
 				_driver.Url = value;
-				Tick(this, e);
 			}
 		}
 
@@ -70,7 +66,6 @@ namespace ReloadedInterface.Interfaces
 		public void Navigate(string url)
 		{
 			_driver.Navigate().GoToUrl(url);
-			Tick(this, e);
 		}
 
 		public void Quit()

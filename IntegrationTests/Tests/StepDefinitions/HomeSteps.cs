@@ -12,61 +12,61 @@ namespace IntegrationTests.Tests.StepDefinitions
 		[StepDefinition(@"the SystemMessages feed is visible")]
 		public static void CheckSystemMessagesExists()
 		{
-			Assert.That(View.SystemMessages != null);
+			Assert.That(App.View.Home.SystemMessages.IsVisible);
 		}
 
 		[StepDefinition(@"the SystemMessages Message number '(.*)' is clicked")]
 		public static void ClickSystemMessagesItem(int index)
 		{
-			Feed.ClickMessage(View.SystemMessages, index);
+			App.View.Home.SystemMessages.ClickMessage(index);
 		}
 
 		[StepDefinition(@"the SystemMessages Message number '(.*)' is expanded")]
 		public static void SystemMessagesItemExpanded(int index)
 		{
-			Assert.That(Feed.MessageExpanded(View.SystemMessages, index));
+			Assert.That(App.View.Home.SystemMessages.MessageExpanded(index));
 		}
 
 		[StepDefinition(@"the SystemMessages Message number '(.*)' is not expanded")]
 		public static void SystemMessagesItemNotExpanded(int index)
 		{
-			Assert.That(!Feed.MessageExpanded(View.SystemMessages, index));
+			Assert.That(!App.View.Home.SystemMessages.MessageExpanded(index));
 		}
 
 		[StepDefinition(@"the NewsFeed is visible")]
 		public static void CheckNewsFeedExists()
 		{
-			Assert.That(View.NewsFeed != null);
+			Assert.That(App.View.Home.NewsFeed.IsVisible);
 		}
 
 		[StepDefinition(@"the NewsFeed Message number '(.*)' is clicked")]
 		public static void ClickNewsFeedItem(int index)
 		{
-			Feed.ClickMessage(View.NewsFeed, index);
+			App.View.Home.NewsFeed.ClickMessage(index);
 		}
 
 		[StepDefinition(@"the NewsFeed Message number '(.*)' is expanded")]
 		public static void NewsFeedItemExpanded(int index)
 		{
-			Assert.That(Feed.MessageExpanded(View.NewsFeed, index));
+			Assert.That(App.View.Home.NewsFeed.MessageExpanded(index));
 		}
 
 		[StepDefinition(@"the NewsFeed Message number '(.*)' is not expanded")]
 		public static void NewsFeedItemNotExpanded(int index)
 		{
-			Assert.That(!Feed.MessageExpanded(View.NewsFeed, index));
+			Assert.That(!App.View.Home.NewsFeed.MessageExpanded(index));
 		}
 
 		[StepDefinition(@"the NewsFeed Options is clicked")]
 		public static void NewsFeedOptionsClicked()
 		{
-			Feed.ClickOptions(View.NewsFeed);
+			App.View.Home.NewsFeed.ClickOptions();
 		}
 
 		[StepDefinition(@"the NewsFeed Option: '(.*)' is clicked")]
-		public static void NewsFeedOptionsItemClicked(string param)
+		public static void NewsFeedOptionsItemClicked(string option)
 		{
-			Feed.SelectOption(View.NewsFeed, param);
+			App.View.Home.NewsFeed.SelectOption(option);
 		}
 	}
 }

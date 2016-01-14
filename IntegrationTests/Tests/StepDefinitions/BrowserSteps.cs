@@ -8,7 +8,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 	public class BrowserSteps : TestBase
 	{
 		[StepDefinition(@"the Browser '(.*)'")]
-        public static void GivenABrowser(string browser)
+		public static void GivenABrowser(string browser)
 		{
 			Init(browser);
 			Assert.NotNull(Page);
