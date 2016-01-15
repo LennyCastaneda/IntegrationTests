@@ -15,6 +15,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 			Assert.That(App.ThemePicker.IsVisible);
 		}
 
+
 		[Then(@"the ThemePicker should not be visible")]
 		public static void ThemePickerIsNotVisible()
 		{
