@@ -93,11 +93,12 @@ namespace ReloadedInterface.Interfaces
 
 		public WebElement FindElement(ByMethod method, string selector)
 		{
+			WebElement result = null;
 			if (_driver.FindElements(GetBy(method, selector)).Count > 0)
 			{
-				return new WebElement(_driver.FindElement(GetBy(method, selector)));
+				result = new WebElement(_driver.FindElement(GetBy(method, selector)));
 			}
-			return null;
+			return result;
 		}
 
 		public WebElement FindElement(FindBy findby)

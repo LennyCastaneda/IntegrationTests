@@ -82,13 +82,15 @@ namespace ReloadedFramework.Model
 		{
 			_driver.FindElements(MenuItemsBy)
 				.FindAll(x => x.FindElements(ByMethod.CssSelector, "a").Count > 0)
-				.Find(x => x.FindElement(ByMethod.CssSelector, "a").Text == name).Click();
+				.Find(x => x.FindElement(ByMethod.CssSelector, "a").Text == name).Click(2000);
 			return this;
 		}
 
 		public MenuPartial ClickSubItem(string name)
 		{
-			_driver.FindElements(MenuItemsBy).Find(x => x.FindElement(ByMethod.CssSelector, "a").Text == name).Click();
+			_driver.FindElements(ByMethod.CssSelector, MenuItemsBy.Selector + " ul li")
+				.Find(x => x.FindElement(ByMethod.CssSelector, "a").Text == name)
+				.Click(2000);
 			return this;
 		}
 	}

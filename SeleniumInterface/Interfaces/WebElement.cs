@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 
@@ -75,7 +76,7 @@ namespace ReloadedInterface.Interfaces
 			{
 				_element.Click();
 			});
-			Wait(300);
+			Wait(500);
 		}
 
 		/// <summary>
@@ -130,11 +131,12 @@ namespace ReloadedInterface.Interfaces
 
 		public WebElement FindElement(ByMethod method, string selector)
 		{
-            if (_element.FindElements(GetBy(method, selector)).Count > 0)
+			WebElement result = null;
+			if (_element.FindElements(GetBy(method, selector)).Count > 0)
 			{
-				return new WebElement(_element.FindElement(GetBy(method, selector)));
+				result = new WebElement(_element.FindElement(GetBy(method, selector)));
 			}
-			return null;
+			return result;
 		}
 
 		public WebElement FindElement(FindBy findby)

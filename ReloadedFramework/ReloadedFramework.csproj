@@ -56,9 +56,8 @@
     <Compile Include="Model\MenuObjects\Menu.cs" />
     <Compile Include="Model\MenuObjects\MenuItem.cs" />
     <Compile Include="Model\MenuPartial.cs" />
-    <Compile Include="Model\ModalObjects\Manual.cs" />
-    <Compile Include="Model\ModalObjects\Modal.cs" />
-    <Compile Include="Model\ModalObjects\ThemePicker.cs" />
+    <Compile Include="Model\ModalObjects\ManualPartial.cs" />
+    <Compile Include="Model\ModalObjects\ThemePickerPartial.cs" />
     <Compile Include="Model\PageObjects\Page.cs" />
     <Compile Include="Model\ViewObjects\Paginator.cs" />
     <Compile Include="Model\ViewObjects\TabPartial.cs" />

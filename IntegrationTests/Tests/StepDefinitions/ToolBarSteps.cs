@@ -7,40 +7,46 @@ namespace IntegrationTests.Tests.StepDefinitions
 	[Binding]
 	public sealed class ToolBarSteps : TestBase
 	{
-		[StepDefinition(@"the ToolBar exists")]
-		public static void ToolBarExists()
+		[Then(@"the ToolBar should be visible")]
+		public static void ToolBarIsVisible()
 		{
-			Assert.NotNull(View.ToolBar);
+			Assert.That(App.View.ToolBar.IsVisible);
 		}
 
-		[StepDefinition(@"the ToolBar '(.*)' button exists")]
-		public static void ToolBarItem_Exists(string name)
+		[StepDefinition(@"the ToolBar Back button is clicked")]
+		public static void Back_Click()
 		{
-			Assert.NotNull(View.ToolBar.SubItem(name));
+			App.View.ToolBar.Back.Click();
 		}
 
-		[StepDefinition(@"the ToolBar '(.*)' button is clicked")]
-		public static void ToolBarItem_Click(string name)
+		[StepDefinition(@"the ToolBar Settings button is clicked")]
+		public static void Cog_Click()
 		{
-			Assert.DoesNotThrow(() =>
-			{
-				View.ToolBar.SubItem(name).Click();
-			});
+			App.View.ToolBar.Cog.Click();
 		}
 
-		[StepDefinition(@"the ToolBar '(.*)' DropDown button '(.*)' is clicked")]
-		public static void ToolBarSubItem_Click(string name, string subname)
+		[When(@"the ToolBar Settings item '(.*)' is clicked")]
+		public void WhenTheToolBarDropdownItemIsClicked(string name)
 		{
-			Assert.DoesNotThrow(() =>
-			{
-				View.ToolBar.SubItem(name).DropDown.SubItem(subname).Click();
-			});
+			App.View.ToolBar.Cog.ClickItem(name);
 		}
 
-		[StepDefinition(@"the ToolBar '(.*)' menu is visible")]
-		public static void SubItemMenuIsVisible(string item)
+		[Then(@"the ToolBar Settings should be visible")]
+		public static void CogIsVisible()
 		{
-			Assert.That(View.ToolBar.SubItem(item).IsOpen);
+			Assert.That(App.View.ToolBar.Cog.IsVisible);
+		}
+
+		[Then(@"the ToolBar Back should be visible")]
+		public static void BackIsVisible()
+		{
+			Assert.That(App.View.ToolBar.Cog.IsVisible);
+		}
+
+		[Then(@"the ToolBar Settings dropdown should be visible")]
+		public void ThenTheToolBarSettingsDropdownShouldBeVisible()
+		{
+			Assert.That(App.View.ToolBar.Cog.DropDownIsVisible);
 		}
 	}
 }

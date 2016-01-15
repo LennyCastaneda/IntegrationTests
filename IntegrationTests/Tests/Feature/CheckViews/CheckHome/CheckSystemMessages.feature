@@ -4,7 +4,7 @@ Feature: SystemMessages
 
 Background: 
 	Given Reloaded is open
-	Then the Tab 'Home' is active
+	Then the Tab 'Home' should be active
 
 Scenario: Expand a System Message
 	Given the SystemMessages feed is visible

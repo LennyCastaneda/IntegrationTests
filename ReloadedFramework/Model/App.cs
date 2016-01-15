@@ -1,4 +1,5 @@
 ﻿using ReloadedFramework.Model.AbstractClasses;
+using ReloadedFramework.Model.ModalObjects;
 using ReloadedFramework.Model.ViewObjects;
 using ReloadedInterface.Interfaces;
 
@@ -44,6 +45,23 @@ namespace ReloadedFramework.Model
 			get
 			{
 				return new TabPartial(_driver);
+			}
+		}
+
+		public ThemePickerPartial ThemePicker
+		{
+			get
+			{
+				return new ThemePickerPartial(_driver);
+			}
+		}
+
+		public string BackgroundColour
+		{
+			get
+			{
+				var colour = _driver.FindElement(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar").GetCssValue("background-color");
+				return colour;
 			}
 		}
 	}

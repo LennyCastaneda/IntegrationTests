@@ -72,27 +72,38 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
 #line 6
  testRunner.Given("a \'GridView\' is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.Then("the ToolBar exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the ToolBar should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Click each ToolBar button")]
-        [NUnit.Framework.TestCaseAttribute("Settings", null)]
-        [NUnit.Framework.TestCaseAttribute("Back", null)]
-        public virtual void ClickEachToolBarButton(string button, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Click Back")]
+        public virtual void ClickBack()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click each ToolBar button", exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click Back", ((string[])(null)));
 #line 9
 this.ScenarioSetup(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line 10
- testRunner.Given(string.Format("the ToolBar \'{0}\' button exists", button), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 11
- testRunner.When(string.Format("the ToolBar \'{0}\' button is clicked", button), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the ToolBar Back button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Click Settings")]
+        public virtual void ClickSettings()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click Settings", ((string[])(null)));
 #line 12
- testRunner.Then("wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+this.ScenarioSetup(scenarioInfo);
+#line 5
+this.FeatureBackground();
+#line 13
+ testRunner.When("the ToolBar Settings button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.Then("the ToolBar Settings dropdown should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

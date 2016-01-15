@@ -6,12 +6,11 @@ Feature: Open Configurations
 Background:
 	Given Reloaded is open
 	When the Menu icon is clicked
-	And the Menu is currently open
-	Then the MenuItem 'Configurations' is clicked
+	Then the Menu should be visible
 
 Scenario Outline: Open Configurations
-	Given the MenuItem 'Configurations' is currently expanded
-	When the MenuItem SubItem '<Config>' is clicked
+	Given the Menu item 'Configurations' is clicked
+	When the Menu SubItem '<Config>' is clicked
 	Then the Tab count should be '<TabCount>'
 	
 Examples: 

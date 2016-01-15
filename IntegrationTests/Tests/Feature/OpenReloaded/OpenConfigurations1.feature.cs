@@ -75,9 +75,7 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
 #line 8
  testRunner.When("the Menu icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.And("the Menu is currently open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
- testRunner.Then("the MenuItem \'Configurations\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the Menu should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
         
@@ -87,15 +85,15 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         public virtual void OpenConfigurations(string config, string tabCount, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Configurations", exampleTags);
-#line 12
+#line 11
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
+#line 12
+ testRunner.Given("the Menu item \'Configurations\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
- testRunner.Given("the MenuItem \'Configurations\' is currently expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When(string.Format("the Menu SubItem \'{0}\' is clicked", config), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
- testRunner.When(string.Format("the MenuItem SubItem \'{0}\' is clicked", config), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
  testRunner.Then(string.Format("the Tab count should be \'{0}\'", tabCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

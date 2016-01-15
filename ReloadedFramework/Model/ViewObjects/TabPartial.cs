@@ -11,12 +11,30 @@ namespace ReloadedFramework.Model.ViewObjects
 	public class TabPartial : Driver
 	{
 		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "durell-tabs");
+		private FindBy TabsBy = new FindBy(ByMethod.CssSelector, "[ng-model=openTabs] a");
 
 		public TabPartial(WebDriver driver) : base(driver) { }
 
+		private WebElement FindTabByName(string name)
+		{
+			return _driver.FindElement(ThisBy)
+				.FindElements(TabsBy)
+				.Find(x => x.Text == name.ToUpper());
+		}
+
+		public TabPartial ClickTab(string name)
+		{
+			var result = FindTabByName(name);
+			if (result != null)
+			{
+				result.Click();
+			}
+			return this;
+		}
+
 		public bool TabExists(string name)
 		{
-			var result = _driver.FindElement(ThisBy).FindElements(ByMethod.CssSelector, "[ng-model=openTabs]").Find(x => x.FindElement(ByMethod.CssSelector, "a").Text == name);
+			var result = FindTabByName(name);
 			if (result != null)
 			{
 				return result.IsVisible;
@@ -26,9 +44,17 @@ namespace ReloadedFramework.Model.ViewObjects
 
 		public bool TabIsActive(string name)
 		{
-			var elements = _driver.FindElement(ThisBy).FindElements(ByMethod.CssSelector, "[ng-model=openTabs] a");
-			var result = elements.Find(x => x.Text == name.ToUpper());
-			return result.GetAttribute("ng-class").Contains("active");
+			var result = FindTabByName(name);
+			if (result != null)
+			{
+				return FindTabByName(name).GetAttribute("ng-class").Contains("active");
+			}
+			return false;
+		}
+
+		public int Count()
+		{
+			 return _driver.FindElement(ThisBy).FindElements(TabsBy).Count();
 		}
 	}
 }

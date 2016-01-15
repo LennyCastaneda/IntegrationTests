@@ -4,14 +4,11 @@ Feature: CheckToolBar
 
 Background: 
 	Given a 'GridView' is open
-	Then the ToolBar exists
+	Then the ToolBar should be visible
 
-Scenario Outline: Click each ToolBar button
-	Given the ToolBar '<button>' button exists
-	When the ToolBar '<button>' button is clicked
-	Then wait
-
-Examples: 
-	| button   |
-	| Settings |
-	| Back     |
+Scenario: Click Back
+	When the ToolBar Back button is clicked
+	
+Scenario: Click Settings
+	When the ToolBar Settings button is clicked
+	Then the ToolBar Settings dropdown should be visible

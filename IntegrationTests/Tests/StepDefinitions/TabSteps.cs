@@ -9,32 +9,34 @@ namespace IntegrationTests.Tests.StepDefinitions
 	[Binding]
 	public sealed class TabSteps : TestBase
 	{
-		//[StepDefinition(@"the Tab '(.*)' is clicked")]
-		//public static void ClickTab(string name)
-		//{
-		//	TabExists(name);
+		[StepDefinition(@"the Tab '(.*)' is clicked")]
+		public static void ClickTab(string name)
+		{
+			App.View.Tabs.ClickTab(name);
+		}
 
-		//	App.View.Tab(name).Click();
-		//}
-
-		[StepDefinition(@"the Tab '(.*)' should be active")]
+		[Then(@"the Tab '(.*)' should be active")]
 		public static void TabIsActive(string name)
 		{
-			App.View.Tabs.TabExists(name);
 			Assert.That(App.View.Tabs.TabIsActive(name));
 		}
 
-		//[StepDefinition(@"the Tab '(.*)' exists")]
-		//public static void TabExists(string name)
-		//{
-		//	Assert.NotNull((object)View);
-		//	Assert.NotNull(View.Tab(name));
-		//}
+		[Then(@"the Tab '(.*)' should be visible")]
+		public static void TabExists(string name)
+		{
+			Assert.That(App.View.Tabs.TabExists(name));
+		}
 
-		//[StepDefinition(@"the Tab count should be '(.*)'")]
-		//public static void NumberOfTabs(int count)
-		//{
-		//	Assert.That(View.TabCount == count);
-		//}
+		[Then(@"the Tab '(.*)' should not be visible")]
+		public void ThenTheTabShouldNotBeVisible(string name)
+		{
+			Assert.That(!App.View.Tabs.TabExists(name));
+		}
+
+		[Then(@"the Tab count should be '(.*)'")]
+		public static void NumberOfTabs(int count)
+		{
+			Assert.That(App.View.Tabs.Count() == count);
+		}
 	}
 }

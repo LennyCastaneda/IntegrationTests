@@ -1,19 +1,27 @@
 ﻿@Chrome
-Feature: CheckGrivViewToolBarOptions
+Feature: CheckGridViewToolBarOptions
 	The ToolBar has icons. Once pressed some icons show a dropdown menu.
 	Each of these items should be clickable.
 
 Background: 
 	Given a 'GridView' is open
 
-Scenario Outline: The Toolbar dropdown menus are clickable
-	Given the ToolBar '<ToolBar>' button is clicked
-	And the ToolBar '<ToolBar>' menu is visible
-	Then the ToolBar '<ToolBar>' DropDown button '<Options>' is clicked
+Scenario: Click 'Column Picker' from Settings
+	Given the ToolBar Settings button is clicked
+	When the ToolBar Settings item 'Column Picker' is clicked
+	#Then the ColumnPicker should be open
 
-Examples: 
-	| ToolBar  | Options       |
-	| Settings | Column Picker |
-	| Settings | Sort Order    |
-	| Settings | Choose Theme  |
-	| Settings | Close Tab     |
+Scenario: Click 'Sort Order' from Settings
+	Given the ToolBar Settings button is clicked
+	When the ToolBar Settings item 'Sort Order' is clicked
+	#Then the SortOrderPicker should be open
+
+Scenario: Click 'Choose Theme' from Settings
+	Given the ToolBar Settings button is clicked
+	When the ToolBar Settings item 'Choose Theme' is clicked
+	#Then the ThemePicker should be open
+
+Scenario: Click Close from Settings
+	Given the ToolBar Settings button is clicked
+	When the ToolBar Settings item 'Close Tab' is clicked
+	Then the Tab 'Grid Views' should not be visible

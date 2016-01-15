@@ -19,9 +19,9 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CheckGrivViewToolBarOptions")]
+    [NUnit.Framework.DescriptionAttribute("CheckGridViewToolBarOptions")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class CheckGrivViewToolBarOptionsFeature
+    public partial class CheckGridViewToolBarOptionsFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CheckGrivViewToolBarOptions", "The ToolBar has icons. Once pressed some icons show a dropdown menu.\r\nEach of the" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CheckGridViewToolBarOptions", "The ToolBar has icons. Once pressed some icons show a dropdown menu.\r\nEach of the" +
                     "se items should be clickable.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
@@ -76,24 +76,71 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("The Toolbar dropdown menus are clickable")]
-        [NUnit.Framework.TestCaseAttribute("Settings", "Column Picker", null)]
-        [NUnit.Framework.TestCaseAttribute("Settings", "Sort Order", null)]
-        [NUnit.Framework.TestCaseAttribute("Settings", "Choose Theme", null)]
-        [NUnit.Framework.TestCaseAttribute("Settings", "Close Tab", null)]
-        public virtual void TheToolbarDropdownMenusAreClickable(string toolBar, string options, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Click \'Column Picker\' from Settings")]
+        public virtual void ClickColumnPickerFromSettings()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Toolbar dropdown menus are clickable", exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click \'Column Picker\' from Settings", ((string[])(null)));
 #line 9
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 10
- testRunner.Given(string.Format("the ToolBar \'{0}\' button is clicked", toolBar), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the ToolBar Settings button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
- testRunner.And(string.Format("the ToolBar \'{0}\' menu is visible", toolBar), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
- testRunner.Then(string.Format("the ToolBar \'{0}\' DropDown button \'{1}\' is clicked", toolBar, options), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the ToolBar Settings item \'Column Picker\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Click \'Sort Order\' from Settings")]
+        public virtual void ClickSortOrderFromSettings()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click \'Sort Order\' from Settings", ((string[])(null)));
+#line 14
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 15
+ testRunner.Given("the ToolBar Settings button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+ testRunner.When("the ToolBar Settings item \'Sort Order\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Click \'Choose Theme\' from Settings")]
+        public virtual void ClickChooseThemeFromSettings()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click \'Choose Theme\' from Settings", ((string[])(null)));
+#line 19
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 20
+ testRunner.Given("the ToolBar Settings button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 21
+ testRunner.When("the ToolBar Settings item \'Choose Theme\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Click Close from Settings")]
+        public virtual void ClickCloseFromSettings()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click Close from Settings", ((string[])(null)));
+#line 24
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 25
+ testRunner.Given("the ToolBar Settings button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 26
+ testRunner.When("the ToolBar Settings item \'Close Tab\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+ testRunner.Then("the Tab \'Grid Views\' should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

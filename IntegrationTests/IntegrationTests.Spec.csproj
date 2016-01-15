@@ -137,10 +137,15 @@
       <DependentUpon>OpenReloaded.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ColumnPickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\HomeSteps.cs" />
     <Compile Include="Tests\StepDefinitions\LoginSteps.cs" />
     <Compile Include="Tests\StepDefinitions\MenuSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\PaginationSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ThemePickerSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ToolBarSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ViewSteps.cs" />
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Tests\Workflow\WorkFlow.cs" />
   </ItemGroup>

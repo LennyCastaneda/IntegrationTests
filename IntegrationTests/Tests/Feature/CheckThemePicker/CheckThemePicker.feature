@@ -5,33 +5,32 @@ Feature: ThemePicker
 
 Background: 
 	Given a 'GridView' is open
-	Then the ToolBar exists
-	
+	Then the ToolBar should be visible
+
 Scenario: Open ThemePicker by ToolBar
-	Given the ToolBar 'Settings' button exists
-	When the ToolBar 'Settings' button is clicked
-	And the ToolBar 'Settings' DropDown button 'Choose Theme' is clicked
-	Then the ThemePicker should be open
+	Given the ToolBar Settings button is clicked
+	When the ToolBar Settings item 'Choose Theme' is clicked
+	Then the ThemePicker should be visible
 
 Scenario: Open ThemePicker by Shortcut
 	Given the Browser is sent the keys 'F6'
-	Then the ThemePicker should be open
+	Then the ThemePicker should be visible
 
 Scenario: Close ThemePicker by Cancel
 	Given the ThemePicker is open
 	When the ThemePicker Cancel button is clicked
-	Then the ThemePicker should not be open
+	Then the ThemePicker should not be visible
 
 Scenario: Close ThemePicker by Apply
 	Given the ThemePicker is open
 	When the ThemePicker Apply button is clicked
-	Then the ThemePicker should not be open
+	Then the ThemePicker should not be visible
 
 Scenario Outline: Apply Colour Scheme
 	Given the ThemePicker is open
 	And the ThemePicker colour '<Colour>' is clicked
 	When the ThemePicker Apply button is clicked
-	And the ThemePicker should not be open
+	Then the ThemePicker should not be visible
 	Then the Background colour is '<Colour>'
 
 Examples: 

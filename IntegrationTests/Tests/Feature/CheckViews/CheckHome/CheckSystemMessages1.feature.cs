@@ -72,7 +72,7 @@ namespace IntegrationTests.Tests.Feature.CheckViews.CheckHome
 #line 6
  testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.Then("the Tab \'Home\' is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the Tab \'Home\' should be active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
         

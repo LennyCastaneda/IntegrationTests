@@ -4,7 +4,7 @@ Feature: NewsFeed
 
 Background: 
 	Given Reloaded is open
-	Then the Tab 'Home' is active
+	Then the Tab 'Home' should be active
 
 Scenario: Expand a NewsFeed Message
 	Given the NewsFeed is visible

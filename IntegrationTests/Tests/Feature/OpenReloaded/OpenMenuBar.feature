@@ -7,10 +7,10 @@ Background:
 
 Scenario: Open Menu Bar
 	When the Menu icon is clicked
-	Then the Menu is currently open
+	Then the Menu should be visible
 
 Scenario: Close Menu Bar
 	Given the Menu icon is clicked
 	And the Menu is open
-	When the Menu close icon is clicked
-	Then the Menu is closed
+	When the Menu Back icon is clicked
+	Then the Menu should not be visible

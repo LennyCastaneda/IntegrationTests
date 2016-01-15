@@ -9,55 +9,46 @@ namespace IntegrationTests.Tests.StepDefinitions
 	[Binding]
 	public sealed class ThemePickerSteps : TestBase
 	{
-		[StepDefinition(@"the ThemePicker should be open")]
-		public static void ThemePickerIsOpen()
+		[Then(@"the ThemePicker should be visible")]
+		public static void ThemePickerIsVisible()
 		{
-			Assert.That(ThemePicker.IsOpen());
+			Assert.That(App.ThemePicker.IsVisible);
 		}
 
-		[StepDefinition(@"the ThemePicker should not be open")]
-		public static void ThemePickerIsNotOpen()
+		[Then(@"the ThemePicker should not be visible")]
+		public static void ThemePickerIsNotVisible()
 		{
-			Assert.That(!ThemePicker.IsOpen());
-		}
-
-		[StepDefinition(@"the ThemePicker Add New is clicked")]
-		public static void AddNewClicked()
-		{
-			Assert.DoesNotThrow(()=> {
-				ThemePicker.ClickAddNew();
-			});
+			Assert.That(!App.ThemePicker.IsVisible);
 		}
 
 		[StepDefinition(@"the ThemePicker colour '(.*)' is clicked")]
-		public static void ColourClicked(string colour)
+		public static void ThemePicker_Colour(string colour)
 		{
-			Assert.DoesNotThrow(() => {
-				ThemePicker.ClickColour(colour);
+			Assert.DoesNotThrow(() =>
+			{
+				App.ThemePicker.ClickColour(colour);
 			});
 		}
 
-		[StepDefinition(@"the ThemePicker colour '(.*)' is double-clicked")]
-		public static void ColourDoubleClicked(string colour)
+		//[StepDefinition(@"the ThemePicker colour '(.*)' is double-clicked")]
+		//public static void ColourDoubleClicked(string colour)
+		//{
+		//	Assert.DoesNotThrow(() => {
+		//		//ThemePicker.ClickColour(colour);
+		//		//ThemePicker.ClickColour(colour);
+		//	});
+		//}
+
+		[When(@"the ThemePicker Apply button is clicked")]
+		public static void ThemePicker_Apply()
 		{
-			Assert.DoesNotThrow(() => {
-				ThemePicker.ClickColour(colour);
-				ThemePicker.ClickColour(colour);
-			});
+			App.ThemePicker.ClickApply();
 		}
 
-		[StepDefinition(@"the ThemePicker Apply button is clicked")]
-		public static void ApplyClicked()
+		[When(@"the ThemePicker Cancel button is clicked")]
+		public static void ThemePicker_Cancel()
 		{
-			Assert.DoesNotThrow(() => {
-				ThemePicker.ClickApply();
-			});
-		}
-
-		[StepDefinition(@"the ThemePicker Cancel button is clicked")]
-		public static void ThemePicker_Close()
-		{
-			ThemePicker.Close();
+			App.ThemePicker.Cancel();
 		}
 	}
 }

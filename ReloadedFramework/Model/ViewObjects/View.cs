@@ -69,7 +69,7 @@
 //		public void SetActiveTab(Tab tab)
 //		{
 //			ActiveTab = tab;
-//        }
+//		}
 
 //		private void SelectElement()
 //		{
@@ -84,9 +84,9 @@
 //			}
 
 //			var items = new List<WebElement>();
-//            items = _element.FindElements(SubItemsBy);
+//			items = _element.FindElements(SubItemsBy);
 
-//			if(items.Count > 0)
+//			if (items.Count > 0)
 //			{
 //				var result = new Dictionary<string, Tab>();
 //				items.ForEach((element) =>
@@ -129,7 +129,7 @@
 //				{
 //					GetTabs();
 //				}
-//				if(Tabs == null)
+//				if (Tabs == null)
 //				{
 //					return 0;
 //				}
@@ -141,7 +141,7 @@
 //		{
 //			var orig = _driver.FindElement(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar").GetAttribute("style");
 //			var sub = orig.Substring(orig.LastIndexOf("background-color: rgb(") + 22);
-//            return sub.Remove(sub.IndexOf(")"));
+//			return sub.Remove(sub.IndexOf(")"));
 //		}
 //	}
 //}

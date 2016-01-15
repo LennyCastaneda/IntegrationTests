@@ -40,5 +40,10 @@ namespace ReloadedFramework.Model.ViewObjects
 			}
 		}
 
+		public bool Loading()
+		{
+			var loaded = _driver.FindElement(new FindBy(ByMethod.CssSelector, "#md-loading-bar")).GetCssValue("display") == "none";
+			return !loaded;
+		}
 	}
 }
