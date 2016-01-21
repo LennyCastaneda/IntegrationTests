@@ -1,8 +1,7 @@
 ﻿using ReloadedFramework.Model;
-using System.Collections.Generic;
 using TechTalk.SpecFlow;
 
-namespace ReloadedFramework
+namespace ReloadedFramework.Tests
 {
 	[Binding]
 	public class TestBase : Browser
@@ -11,6 +10,12 @@ namespace ReloadedFramework
 		public static void SetupChrome()
 		{
 			Init("Chrome");
+		}
+
+		[BeforeFeature("Firefox")]
+		public static void SetupFireFox()
+		{
+			Init("Firefox");
 		}
 
 		[BeforeFeature("Edge")]

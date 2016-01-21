@@ -35,22 +35,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SpecRun.SpecFlowPlugin, Version=1.2.0.15, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecRun.SpecFlow.1.2.0\lib\net35\SpecRun.SpecFlowPlugin.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="TechTalk.SpecRun, Version=1.2.0.15, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecRun.SpecFlow.1.2.0\lib\net35\TechTalk.SpecRun.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -67,27 +75,141 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Tests\Steps.cs" />
-    <Compile Include="Tests\Feature\OpenHomePage.feature.cs">
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\Feature\CheckColumnPicker\CheckColumnPicker.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OpenHomePage.feature</DependentUpon>
+      <DependentUpon>CheckColumnPicker.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Steps\OpenHomePageSteps.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\Feature\CheckMenu\CheckMenu1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckMenu.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckMenu\Menu.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckThemePicker\CheckThemePicker1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckThemePicker.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBar1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckToolBar.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckToolBarDropDowns.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckNewsFeed.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckSystemMessages1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckSystemMessages.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\CheckWorkflow\CheckWorkflow1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckWorkflow.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\OpenGoogle\OpenGoogleOutline1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OpenGoogleOutline.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\OpenReloaded\OpenConfigurations1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OpenConfigurations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\OpenReloaded\OpenMenuBar1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OpenMenuBar.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\OpenReloaded\OpenReloaded.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OpenReloaded.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ColumnPickerSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\HomeSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\LoginSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\MenuSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\PaginationSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ThemePickerSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ToolBarSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ViewSteps.cs" />
     <Compile Include="Tests\TestBase.cs" />
+    <Compile Include="Tests\Workflow\WorkFlow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Default.srprofile" />
-    <None Include="packages.config" />
-    <None Include="runtests.cmd" />
-    <None Include="SpecRunTestProfile.xsd">
+    <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Tests\Feature\OpenHomePage.feature">
+    <None Include="Tests\Feature\CheckColumnPicker\CheckColumnPicker.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenHomePage.feature.cs</LastGenOutput>
+      <LastGenOutput>CheckColumnPicker.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckMenu\CheckMenu.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckMenu1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckMenu\Menu.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Menu.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckThemePicker\CheckThemePicker.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckThemePicker1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckToolBar\CheckToolBar.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckToolBar1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckToolBarDropDowns1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckNewsFeed1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckViews\CheckHome\CheckSystemMessages.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckSystemMessages1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\CheckWorkflow\CheckWorkflow.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckWorkflow1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OpenGoogleOutline1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\OpenReloaded\OpenConfigurations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OpenConfigurations1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\OpenReloaded\OpenMenuBar.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OpenMenuBar1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\OpenReloaded\OpenReloaded.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OpenReloaded.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -95,7 +217,12 @@
       <Project>{8fee914b-00c7-4cfa-8c85-6aad2a2e1dab}</Project>
       <Name>ReloadedFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SeleniumInterface\ReloadedInterface.csproj">
+      <Project>{CF7CE627-D02D-42C4-93C5-E41C06F7FB2B}</Project>
+      <Name>ReloadedInterface</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

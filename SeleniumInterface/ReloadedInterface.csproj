@@ -7,8 +7,8 @@
     <ProjectGuid>{CF7CE627-D02D-42C4-93C5-E41C06F7FB2B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SeleniumInterface</RootNamespace>
-    <AssemblyName>SeleniumInterface</AssemblyName>
+    <RootNamespace>ReloadedInterface</RootNamespace>
+    <AssemblyName>ReloadedInterface</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -54,9 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generators\WebDriverFactory.cs" />
+    <Compile Include="Interfaces\Common.cs" />
     <Compile Include="Interfaces\WebDriver.cs" />
     <Compile Include="Interfaces\WebElement.cs" />
-    <Compile Include="SeleniumInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

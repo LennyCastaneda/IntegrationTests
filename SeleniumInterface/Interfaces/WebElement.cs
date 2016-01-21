@@ -1,31 +1,24 @@
 ﻿using OpenQA.Selenium;
-using System.Collections.ObjectModel;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace ReloadedInterface.Interfaces
 {
-	public class WebElement
+	public class WebElement : Common
 	{
-		private IWebElement webElement;
+		private IWebElement _element;
 
 		public WebElement(IWebElement element)
 		{
-			webElement = element;
+			_element = element;
 		}
 
-		public bool Displayed
+		public bool IsVisible
 		{
 			get
 			{
-				return webElement.Displayed;
-			}
-		}
-
-		public bool Enabled
-		{
-			get
-			{
-				return webElement.Enabled;
+				return _element.Displayed && _element.Enabled;
 			}
 		}
 
@@ -33,15 +26,15 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webElement.Location;
+				return _element.Location;
 			}
 		}
 
-		public bool Selected
+		public bool IsSelected
 		{
 			get
 			{
-				return webElement.Selected;
+				return _element.Selected;
 			}
 		}
 
@@ -49,7 +42,7 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webElement.Size;
+				return _element.Size;
 			}
 		}
 
@@ -57,7 +50,7 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webElement.TagName;
+				return _element.TagName;
 			}
 		}
 
@@ -65,49 +58,105 @@ namespace ReloadedInterface.Interfaces
 		{
 			get
 			{
-				return webElement.Text;
+				return _element.Text;
 			}
 		}
 
 		public void Clear()
 		{
-			webElement.Clear();
+			ExplicitWait(() =>
+			{
+				_element.Clear();
+			});
 		}
 
 		public void Click()
 		{
-			webElement.Click();
+			ExplicitWait(() =>
+			{
+				_element.Click();
+			});
+			Wait(500);
 		}
 
-		public WebElement FindElement(By by)
+		/// <summary>
+		/// Clicks element then waits for the designated amount of milliseconds before continiuing.
+		/// </summary>
+		/// <param name="milliseconds"></param>
+		public void Click(double milliseconds)
 		{
-			return new WebElement(webElement.FindElement(by));
-		}
-
-		// Need to edit to return a collection of WebElement not IWebElement. (if we ever want to use it).
-		public ReadOnlyCollection<IWebElement> FindElements(By by)
-		{
-			return webElement.FindElements(by);
+			ExplicitWait(() =>
+			{
+				_element.Click();
+			});
+			Wait(milliseconds);
 		}
 
 		public string GetAttribute(string attributeName)
 		{
-			return webElement.GetAttribute(attributeName);
+			string result = null;
+			ExplicitWait(() => {
+				do
+				{
+					result = _element.GetAttribute(attributeName);
+				} while (result == null);
+			}, 3000);
+			return result;
 		}
 
 		public string GetCssValue(string propertyName)
 		{
-			return webElement.GetCssValue(propertyName);
+			string result = "";
+			ExplicitWait(() => {
+				result = _element.GetCssValue(propertyName);
+			});
+			return result;
 		}
 
 		public void SendKeys(string text)
 		{
-			webElement.SendKeys(text);
+			ExplicitWait(() =>
+			{
+				_element.SendKeys(text);
+			});
 		}
 
 		public void Submit()
 		{
-			webElement.Submit();
+			ExplicitWait(() =>
+			{
+				_element.Submit();
+			});
+		}
+
+		public WebElement FindElement(ByMethod method, string selector)
+		{
+			WebElement result = null;
+			if (_element.FindElements(GetBy(method, selector)).Count > 0)
+			{
+				result = new WebElement(_element.FindElement(GetBy(method, selector)));
+			}
+			return result;
+		}
+
+		public WebElement FindElement(FindBy findby)
+		{
+			return FindElement(findby.Method, findby.Selector);
+		}
+
+		public List<WebElement> FindElements(ByMethod method, string selector)
+		{
+			var result = new List<WebElement>();
+			foreach (IWebElement element in _element.FindElements(GetBy(method, selector)))
+			{
+				result.Add(new WebElement(element));
+			}
+			return result;
+		}
+
+		public List<WebElement> FindElements(FindBy findby)
+		{
+			return FindElements(findby.Method, findby.Selector);
 		}
 	}
 }

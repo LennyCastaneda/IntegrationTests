@@ -45,8 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AbstractClasses\Driver.cs" />
+    <Compile Include="Model\App.cs" />
     <Compile Include="Model\Browser.cs" />
-    <Compile Include="Model\Page.cs" />
+    <Compile Include="Model\Helper Classes\Colour.cs" />
+    <Compile Include="Model\LoginPagePartial.cs" />
+    <Compile Include="Model\MenuObjects\MenuPartial.cs" />
+    <Compile Include="Model\ModalObjects\ColumnPickerPartial.cs" />
+    <Compile Include="Model\ModalObjects\ManualPartial.cs" />
+    <Compile Include="Model\ModalObjects\ThemePickerPartial.cs" />
+    <Compile Include="Model\PageObjects\Page.cs" />
+    <Compile Include="Model\ViewObjects\PaginationPartial.cs" />
+    <Compile Include="Model\ViewObjects\TabPartial.cs" />
+    <Compile Include="Model\ViewObjects\ToolBarObjects\ToolBarButtonPartial.cs" />
+    <Compile Include="Model\ViewObjects\ToolBarObjects\ToolBarPartial.cs" />
+    <Compile Include="Model\ViewObjects\ViewPartial.cs" />
+    <Compile Include="Model\ViewObjects\ViewTypes\GridViewPartial.cs" />
+    <Compile Include="Model\ViewObjects\ViewTypes\HomePartial.cs" />
+    <Compile Include="Model\ViewObjects\ViewTypes\ItemViewPartial.cs" />
+    <Compile Include="Model\ViewObjects\ViewTypes\SettingsPartial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
