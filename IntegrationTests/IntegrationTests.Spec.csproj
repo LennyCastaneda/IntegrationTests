@@ -76,6 +76,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\Feature\CheckColumnPicker\CheckColumnPicker.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckColumnPicker.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Feature\CheckMenu\CheckMenu1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,6 +158,10 @@
     <None Include="App.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Tests\Feature\CheckColumnPicker\CheckColumnPicker.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckColumnPicker.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\CheckMenu\CheckMenu.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

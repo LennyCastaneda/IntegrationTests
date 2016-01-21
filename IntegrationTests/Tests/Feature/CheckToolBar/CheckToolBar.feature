@@ -7,8 +7,8 @@ Background:
 	Then the ToolBar should be visible
 
 Scenario: Click Back
-	When the ToolBar Back button is clicked
+	When the ToolBar 'Back' button is clicked
 	
 Scenario: Click Settings
-	When the ToolBar Settings button is clicked
+	When the ToolBar 'Settings' button is clicked
 	Then the ToolBar Settings dropdown should be visible

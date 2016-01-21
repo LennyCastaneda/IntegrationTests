@@ -60,7 +60,9 @@ namespace IntegrationTests.Tests.Workflow
 		{
 			Given("the Menu is open");
 			And("the Menu item 'Ungrouped views' is clicked");
+			//And("the Menu item 'Workflow Tool' is clicked");
 			When("the Menu SubItem 'Grid Views' is clicked");
+			//When("the Menu SubItem 'Work Items' is clicked");
 			Then("the Tab 'Grid Views' should be active");
 		}
 
@@ -79,6 +81,32 @@ namespace IntegrationTests.Tests.Workflow
 			Given("a 'GridView' is open");
 			And("the Browser is sent the keys 'F6'");
 			Then("the ThemePicker should be visible");
+		}
+
+		[Given(@"the ColumnPicker is visible")]
+		public void Open_ColumnPicker()
+		{
+			Given("a 'GridView' is open");
+			And("the ToolBar 'Settings' button is clicked");
+			When("the ToolBar Settings item 'Column Picker' is clicked");
+			Then("the ColumnPicker should be visible");
+		}
+
+		[Given(@"the Column '(.*)' is removed")]
+		public void RemoveColumn(string name)
+		{
+			Given("the ColumnPicker is visible");
+			When("the ColumnPicker DropDown is clicked");
+			And("the ColumnPicker Column '" + name + "' is removed");
+		}
+
+		[Given(@"the Column '(.*)' is added")]
+		public void AddColumn(string name)
+		{
+			Given("the Column '" + name + "' is removed");
+			When("the ColumnPicker DropDown is clicked");
+			And("the ColumnPicker DropDown item '" + name + "' is clicked");
+			Then("the ColumnPicker Column '" + name + "' should be visible");
 		}
 	}
 }

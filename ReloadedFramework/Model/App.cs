@@ -56,6 +56,14 @@ namespace ReloadedFramework.Model
 			}
 		}
 
+		public ColumnPickerPartial ColumnPicker
+		{
+			get
+			{
+				return new ColumnPickerPartial(_driver);
+			}
+		}
+
 		public string BackgroundColour
 		{
 			get

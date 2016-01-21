@@ -120,5 +120,29 @@ namespace ReloadedInterface.Interfaces
 		{
 			return FindElements(findby.Method, findby.Selector);
 		}
+
+		/// <summary>
+		/// Drag and Drop element to target.
+		/// </summary>
+		/// <param name="elementBy"></param>
+		/// <param name="targetBy"></param>
+		public void DragAndDrop(FindBy sourceBy, FindBy targetBy)
+		{
+			IWebElement element = _driver.FindElement(GetBy(sourceBy.Method, sourceBy.Selector));
+			IWebElement target = _driver.FindElement(GetBy(targetBy.Method, targetBy.Selector));
+			(new Actions(_driver)).DragAndDrop(element, target).Perform();
+		}
+
+		/// <summary>
+		/// Drag and Drop element by offsetX and offsetY.
+		/// </summary>
+		/// <param name="sourceBy"></param>
+		/// <param name="offsetX"></param>
+		/// <param name="offsetY"></param>
+		public void DragAndDropToOffset(FindBy sourceBy, int offsetX, int offsetY)
+		{
+			IWebElement source = _driver.FindElement(GetBy(sourceBy.Method, sourceBy.Selector));
+			(new Actions(_driver)).DragAndDropToOffset(source, offsetX, offsetY).Perform();
+		}
 	}
 }

@@ -87,7 +87,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 11
- testRunner.Given("the ToolBar Settings button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the ToolBar \'Settings\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
  testRunner.When("the ToolBar Settings item \'Choose Theme\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
@@ -125,7 +125,7 @@ this.FeatureBackground();
 #line 20
  testRunner.Given("the ThemePicker is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 21
- testRunner.When("the ThemePicker Cancel button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the ThemePicker \'Cancel\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
  testRunner.Then("the ThemePicker should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -144,7 +144,7 @@ this.FeatureBackground();
 #line 25
  testRunner.Given("the ThemePicker is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 26
- testRunner.When("the ThemePicker Apply button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the ThemePicker \'Apply to View\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
  testRunner.Then("the ThemePicker should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -182,13 +182,13 @@ this.FeatureBackground();
 #line 30
  testRunner.Given("the ThemePicker is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 31
- testRunner.And(string.Format("the ThemePicker colour \'{0}\' is clicked", colour), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("the ThemePicker colour \'{0}\' is clicked", colour), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 32
- testRunner.When("the ThemePicker Apply button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("the ThemePicker \'Apply to View\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
  testRunner.Then("the ThemePicker should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 34
- testRunner.Then(string.Format("the Background colour is \'{0}\'", colour), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And(string.Format("the Background colour is \'{0}\'", colour), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

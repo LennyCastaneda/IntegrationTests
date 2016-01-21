@@ -13,13 +13,13 @@ namespace IntegrationTests.Tests.StepDefinitions
 			Assert.That(App.View.ToolBar.IsVisible);
 		}
 
-		[StepDefinition(@"the ToolBar Back button is clicked")]
+		[StepDefinition(@"the ToolBar 'Back' button is clicked")]
 		public static void Back_Click()
 		{
 			App.View.ToolBar.Back.Click();
 		}
 
-		[StepDefinition(@"the ToolBar Settings button is clicked")]
+		[StepDefinition(@"the ToolBar 'Settings' button is clicked")]
 		public static void Cog_Click()
 		{
 			App.View.ToolBar.Cog.Click();
@@ -31,13 +31,13 @@ namespace IntegrationTests.Tests.StepDefinitions
 			App.View.ToolBar.Cog.ClickItem(name);
 		}
 
-		[Then(@"the ToolBar Settings should be visible")]
+		[Then(@"the ToolBar 'Settings' should be visible")]
 		public static void CogIsVisible()
 		{
 			Assert.That(App.View.ToolBar.Cog.IsVisible);
 		}
 
-		[Then(@"the ToolBar Back should be visible")]
+		[Then(@"the ToolBar 'Back' should be visible")]
 		public static void BackIsVisible()
 		{
 			Assert.That(App.View.ToolBar.Cog.IsVisible);

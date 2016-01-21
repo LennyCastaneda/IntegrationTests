@@ -86,7 +86,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line 10
- testRunner.When("the ToolBar Back button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the ToolBar \'Back\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -101,7 +101,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line 13
- testRunner.When("the ToolBar Settings button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the ToolBar \'Settings\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
  testRunner.Then("the ToolBar Settings dropdown should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

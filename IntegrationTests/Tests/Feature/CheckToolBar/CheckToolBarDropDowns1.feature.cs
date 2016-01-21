@@ -85,9 +85,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 10
- testRunner.Given("the ToolBar Settings button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the ToolBar \'Settings\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
  testRunner.When("the ToolBar Settings item \'Column Picker\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+ testRunner.Then("the ColumnPicker should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -102,7 +104,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 15
- testRunner.Given("the ToolBar Settings button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the ToolBar \'Settings\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 16
  testRunner.When("the ToolBar Settings item \'Sort Order\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -119,7 +121,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 20
- testRunner.Given("the ToolBar Settings button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the ToolBar \'Settings\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 21
  testRunner.When("the ToolBar Settings item \'Choose Theme\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -136,7 +138,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 25
- testRunner.Given("the ToolBar Settings button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the ToolBar \'Settings\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 26
  testRunner.When("the ToolBar Settings item \'Close Tab\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
