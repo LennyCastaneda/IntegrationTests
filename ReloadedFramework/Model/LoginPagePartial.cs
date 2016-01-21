@@ -3,17 +3,17 @@ using ReloadedInterface.Interfaces;
 
 namespace ReloadedFramework.Model
 {
-	public class LoginPage : Driver
+	public class LoginPagePartial : Driver
 	{
-		public LoginPage(WebDriver driver) : base(driver) { }
+		public LoginPagePartial(WebDriver driver) : base(driver) { }
 
-		public LoginPage EnterUsername(string username)
+		public LoginPagePartial EnterUsername(string username)
 		{
 			// enter username
 			return this;
 		}
 
-		public LoginPage EnterPassword(string password)
+		public LoginPagePartial EnterPassword(string password)
 		{
 			// enter password
 			return this;

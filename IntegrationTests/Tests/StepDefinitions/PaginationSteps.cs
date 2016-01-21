@@ -11,25 +11,25 @@ namespace IntegrationTests.Tests.StepDefinitions
 		[StepDefinition(@"the Pagination dropdown '(.*)' is selected")]
 		public static void PaginationDropDown(string param)
 		{
-			Paginator.SelectItemsPerPage(_driver, param);
+			App.View.Home.NewsFeed.Paginator.SelectItemsPerPage(param);
 		}
 
 		[StepDefinition(@"the Pagination Next Page button is clicked")]
 		public static void PaginationNextPage()
 		{
-			Paginator.SelectNextPage(_driver);
+			App.View.Home.NewsFeed.Paginator.NextPage();
 		}
 
 		[StepDefinition(@"the Pagination Previous Page button is clicked")]
 		public static void PaginationPreviousPage()
 		{
-			Paginator.SelectPreviousPage(_driver);
+			App.View.Home.NewsFeed.Paginator.PreviousPage();
 		}
 
 		[StepDefinition(@"the Pagination Status should read '(.*)'")]
 		public static void PaginationStatus(string param)
 		{
-			Assert.That(Paginator.GetPageStatus(_driver).Contains(param));
+			Assert.That(App.View.Home.NewsFeed.Paginator.PageStatus.Contains(param));
 		}
 	}
 }

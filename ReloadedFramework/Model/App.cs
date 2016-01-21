@@ -16,11 +16,11 @@ namespace ReloadedFramework.Model
 			LoggedIn = loggedIn;
 		}
 
-		public LoginPage Login
+		public LoginPagePartial Login
 		{
 			get
 			{
-				return new LoginPage(_driver);
+				return new LoginPagePartial(_driver);
 			}
 		}
 
