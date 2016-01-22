@@ -78,5 +78,11 @@ namespace IntegrationTests.Tests.StepDefinitions
 		{
 			Assert.That(App.ColumnPicker.IsColumnAtPosition(name, position));
 		}
+
+		[Then(@"the GridView Column '(.*)' should not be visible")]
+		public void ColumnPicker_Column_IsNotVisible(string name)
+		{
+			App.View.GridView.IsColumnVisible(name);
+		}
 	}
 }

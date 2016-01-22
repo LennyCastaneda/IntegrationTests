@@ -1,4 +1,4 @@
-﻿Feature: Check Browsers open Google
+﻿Feature: Browsers open Google
 	Check that the webdrivers are working at a minimum level by opening Google.co.uk in each.
 	This test is provided to simply check each supported browser can be run. 
 

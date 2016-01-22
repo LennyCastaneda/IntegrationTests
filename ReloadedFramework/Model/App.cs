@@ -2,6 +2,7 @@
 using ReloadedFramework.Model.ModalObjects;
 using ReloadedFramework.Model.ViewObjects;
 using ReloadedInterface.Interfaces;
+using System.Collections.Generic;
 
 namespace ReloadedFramework.Model
 {
@@ -12,8 +13,15 @@ namespace ReloadedFramework.Model
 	{
 		bool LoggedIn;
 
-		public App(WebDriver driver, bool loggedIn) : base(driver) {
+		/// <summary>
+		/// Store variables to share between steps.
+		/// </summary>
+		public Dictionary<string, object> SharedInfo { get; set; }
+
+		public App(WebDriver driver, bool loggedIn) : base(driver)
+		{
 			LoggedIn = loggedIn;
+			SharedInfo = new Dictionary<string, object>();
 		}
 
 		public LoginPagePartial Login

@@ -56,6 +56,7 @@
     <Compile Include="Model\ModalObjects\ThemePickerPartial.cs" />
     <Compile Include="Model\PageObjects\Page.cs" />
     <Compile Include="Model\ViewObjects\PaginationPartial.cs" />
+    <Compile Include="Model\ViewObjects\TabContextMenuPartial.cs" />
     <Compile Include="Model\ViewObjects\TabPartial.cs" />
     <Compile Include="Model\ViewObjects\ToolBarObjects\ToolBarButtonPartial.cs" />
     <Compile Include="Model\ViewObjects\ToolBarObjects\ToolBarPartial.cs" />

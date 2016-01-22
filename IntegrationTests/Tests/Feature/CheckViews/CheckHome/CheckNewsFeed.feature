@@ -1,5 +1,5 @@
 ﻿@Chrome
-Feature: NewsFeed
+Feature: Check NewsFeed
 	Check the NewsFeed UI works.
 
 Scenario: the 'Home' Tab is open
@@ -13,10 +13,10 @@ Scenario: Expand a NewsFeed Message
 	And the NewsFeed Message number '1' is clicked
 	Then the NewsFeed Message number '1' is not expanded
 
-Scenario Outline: Change NewsFeed Options
+Scenario Outline: Change NewsFeed Filters
 	Given the 'Home' Tab is open
-	When the NewsFeed Options is clicked
-	And the NewsFeed Option: '<NewsFeedOption>' is clicked
+	When the NewsFeed Filter Icon is clicked
+	And the NewsFeed Filter: '<NewsFeedOption>' is clicked
 	#Then the NewsFeed is ordered by '<NewsFeedOption>'
 
 Examples:
@@ -28,12 +28,12 @@ Examples:
 
 Scenario: Check Pagination Dropdown
 	Given the 'Home' Tab is open
-	When the Pagination dropdown '10' is selected
-	Then the Pagination Status should read '1-10'
+	When the NewsFeed Pagination dropdown '10' is selected
+	Then the NewsFeed Pagination Status should read '1-10'
 
 Scenario: Check Pagination Next/Previous
 	Given the 'Home' Tab is open
-	When the Pagination dropdown '3' is selected
-	When the Pagination Next Page button is clicked
-	And the Pagination Previous Page button is clicked
-	Then the Pagination Status should read '1-3'
+	When the NewsFeed Pagination dropdown '3' is selected
+	When the NewsFeed Pagination Next Page button is clicked
+	And the NewsFeed Pagination Previous Page button is clicked
+	Then the NewsFeed Pagination Status should read '1-3'

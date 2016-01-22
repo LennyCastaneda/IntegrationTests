@@ -1,5 +1,5 @@
 ﻿@Chrome
-Feature: OpenReloaded
+Feature: Check Open Reloaded
 	In order to go to the home page
 	As a user
 	I want to open a browser and navigate to 

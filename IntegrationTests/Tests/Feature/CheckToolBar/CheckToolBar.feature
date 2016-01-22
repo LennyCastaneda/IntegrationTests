@@ -1,5 +1,5 @@
 ﻿@Chrome
-Feature: CheckToolBar
+Feature: Check ToolBar
 	As a user I would like to open the toolbar.
 
 Background: 

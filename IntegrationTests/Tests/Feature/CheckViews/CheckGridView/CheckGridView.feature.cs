@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace IntegrationTests.Tests.Feature.CheckMenu
+namespace IntegrationTests.Tests.Feature.CheckViews.CheckGridView
 {
     using TechTalk.SpecFlow;
     
@@ -19,21 +19,21 @@ namespace IntegrationTests.Tests.Feature.CheckMenu
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Menu")]
+    [NUnit.Framework.DescriptionAttribute("Check GridView")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class MenuFeature
+    public partial class CheckGridViewFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Menu.feature"
+#line 1 "CheckGridView.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Menu", "", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Check GridView", "As a user of a table\nI would like to resize columns\nto better view the data.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -66,29 +66,36 @@ namespace IntegrationTests.Tests.Feature.CheckMenu
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("MakeColumnBigger")]
+        public virtual void MakeColumnBigger()
         {
-#line 4
-#line 5
- testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("MakeColumnBigger", ((string[])(null)));
+#line 7
+this.ScenarioSetup(scenarioInfo);
+#line 8
+ testRunner.Given("a \'GridView\' is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
+ testRunner.When("the GridView Column \'name\' is dragged right", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.Then("the GridView Column \'name\' width should have increased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+            this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check Menu UI")]
-        public virtual void CheckMenuUI()
+        [NUnit.Framework.DescriptionAttribute("MakeColumnSmaller")]
+        public virtual void MakeColumnSmaller()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Menu UI", ((string[])(null)));
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("MakeColumnSmaller", ((string[])(null)));
+#line 12
 this.ScenarioSetup(scenarioInfo);
-#line 4
-this.FeatureBackground();
-#line 8
- testRunner.Given("I have logged into Reloaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
- testRunner.When("the Menu icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
- testRunner.Then("the Menu should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 13
+ testRunner.Given("a \'GridView\' is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 14
+ testRunner.When("the GridView Column \'name\' is dragged left", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.Then("the GridView Column \'name\' width should have decreased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

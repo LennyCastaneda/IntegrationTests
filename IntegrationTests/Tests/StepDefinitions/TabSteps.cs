@@ -15,6 +15,12 @@ namespace IntegrationTests.Tests.StepDefinitions
 			App.View.Tabs.ClickTab(name);
 		}
 
+		[When(@"the Tab '(.*)' is right-clicked")]
+		public static void Tab_RightClick(string name)
+		{
+			App.View.Tabs.RightClickTab(name);
+		}
+
 		[Then(@"the Tab '(.*)' should be active")]
 		public static void Tab_IsActive(string name)
 		{

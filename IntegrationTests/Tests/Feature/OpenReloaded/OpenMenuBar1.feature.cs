@@ -19,9 +19,9 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Open and close Menu bar")]
+    [NUnit.Framework.DescriptionAttribute("Check Open and close Menu bar")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class OpenAndCloseMenuBarFeature
+    public partial class CheckOpenAndCloseMenuBarFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Open and close Menu bar", "As a user I would like to open the menu bar.", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Check Open and close Menu bar", "As a user I would like to open the menu bar.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }

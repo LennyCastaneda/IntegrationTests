@@ -19,9 +19,9 @@ namespace IntegrationTests.Tests.Feature.CheckViews.CheckHome
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SystemMessages")]
+    [NUnit.Framework.DescriptionAttribute("Check SystemMessages")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class SystemMessagesFeature
+    public partial class CheckSystemMessagesFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.CheckViews.CheckHome
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SystemMessages", "Check the System Messages UI works.", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Check SystemMessages", "Check the System Messages UI works.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }

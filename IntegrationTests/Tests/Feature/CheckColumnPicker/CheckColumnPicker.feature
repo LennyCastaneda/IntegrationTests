@@ -38,7 +38,7 @@ Scenario: the Column '(.*)' is added
 Scenario: Remove a column
 	Given the Column 'singleton' is removed
 	When the ColumnPicker 'Apply' button is clicked
-	#Then the Grid Column 'singleton' should not be visible
+	Then the GridView Column 'singleton' should not be visible
 
 Scenario: DragAndDrop a Column
 	Given the ColumnPicker is visible

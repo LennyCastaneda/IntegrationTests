@@ -19,9 +19,9 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("OpenReloaded")]
+    [NUnit.Framework.DescriptionAttribute("Check Open Reloaded")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class OpenReloadedFeature
+    public partial class CheckOpenReloadedFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenReloaded", "In order to go to the home page\r\nAs a user\r\nI want to open a browser and navigate" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Check Open Reloaded", "In order to go to the home page\r\nAs a user\r\nI want to open a browser and navigate" +
                     " to", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);

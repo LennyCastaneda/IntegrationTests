@@ -59,11 +59,9 @@ namespace IntegrationTests.Tests.Workflow
 		public void OpenAGridView()
 		{
 			Given("the Menu is open");
-			When("the Menu item 'Ungrouped views' is clicked");
-			//And("the Menu item 'Workflow Tool' is clicked");
-			And("the Menu SubItem 'Grid Views' is clicked");
-			//When("the Menu SubItem 'Work Items' is clicked");
-			Then("the Tab 'Grid Views' should be active");
+			When("the Menu item 'Workflow Tool' is clicked");
+			And("the Menu SubItem 'Work Items' is clicked");
+			Then("the Tab 'Work Items' should be active");
 		}
 
 		[Given(@"a 'ItemView' is open")]
@@ -107,6 +105,14 @@ namespace IntegrationTests.Tests.Workflow
 			When("the ColumnPicker DropDown is clicked");
 			And("the ColumnPicker DropDown item '" + name + "' is clicked");
 			Then("the ColumnPicker Column '" + name + "' should be visible");
+		}
+
+		[Given(@"the Tab ContextMenu is visible")]
+		public void AddColumn()
+		{
+			Given("a 'GridView' is open");
+			When("the Tab 'Work Items' is right-clicked");
+			Then("the Tab ContextMenu should be visible");
 		}
 	}
 }

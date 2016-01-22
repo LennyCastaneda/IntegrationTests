@@ -1,5 +1,5 @@
 ﻿@Chrome
-Feature: CheckGridViewToolBarOptions
+Feature: Check GridView ToolBar Options
 	The ToolBar has icons. Once pressed some icons show a dropdown menu.
 	Each of these items should be clickable.
 
@@ -19,7 +19,7 @@ Scenario: Click 'Sort Order' from Settings
 Scenario: Click 'Choose Theme' from Settings
 	When the ToolBar 'Settings' button is clicked
 	And the ToolBar Settings item 'Choose Theme' is clicked
-	#Then the ThemePicker should be open
+	Then the ThemePicker should be visible
 
 Scenario: Click Close from Settings
 	When the ToolBar 'Settings' button is clicked

@@ -19,7 +19,7 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CheckGridViewToolBarOptions")]
+    [NUnit.Framework.DescriptionAttribute("Check GridView ToolBar Options")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
     public partial class CheckGridViewToolBarOptionsFeature
     {
@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CheckGridViewToolBarOptions", "The ToolBar has icons. Once pressed some icons show a dropdown menu.\r\nEach of the" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Check GridView ToolBar Options", "The ToolBar has icons. Once pressed some icons show a dropdown menu.\r\nEach of the" +
                     "se items should be clickable.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
@@ -124,6 +124,8 @@ this.FeatureBackground();
  testRunner.When("the ToolBar \'Settings\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
  testRunner.And("the ToolBar Settings item \'Choose Theme\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.Then("the ThemePicker should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

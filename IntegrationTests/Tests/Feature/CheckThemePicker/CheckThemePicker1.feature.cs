@@ -19,9 +19,9 @@ namespace IntegrationTests.Tests.Feature.CheckThemePicker
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ThemePicker")]
+    [NUnit.Framework.DescriptionAttribute("CheckThemePicker")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class ThemePickerFeature
+    public partial class CheckThemePickerFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.CheckThemePicker
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ThemePicker", "The Theme Picker, accessible from the Toolbar Setup dropdown or the shortcut \'F6\'" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CheckThemePicker", "The Theme Picker, accessible from the Toolbar Setup dropdown or the shortcut \'F6\'" +
                     "\r\nShould change the colour scheme of the current page.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);

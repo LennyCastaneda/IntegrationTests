@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using ReloadedFramework.Model.ViewObjects;
-using ReloadedFramework.Model.ViewObjects.ViewTypes;
 using ReloadedFramework.Tests;
 using TechTalk.SpecFlow;
 
@@ -22,12 +20,14 @@ namespace IntegrationTests.Tests.StepDefinitions
 		}
 
 		[When(@"the NewsFeed Options is clicked")]
+		[When(@"the NewsFeed Filter Icon is clicked")]
 		public static void Home_NewsFeedFilter_Click()
 		{
 			App.View.Home.NewsFeed.ClickOptions();
 		}
 
 		[When(@"the NewsFeed Option: '(.*)' is clicked")]
+		[When(@"the NewsFeed Filter: '(.*)' is clicked")]
 		public static void Home_NewsFeedFilterItem_Click(string option)
 		{
 			App.View.Home.NewsFeed.SelectOption(option);

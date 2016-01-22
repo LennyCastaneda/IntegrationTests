@@ -1,5 +1,5 @@
 ﻿@Chrome
-Feature: SystemMessages
+Feature: Check SystemMessages
 	Check the System Messages UI works.
 
 Scenario: Expand a System Message

@@ -28,6 +28,21 @@ namespace ReloadedFramework.Model.ViewObjects
 			return this;
 		}
 
+		/// <summary>
+		/// Right click the Tab (name).
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public TabPartial RightClickTab(string name)
+		{
+			var result = FindTabByName(name);
+			if (result != null)
+			{
+				result.RightClick(_driver);
+			}
+			return this;
+		}
+
 		public bool TabExists(string name)
 		{
 			var result = FindTabByName(name);
@@ -51,6 +66,14 @@ namespace ReloadedFramework.Model.ViewObjects
 		public int Count()
 		{
 			 return _driver.FindElement(ThisBy).FindElements(TabsBy).Count();
+		}
+
+		public TabContextMenuPartial ContextMenu
+		{
+			get
+			{
+				return new TabContextMenuPartial(_driver);
+			}
 		}
 	}
 }

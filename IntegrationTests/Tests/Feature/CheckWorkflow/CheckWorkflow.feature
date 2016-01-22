@@ -1,5 +1,5 @@
 ﻿@Chrome
-Feature: CheckWorkflow
+Feature: Check Workflow
 	Check each workflow performs the desired operation
 
 Scenario: Reloaded is open
@@ -28,3 +28,8 @@ Scenario: a 'ItemView' is open
 
 Scenario: the ThemePicker is open
 	Given the ThemePicker is open
+
+Scenario: the Tab ContextMenu is visible
+	Given a 'GridView' is open
+	When the Tab 'Work Items' is right-clicked
+	Then the Tab ContextMenu should be visible

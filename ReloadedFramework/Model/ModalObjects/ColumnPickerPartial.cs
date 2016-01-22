@@ -127,22 +127,31 @@ namespace ReloadedFramework.Model.ModalObjects
 		}
 
 		/// <summary>
-		/// Drag and drop the column at (sourcePosition) and move it to (targetPosition)
+		/// Drag and drop the column at (sourcePosition) and move it to (targetPosition).
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>
 		public ColumnPickerPartial DragAndDropColumn(int sourcePosition, int targetPosition)
 		{
-			FindBy sourceBy = new FindBy(ByMethod.CssSelector, 
+			WebElement source = _driver.FindElement(ByMethod.CssSelector, 
 				".modal-body ul[ui-sortable=sortableOptions] li:nth-child(" + sourcePosition + ") .mdi-drag-vertical");
 
-			Point source = _driver.FindElement(sourceBy).Location;
-			Point target = _driver.FindElement(ByMethod.CssSelector, 
-				".modal-body ul[ui-sortable=sortableOptions] li:nth-child(" + targetPosition + ") .mdi-drag-vertical").Location;
+			WebElement target = _driver.FindElement(ByMethod.CssSelector,
+				".modal-body ul[ui-sortable=sortableOptions] li:nth-child(" + targetPosition + ") .mdi-drag-vertical");
 
-			int offsetY = target.Y - source.Y;
+			int offsetY = target.Location.Y - source.Location.Y;
+			source.DragAndDropTo(_driver, 0, offsetY + 10);
+			return this;
+		}
 
-			_driver.DragAndDropToOffset(sourceBy, 0, offsetY + 10);
+		/// <summary>
+		/// Drag and drop the column (source) and move it to (target).
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public ColumnPickerPartial DragAndDropColumn(string source, string target)
+		{
+			GetListItem(source).DragAndDrop(_driver, GetListItem(target));
 			return this;
 		}
 

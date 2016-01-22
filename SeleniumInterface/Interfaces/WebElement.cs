@@ -78,6 +78,15 @@ namespace ReloadedInterface.Interfaces
 			Wait(500);
 		}
 
+		public void RightClick(WebDriver driver)
+		{
+			ExplicitWait(() =>
+			{
+				driver.RightClick(_element);
+			});
+			Wait(500);
+		}
+
 		/// <summary>
 		/// Clicks element then waits for the designated amount of milliseconds before continiuing.
 		/// </summary>
@@ -156,6 +165,37 @@ namespace ReloadedInterface.Interfaces
 		public List<WebElement> FindElements(FindBy findby)
 		{
 			return FindElements(findby.Method, findby.Selector);
+		}
+
+		/// <summary>
+		/// Drag and Drop this element to target.
+		/// </summary>
+		/// <param name="driver"></param>
+		/// <param name="target"></param>
+		public void DragAndDrop(WebDriver driver, WebElement target)
+		{
+			target.DragDropEnd(driver, _element);
+		}
+
+		/// <summary>
+		/// Takes IWebElement from source.DragDropStart() and performs action in target.DragDropEnd().
+		/// </summary>
+		/// <param name="driver"></param>
+		/// <param name="source"></param>
+		private void DragDropEnd(WebDriver driver, IWebElement source)
+		{
+			driver.Drag(source, _element);
+		}
+
+		/// <summary>
+		/// Drag and Drop element by offsetX and offsetY.
+		/// </summary>
+		/// <param name="sourceBy"></param>
+		/// <param name="offsetX"></param>
+		/// <param name="offsetY"></param>
+		public void DragAndDropTo(WebDriver driver, int offsetX, int offsetY)
+		{
+			driver.DragAndDropTo(_element, offsetX, offsetY);
 		}
 	}
 }

@@ -1,5 +1,5 @@
 ﻿@Chrome
-Feature: ThemePicker
+Feature: CheckThemePicker
 	The Theme Picker, accessible from the Toolbar Setup dropdown or the shortcut 'F6'
 	Should change the colour scheme of the current page.
 

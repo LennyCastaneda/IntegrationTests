@@ -2,12 +2,14 @@
 using ReloadedFramework.Model.ViewObjects.ToolBarObjects;
 using ReloadedFramework.Model.ViewObjects.ViewTypes;
 using ReloadedInterface.Interfaces;
+using System.Drawing;
 
 namespace ReloadedFramework.Model.ViewObjects
 {
 	public class ViewPartial : Driver
 	{
-		private FindBy ViewBy = new FindBy(ByMethod.CssSelector, "#tab_holder");
+		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#tab_holder");
+		private FindBy ActiveViewBy = new FindBy(ByMethod.CssSelector, "");
 
 		public ViewPartial(WebDriver driver) : base(driver) { }
 
@@ -35,10 +37,20 @@ namespace ReloadedFramework.Model.ViewObjects
 			}
 		}
 
-		public bool Loading()
+		public GridViewPartial GridView
 		{
-			var loaded = _driver.FindElement(new FindBy(ByMethod.CssSelector, "#md-loading-bar")).GetCssValue("display") == "none";
-			return !loaded;
+			get
+			{
+				return new GridViewPartial(_driver);
+			}
+		}
+
+		public bool Loading
+		{
+			get
+			{
+				return !(_driver.FindElement(new FindBy(ByMethod.CssSelector, "#md-loading-bar")).GetCssValue("display") == "none");
+			}
 		}
 	}
 }

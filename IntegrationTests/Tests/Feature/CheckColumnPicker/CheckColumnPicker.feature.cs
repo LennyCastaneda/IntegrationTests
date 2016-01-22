@@ -185,6 +185,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("the Column \'singleton\' is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 40
  testRunner.When("the ColumnPicker \'Apply\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 41
+ testRunner.Then("the GridView Column \'singleton\' should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
