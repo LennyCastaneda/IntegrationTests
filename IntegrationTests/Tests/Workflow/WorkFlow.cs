@@ -108,11 +108,20 @@ namespace IntegrationTests.Tests.Workflow
 		}
 
 		[Given(@"the Tab ContextMenu is visible")]
-		public void AddColumn()
+		public void ContextMenu_IsVisible()
 		{
 			Given("a 'GridView' is open");
 			When("the Tab 'Work Items' is right-clicked");
 			Then("the Tab ContextMenu should be visible");
 		}
+
+		[Given(@"the ConfigurationMenu is open")]
+		public void ConfigurationMenu_Open()
+		{
+			Given("Reloaded is open");
+			When("the ConfigurationMenu icon is clicked");
+			Then("the ConfigurationMenu should be visible");
+		}
+
 	}
 }

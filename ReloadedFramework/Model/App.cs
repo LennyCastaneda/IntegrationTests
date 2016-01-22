@@ -72,6 +72,14 @@ namespace ReloadedFramework.Model
 			}
 		}
 
+		public ConfigurationMenuPartial ConfigMenu
+		{
+			get
+			{
+				return new ConfigurationMenuPartial(_driver);
+			}
+		}
+
 		public string BackgroundColour
 		{
 			get
