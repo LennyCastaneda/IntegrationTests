@@ -48,7 +48,7 @@
     <Compile Include="Model\AbstractClasses\Driver.cs" />
     <Compile Include="Model\App.cs" />
     <Compile Include="Model\Browser.cs" />
-    <Compile Include="Model\Helper Classes\Colour.cs" />
+    <Compile Include="Model\HelperClasses\Colour.cs" />
     <Compile Include="Model\LoginPagePartial.cs" />
     <Compile Include="Model\MenuObjects\MenuPartial.cs" />
     <Compile Include="Model\ModalObjects\ColumnPickerPartial.cs" />

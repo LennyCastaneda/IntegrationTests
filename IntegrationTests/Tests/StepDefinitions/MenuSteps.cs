@@ -6,55 +6,53 @@ namespace IntegrationTests.Tests.StepDefinitions
 {
 	[Binding]
 	public sealed class MenuSteps : TestBase
-	{
-		[StepDefinition(@"the Menu is opened")]
-		[StepDefinition("the Menu icon is clicked")]
-		public void OpenMenu()
+	{ 
+		[When("the Menu icon is clicked")]
+		public static void Menu_Open()
 		{
 			App.Menu.Open();
 		}
 
-		[StepDefinition("the Menu is closed")]
-		[StepDefinition("the Menu Back icon is clicked")]
-		public void CloseMenu()
+		[When("the Menu Back icon is clicked")]
+		public static void Menu_Close()
 		{
 			App.Menu.Close();
 		}
 
-		[StepDefinition("the Menu item '(.*)' is clicked")]
-		public void ClickMenuItem(string name)
+		[When("the Menu item '(.*)' is clicked")]
+		public static void Menu_Item_Click(string name)
 		{
 			App.Menu.ClickItem(name);
 		}
 
-		[StepDefinition("the Menu SubItem '(.*)' is clicked")]
-		public void ClickMenuSubItem(string name)
+		[When("the Menu SubItem '(.*)' is clicked")]
+		public static void Menu_SubItem_Click(string name)
 		{
 			App.Menu.ClickSubItem(name);
 		}
 
 		[Then("the Menu should be visible")]
-		public void MenuVisible()
+		public static void Menu_Visible()
 		{
 			Assert.That(App.Menu.IsVisible);
 		}
 
 		[Then("the Menu should not be visible")]
-		public void MenuNotVisible()
+		public static void Menu_NotVisible()
 		{
 			Assert.That(!App.Menu.IsVisible);
 		}
 
-		[Then("the Menu item '(.*)' exists")]
-		public void MenuItemExists(string name)
+		[Then("the Menu item '(.*)' is visible")]
+		public static void Menu_Item_IsVisible(string name)
 		{
-			Assert.That(App.Menu.ItemExists(name));
+			Assert.That(App.Menu.ItemIsVisible(name));
 		}
 
 		[Then("the Menu item '(.*)' should be expanded")]
-		public void MenuItemExpanded(string name)
+		public static void Menu_Item_Expanded(string name)
 		{
-			Assert.That(App.Menu.ItemExists(name));
+			Assert.That(App.Menu.ItemIsVisible(name));
 		}
 	}
 }

@@ -8,12 +8,12 @@ Background:
 	Then the ToolBar should be visible
 
 Scenario: Open ThemePicker by ToolBar
-	Given the ToolBar 'Settings' button is clicked
-	When the ToolBar Settings item 'Choose Theme' is clicked
+	When the ToolBar 'Settings' button is clicked
+	And the ToolBar Settings item 'Choose Theme' is clicked
 	Then the ThemePicker should be visible
 
 Scenario: Open ThemePicker by Shortcut
-	Given the Browser is sent the keys 'F6'
+	When the Browser is sent the keys 'F6'
 	Then the ThemePicker should be visible
 
 Scenario: Close ThemePicker by Cancel

@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Threading;
 using System.Diagnostics;
+using System.Threading;
 
 namespace ReloadedInterface.Interfaces
 {

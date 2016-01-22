@@ -53,7 +53,7 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>
-		public bool ItemExists(string name)
+		public bool ItemIsVisible(string name)
 		{
 			var result = _driver.FindElements(MenuItemsBy)
 				.FindAll(x => x.FindElements(ByMethod.CssSelector, "a").Count > 0)

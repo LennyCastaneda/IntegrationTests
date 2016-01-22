@@ -6,5 +6,5 @@ Background:
 
 Scenario: Check Menu UI
 	Given I have logged into Reloaded
-	And the Menu icon is clicked
+	When the Menu icon is clicked
 	Then the Menu should be visible

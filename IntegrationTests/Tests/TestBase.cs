@@ -25,6 +25,7 @@ namespace ReloadedFramework.Tests
 		}
 
 		[AfterTestRun]
+		[After]
 		public static void After()
 		{
 			Page.Quit();

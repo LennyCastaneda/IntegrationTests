@@ -4,8 +4,8 @@ Feature: CheckColumnPicker
 
 Scenario: the ColumnPicker is visible
 	Given a 'GridView' is open
-	And the ToolBar 'Settings' button is clicked
-	When the ToolBar Settings item 'Column Picker' is clicked
+	When the ToolBar 'Settings' button is clicked
+	And the ToolBar Settings item 'Column Picker' is clicked
 	Then the ColumnPicker should be visible
 
 Scenario: Click Close

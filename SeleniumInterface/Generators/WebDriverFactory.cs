@@ -22,7 +22,7 @@ namespace ReloadedInterface.Generators
 
 	/// <summary>
 	/// Contains static methods that return an IWebDriver for the specified browser. Contains any browser specific implementations required.
-	/// /// </summary>
+	/// </summary>
 	public static class WebDriverFactory
 	{
 		public static WebDriver CreateDriver(string driverName)

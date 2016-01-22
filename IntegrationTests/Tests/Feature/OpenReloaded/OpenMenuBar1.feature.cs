@@ -66,47 +66,20 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Open and Close the Menu using the icons")]
+        public virtual void OpenAndCloseTheMenuUsingTheIcons()
         {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open and Close the Menu using the icons", ((string[])(null)));
 #line 5
+this.ScenarioSetup(scenarioInfo);
 #line 6
  testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Open Menu Bar")]
-        public virtual void OpenMenuBar()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Menu Bar", ((string[])(null)));
-#line 8
-this.ScenarioSetup(scenarioInfo);
-#line 5
-this.FeatureBackground();
-#line 9
+#line 7
  testRunner.When("the Menu icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
- testRunner.Then("the Menu should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Close Menu Bar")]
-        public virtual void CloseMenuBar()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Close Menu Bar", ((string[])(null)));
-#line 12
-this.ScenarioSetup(scenarioInfo);
-#line 5
-this.FeatureBackground();
-#line 13
- testRunner.Given("the Menu icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 14
- testRunner.And("the Menu is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
- testRunner.When("the Menu Back icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 16
+#line 8
+ testRunner.And("the Menu Back icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
  testRunner.Then("the Menu should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

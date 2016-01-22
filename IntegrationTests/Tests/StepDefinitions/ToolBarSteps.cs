@@ -7,19 +7,13 @@ namespace IntegrationTests.Tests.StepDefinitions
 	[Binding]
 	public sealed class ToolBarSteps : TestBase
 	{
-		[Then(@"the ToolBar should be visible")]
-		public static void ToolBarIsVisible()
-		{
-			Assert.That(App.View.ToolBar.IsVisible);
-		}
-
-		[StepDefinition(@"the ToolBar 'Back' button is clicked")]
+		[When(@"the ToolBar 'Back' button is clicked")]
 		public static void Back_Click()
 		{
 			App.View.ToolBar.Back.Click();
 		}
 
-		[StepDefinition(@"the ToolBar 'Settings' button is clicked")]
+		[When(@"the ToolBar 'Settings' button is clicked")]
 		public static void Cog_Click()
 		{
 			App.View.ToolBar.Cog.Click();
@@ -47,6 +41,12 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public void ThenTheToolBarSettingsDropdownShouldBeVisible()
 		{
 			Assert.That(App.View.ToolBar.Cog.DropDownIsVisible);
+		}
+
+		[Then(@"the ToolBar should be visible")]
+		public static void ToolBarIsVisible()
+		{
+			Assert.That(App.View.ToolBar.IsVisible);
 		}
 	}
 }

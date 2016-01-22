@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using ReloadedFramework.Model.ViewObjects;
 using ReloadedFramework.Tests;
 using TechTalk.SpecFlow;
 
@@ -8,28 +7,28 @@ namespace IntegrationTests.Tests.StepDefinitions
 	[Binding]
 	public sealed class PaginationSteps : TestBase
 	{
-		[StepDefinition(@"the Pagination dropdown '(.*)' is selected")]
-		public static void PaginationDropDown(string param)
+		[When(@"the Pagination dropdown '(.*)' is selected")]
+		public static void Pagination_DropDown(string itemCount)
 		{
-			App.View.Home.NewsFeed.Paginator.SelectItemsPerPage(param);
+			App.View.Home.NewsFeed.Paginator.SelectItemsPerPage(itemCount);
 		}
 
-		[StepDefinition(@"the Pagination Next Page button is clicked")]
-		public static void PaginationNextPage()
+		[When(@"the Pagination Next Page button is clicked")]
+		public static void Pagination_NextPage()
 		{
 			App.View.Home.NewsFeed.Paginator.NextPage();
 		}
 
-		[StepDefinition(@"the Pagination Previous Page button is clicked")]
-		public static void PaginationPreviousPage()
+		[When(@"the Pagination Previous Page button is clicked")]
+		public static void Pagination_PreviousPage()
 		{
 			App.View.Home.NewsFeed.Paginator.PreviousPage();
 		}
 
-		[StepDefinition(@"the Pagination Status should read '(.*)'")]
-		public static void PaginationStatus(string param)
+		[Then(@"the Pagination Status should read '(.*)'")]
+		public static void Pagination_Status(string status)
 		{
-			Assert.That(App.View.Home.NewsFeed.Paginator.PageStatus.Contains(param));
+			Assert.That(App.View.Home.NewsFeed.Paginator.PageStatus.Contains(status));
 		}
 	}
 }

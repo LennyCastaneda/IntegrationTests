@@ -12,8 +12,6 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void CheckBackgroundColour(string colour)
 		{
 			Assert.That(Colour.RBGAToColourName(App.BackgroundColour) == colour);
-			// Returns rgba not rgb.
-			// Ideally need to return the string representation e.g. 'Red'
 		}
 	}
 }

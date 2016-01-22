@@ -66,34 +66,39 @@ namespace IntegrationTests.Tests.Feature.CheckViews.CheckHome
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 5
-#line 6
- testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 7
- testRunner.Then("the Tab \'Home\' should be active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-        }
-        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Expand a System Message")]
         public virtual void ExpandASystemMessage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Expand a System Message", ((string[])(null)));
-#line 9
-this.ScenarioSetup(scenarioInfo);
 #line 5
-this.FeatureBackground();
+this.ScenarioSetup(scenarioInfo);
+#line 6
+ testRunner.Given("the \'Home\' Tab is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 7
+ testRunner.When("the SystemMessages Message number \'1\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 8
+ testRunner.Then("the SystemMessages Message number \'1\' is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Un-Expand a System Message")]
+        public virtual void Un_ExpandASystemMessage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Un-Expand a System Message", ((string[])(null)));
 #line 10
- testRunner.Given("the SystemMessages feed is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 11
- testRunner.And("the SystemMessages Message number \'1\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("the \'Home\' Tab is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
- testRunner.When("the SystemMessages Message number \'1\' is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the SystemMessages Message number \'1\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.And("the SystemMessages Message number \'1\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("the SystemMessages Message number \'1\' is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
+ testRunner.When("the SystemMessages Message number \'1\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
  testRunner.Then("the SystemMessages Message number \'1\' is not expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

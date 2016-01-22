@@ -2,21 +2,22 @@
 Feature: NewsFeed
 	Check the NewsFeed UI works.
 
-Background: 
-	Given Reloaded is open
+Scenario: the 'Home' Tab is open
+	Given the Menu is open
+	When the Menu item 'Home' is clicked
 	Then the Tab 'Home' should be active
 
 Scenario: Expand a NewsFeed Message
-	Given the NewsFeed is visible
-	And the NewsFeed Message number '1' is clicked
-	When the NewsFeed Message number '1' is expanded
+	Given the 'Home' Tab is open
+	When the NewsFeed Message number '1' is clicked
 	And the NewsFeed Message number '1' is clicked
 	Then the NewsFeed Message number '1' is not expanded
 
 Scenario Outline: Change NewsFeed Options
-	Given the NewsFeed is visible
-	And the NewsFeed Options is clicked
-	Then the NewsFeed Option: '<NewsFeedOption>' is clicked
+	Given the 'Home' Tab is open
+	When the NewsFeed Options is clicked
+	And the NewsFeed Option: '<NewsFeedOption>' is clicked
+	#Then the NewsFeed is ordered by '<NewsFeedOption>'
 
 Examples:
 	| NewsFeedOption |
@@ -26,13 +27,13 @@ Examples:
 	| Newest first   |
 
 Scenario: Check Pagination Dropdown
-	Given the NewsFeed is visible
-	And the Pagination dropdown '10' is selected
-	Then the Pagination Status should read '1-10 of 16'
+	Given the 'Home' Tab is open
+	When the Pagination dropdown '10' is selected
+	Then the Pagination Status should read '1-10'
 
 Scenario: Check Pagination Next/Previous
-	Given the NewsFeed is visible
-	And the Pagination dropdown '3' is selected
+	Given the 'Home' Tab is open
+	When the Pagination dropdown '3' is selected
 	When the Pagination Next Page button is clicked
 	And the Pagination Previous Page button is clicked
-	Then the Pagination Status should read '1-3 of 16'	
+	Then the Pagination Status should read '1-3'

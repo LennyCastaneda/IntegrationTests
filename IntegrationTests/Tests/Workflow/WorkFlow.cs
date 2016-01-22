@@ -10,14 +10,14 @@ namespace IntegrationTests.Tests.Workflow
 		{
 			Given("the Browser exists");
 			When("the Browser is pointed to 'http://localhost:52755/index.html#/config/1'");
-			Then("the Browser title is 'Reloaded'");
+			Then("the Browser title should be 'Reloaded'");
 		}
 
 		[Given(@"the Menu is open")]
 		public void OpenMenu()
 		{
 			Given("Reloaded is open");
-			And("the Menu icon is clicked");
+			When("the Menu icon is clicked");
 			Then("the Menu should be visible");
 		}
 
@@ -51,17 +51,17 @@ namespace IntegrationTests.Tests.Workflow
 		public void OpenSettings()
 		{
 			Given("the Menu is open");
-			And("the Menu item 'Settings' exists");
-			Then("the Menu item 'Settings' is clicked");
+			When("the Menu item 'Settings' is clicked");
+			Then("the Tab 'Settings' should be active");
 		}
 
 		[Given(@"a 'GridView' is open")]
 		public void OpenAGridView()
 		{
 			Given("the Menu is open");
-			And("the Menu item 'Ungrouped views' is clicked");
+			When("the Menu item 'Ungrouped views' is clicked");
 			//And("the Menu item 'Workflow Tool' is clicked");
-			When("the Menu SubItem 'Grid Views' is clicked");
+			And("the Menu SubItem 'Grid Views' is clicked");
 			//When("the Menu SubItem 'Work Items' is clicked");
 			Then("the Tab 'Grid Views' should be active");
 		}
@@ -70,8 +70,8 @@ namespace IntegrationTests.Tests.Workflow
 		public void OpenAnItemView()
 		{
 			Given("the Menu is open");
-			And("the Menu item 'Ungrouped views' is clicked");
-			When("the Menu SubItem 'Item View' is clicked");
+			When("the Menu item 'Ungrouped views' is clicked");
+			And("the Menu SubItem 'Item View' is clicked");
 			Then("the Tab 'Item View' should be visible");
 		}
 
@@ -79,7 +79,7 @@ namespace IntegrationTests.Tests.Workflow
 		public void OpenThemePicker()
 		{
 			Given("a 'GridView' is open");
-			And("the Browser is sent the keys 'F6'");
+			When("the Browser is sent the keys 'F6'");
 			Then("the ThemePicker should be visible");
 		}
 
@@ -87,8 +87,8 @@ namespace IntegrationTests.Tests.Workflow
 		public void Open_ColumnPicker()
 		{
 			Given("a 'GridView' is open");
-			And("the ToolBar 'Settings' button is clicked");
-			When("the ToolBar Settings item 'Column Picker' is clicked");
+			When("the ToolBar 'Settings' button is clicked");
+			And("the ToolBar Settings item 'Column Picker' is clicked");
 			Then("the ColumnPicker should be visible");
 		}
 
