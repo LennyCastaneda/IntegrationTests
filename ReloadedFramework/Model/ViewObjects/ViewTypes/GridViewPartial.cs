@@ -11,6 +11,7 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 		FindBy ColumnsBy = new FindBy(ByMethod.CssSelector, "thead tr th");
 		FindBy ColumnHandleBy = new FindBy(ByMethod.CssSelector, ".ui-resizable-handle");
 		FindBy ColumnSortBy = new FindBy(ByMethod.CssSelector, "sup");
+		FindBy RowsBy = new FindBy(ByMethod.CssSelector, "tr:not(.subheader):not(.header)");
 
 		public GridViewPartial(WebDriver driver) : base(driver) { }
 
@@ -116,6 +117,21 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 				.FindElement(TableBy)
 				.FindElements(ColumnsBy)
 				.FindIndex(x => x.Text == name);
+		}
+
+		/// <summary>
+		/// Returns the total number of data Rows in the GridView. 
+		/// <para>Ignores Grouping</para>
+		/// </summary>
+		/// <returns></returns>
+		public int RowCount
+		{
+			get
+			{
+				return _driver.FindElement(ThisBy)
+					.FindElement(TableBy)
+					.FindElements(RowsBy).Count;
+			}
 		}
 	}
 }

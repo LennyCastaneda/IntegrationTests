@@ -1,6 +1,8 @@
 ﻿using ReloadedFramework.Model.AbstractClasses;
 using ReloadedFramework.Model.ModalObjects;
 using ReloadedFramework.Model.ViewObjects;
+using ReloadedFramework.Model.PageObjects;
+
 using ReloadedInterface.Interfaces;
 using System.Collections.Generic;
 

@@ -1,8 +1,8 @@
 ﻿using ReloadedFramework.Model.AbstractClasses;
 using ReloadedFramework.Model.ViewObjects.ToolBarObjects;
 using ReloadedFramework.Model.ViewObjects.ViewTypes;
+using ReloadedFramework.Model.ViewObjects.ViewTypes.Home;
 using ReloadedInterface.Interfaces;
-using System.Drawing;
 
 namespace ReloadedFramework.Model.ViewObjects
 {

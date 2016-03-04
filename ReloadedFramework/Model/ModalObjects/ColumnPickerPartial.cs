@@ -1,13 +1,12 @@
-﻿using ReloadedInterface.Interfaces;
-using ReloadedFramework.Model.AbstractClasses;
-using System.Drawing;
+﻿using ReloadedFramework.Model.AbstractClasses;
+using ReloadedInterface.Interfaces;
 
 namespace ReloadedFramework.Model.ModalObjects
 {
 	public class ColumnPickerPartial : Driver
 	{
-		FindBy IsOpenBy = new FindBy(ByMethod.CssSelector, ".modal[style='display: block;']");
-		FindBy ThisBy = new FindBy(ByMethod.CssSelector, ".modal .modal-dialog[ng-controller^='ColumnPickerController'] .modal-content");
+		FindBy IsOpenBy = new FindBy(ByMethod.CssSelector, "#myModal .modal-content");
+		FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#myModal .modal-dialog[ng-controller^='ColumnPickerController'] .modal-content");
 		FindBy ApplyBy = new FindBy(ByMethod.CssSelector, ".modal-footer button[ng-click='applyColumns()']");
 		FindBy CancelBy = new FindBy(ByMethod.CssSelector, ".modal-footer button:not([ng-click])");
 		FindBy CloseBy = new FindBy(ByMethod.CssSelector, ".modal-header button");
@@ -146,6 +145,7 @@ namespace ReloadedFramework.Model.ModalObjects
 
 		/// <summary>
 		/// Drag and drop the column (source) and move it to (target).
+		/// <para>No offset so may not be useful for reordering elements in a list.</para>
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>

@@ -20,7 +20,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		}
 
 		[When(@"the ToolBar Settings item '(.*)' is clicked")]
-		public void WhenTheToolBarDropdownItemIsClicked(string name)
+		public static void WhenTheToolBarDropdownItemIsClicked(string name)
 		{
 			App.View.ToolBar.Cog.ClickItem(name);
 		}

@@ -34,5 +34,19 @@ namespace IntegrationTests.Tests.StepDefinitions
 			Assert.That((int)App.SharedInfo[name + "Width"] > App.View.GridView.ColumnSize(name).Width);
 			App.SharedInfo.Remove(name + "Width");
 		}
+
+		[Then(@"the Column '(.*)' should be visible in the GridView")]
+		[Then(@"the GridView Column '(.*)' should be visible")]
+		public void GridView_Column_IsVisible(string name)
+		{
+			Assert.That(App.View.GridView.IsColumnVisible(name));
+		}
+
+		[Then(@"the Column '(.*)' should not be visible in the GridView")]
+		[Then(@"the GridView Column '(.*)' should not be visible")]
+		public void GridView_Column_IsNotVisible(string name)
+		{
+			Assert.That(!App.View.GridView.IsColumnVisible(name));
+		}
 	}
 }

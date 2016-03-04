@@ -9,7 +9,8 @@ namespace IntegrationTests.Tests.Workflow
 		public void OpenReloaded()
 		{
 			Given("the Browser exists");
-			When("the Browser is pointed to 'http://localhost:52755/index.html#/config/1'");
+			When("the Browser is pointed to 'http://dev.durellreloaded.co.uk/'");
+			And("I have logged into Reloaded");
 			Then("the Browser title should be 'Reloaded'");
 		}
 
@@ -55,6 +56,7 @@ namespace IntegrationTests.Tests.Workflow
 			Then("the Tab 'Settings' should be active");
 		}
 
+		[Given(@"I open the WorkItems view")]
 		[Given(@"a 'GridView' is open")]
 		public void OpenAGridView()
 		{
@@ -86,7 +88,7 @@ namespace IntegrationTests.Tests.Workflow
 		{
 			Given("a 'GridView' is open");
 			When("the ToolBar 'Settings' button is clicked");
-			And("the ToolBar Settings item 'Column Picker' is clicked");
+			And("the ToolBar Settings item 'Columns' is clicked");
 			Then("the ColumnPicker should be visible");
 		}
 
@@ -122,6 +124,5 @@ namespace IntegrationTests.Tests.Workflow
 			When("the ConfigurationMenu icon is clicked");
 			Then("the ConfigurationMenu should be visible");
 		}
-
 	}
 }

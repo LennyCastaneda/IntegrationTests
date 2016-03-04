@@ -24,7 +24,6 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void Browser_GoTo(string url)
 		{
 			Page.GoTo(url);
-			Page.RemoveDelay();
 		}
 
 		[When(@"the keyboard key '(.*)' is pressed")]

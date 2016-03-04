@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using ReloadedFramework;
 using ReloadedFramework.Model;
 using ReloadedFramework.Tests;
 using TechTalk.SpecFlow;

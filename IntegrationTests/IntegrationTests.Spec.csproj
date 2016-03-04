@@ -76,6 +76,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\GridViews\AllRecords.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllRecords.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Feature\CheckColumnPicker\CheckColumnPicker.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +151,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OpenReloaded.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\GridViews\ColumnPicker.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColumnPicker.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\GridViews\Filters.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Filters.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\GridViews\Groups.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Groups.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\GridViews\InteractiveGrid.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InteractiveGrid.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ColumnPickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\GridViewSteps.cs" />
@@ -156,9 +181,11 @@
     <Compile Include="Tests\StepDefinitions\ConfigurationSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabContextMenuSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\TemplateSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ThemePickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ToolBarSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ViewSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\WorkFlowToolSteps.cs" />
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Tests\Workflow\WorkFlow.cs" />
   </ItemGroup>
@@ -166,6 +193,10 @@
     <None Include="App.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Tests\GridViews\AllRecords.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AllRecords.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\CheckColumnPicker\CheckColumnPicker.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -222,6 +253,22 @@
     <None Include="Tests\Feature\OpenReloaded\OpenReloaded.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>OpenReloaded.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\GridViews\ColumnPicker.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ColumnPicker.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\GridViews\Filters.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Filters.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\GridViews\Groups.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Groups.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\GridViews\InteractiveGrid.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>InteractiveGrid.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,31 @@ namespace IntegrationTests.Tests.StepDefinitions
 	[Binding]
 	public sealed class ColumnPickerSteps : TestBase
 	{
+		[Given(@"I open the ColumnPicker")]
+		[Given(@"the ColumnPicker is open")]
+		public static void ColumnPicker_Open()
+		{
+			ToolBarSteps.Cog_Click();
+			ToolBarSteps.WhenTheToolBarDropdownItemIsClicked("Columns");
+		}
+
+		[When(@"I add the Column '(.*)' from the ColumnPicker")]
+		[When(@"the Column '(.*)' is added")]
+		public static void ColumnPicker_Column_Add(string name)
+		{
+			ColumnPickerSteps.ColumnPicker_DropDown();
+			ColumnPickerSteps.ColumnPicker_DropDownItem(name);
+			ColumnPickerSteps.ColumnPicker_Apply();
+		}
+
+		[When(@"I remove the Column '(.*)' from the ColumnPicker")]
+		[When(@"the Column '(.*)' is removed")]
+		public static void ColumnPicker_Column_Remove(string name)
+		{
+			ColumnPickerSteps.ColumnPicker_ColumnRemoved(name);
+			ColumnPickerSteps.ColumnPicker_Apply();
+		}
+
 		[When(@"the ColumnPicker 'Apply' button is clicked")]
 		public static void ColumnPicker_Apply()
 		{
@@ -43,6 +68,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 			App.ColumnPicker.RemoveColumn(name);
 		}
 
+		[When(@"I drag Column at position '(.*)' to position '(.*)' in the ColumnPicker")]
 		[When(@"the ColumnPicker Column at position '(.*)' is moved to position '(.*)'")]
 		public static void ColumnPicker_ColumnMoved(int start, int finish)
 		{
@@ -77,12 +103,6 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void ColumnPicker_Column_AtPosition(string name, int position)
 		{
 			Assert.That(App.ColumnPicker.IsColumnAtPosition(name, position));
-		}
-
-		[Then(@"the GridView Column '(.*)' should not be visible")]
-		public void ColumnPicker_Column_IsNotVisible(string name)
-		{
-			App.View.GridView.IsColumnVisible(name);
 		}
 	}
 }

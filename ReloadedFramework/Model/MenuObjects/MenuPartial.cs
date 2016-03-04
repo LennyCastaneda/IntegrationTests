@@ -1,12 +1,11 @@
-﻿using System;
-using ReloadedFramework.Model.AbstractClasses;
+﻿using ReloadedFramework.Model.AbstractClasses;
 using ReloadedInterface.Interfaces;
 
 namespace ReloadedFramework.Model
 {
 	public class MenuPartial : Driver
 	{
-		private FindBy MenuBy = new FindBy(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.sidebar");
+		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.sidebar");
 		private FindBy OpenBy = new FindBy(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar > div.container-fluid > div > a.reloaded-icon-button.btn.btn-flat");
 		private FindBy CloseBy = new FindBy(ByMethod.ClassName, "mdi-keyboard-backspace");
 		private FindBy MenuItemsBy = new FindBy(ByMethod.CssSelector, ".sidebar ul li");
@@ -27,7 +26,7 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public MenuPartial Close()
 		{
-			_driver.FindElement(MenuBy).FindElement(CloseBy).Click();
+			_driver.FindElement(ThisBy).FindElement(CloseBy).Click();
 			return this;
 		}
 
@@ -44,7 +43,7 @@ namespace ReloadedFramework.Model
 		{
 			get
 			{
-				return _driver.FindElement(MenuBy).GetAttribute("class") == "sidebar visible";
+				return _driver.FindElement(ThisBy).GetAttribute("class") == "sidebar visible";
 			}
 		}
 

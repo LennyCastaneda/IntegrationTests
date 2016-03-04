@@ -149,5 +149,37 @@ namespace ReloadedInterface.Interfaces
 		{
 			(new Actions(_driver)).ContextClick(target).Build().Perform();
 		}
+
+		public void AlertSendKeys(string keys)
+		{ 
+			_driver.SwitchTo().Alert().SendKeys(keys);
+		}
+
+		public void AlertAccept()
+		{
+			_driver.SwitchTo().Alert().Accept();
+		}
+
+
+		public void AlertDismiss()
+		{
+			_driver.SwitchTo().Alert().Dismiss();
+		}
+
+		public bool AlertIsVisible
+		{
+			get
+			{
+				try
+				{
+					_driver.SwitchTo().Alert();
+					return true;
+				}
+				catch (NoAlertPresentException)
+				{
+					return false;
+				}
+			}
+		}
 	}
 }

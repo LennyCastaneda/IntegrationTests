@@ -1,5 +1,5 @@
-﻿using ReloadedInterface.Interfaces;
-using ReloadedFramework.Model.AbstractClasses;
+﻿using ReloadedFramework.Model.AbstractClasses;
+using ReloadedInterface.Interfaces;
 
 namespace ReloadedFramework.Model.ModalObjects
 {

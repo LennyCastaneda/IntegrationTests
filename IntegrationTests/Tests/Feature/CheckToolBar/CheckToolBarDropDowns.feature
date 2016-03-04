@@ -8,7 +8,7 @@ Background:
 
 Scenario: Click 'Column Picker' from Settings
 	When the ToolBar 'Settings' button is clicked
-	And the ToolBar Settings item 'Column Picker' is clicked
+	And the ToolBar Settings item 'Columns' is clicked
 	Then the ColumnPicker should be visible
 
 Scenario: Click 'Sort Order' from Settings
