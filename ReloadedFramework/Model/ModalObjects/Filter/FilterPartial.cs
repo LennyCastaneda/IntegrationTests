@@ -33,6 +33,10 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 			return this;
 		}
 
+		/// <summary>
+		/// Click the Filter element.
+		/// </summary>
+		/// <returns></returns>
 		public FilterPartial Filter()
 		{
 			_driver.FindElement(ThisBy).FindElement(FilterBy).Click();

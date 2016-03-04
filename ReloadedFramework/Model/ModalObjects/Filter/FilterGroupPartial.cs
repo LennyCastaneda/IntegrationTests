@@ -15,7 +15,7 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 
 		public FilterPartial Filter(string number)
 		{
-			return new FilterPartial(_driver, new FindBy(ByMethod.CssSelector, FiltersBy + ":nth-child(" + number + ")"));
+			return new FilterPartial(_driver, new FindBy(ByMethod.CssSelector, FiltersBy.Selector + ":nth-child(" + number + ")"));
 		}
 	}
 }

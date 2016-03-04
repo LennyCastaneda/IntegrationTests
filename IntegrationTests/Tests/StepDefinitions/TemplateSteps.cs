@@ -10,7 +10,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		// For additional details on SpecFlow step definitions see http://go.specflow.org/doc-stepdef
 
 		[Given("I have entered (.*) into the calculator")]
-		public void GivenIHaveEnteredSomethingIntoTheCalculator(int number)
+		public static void GivenIHaveEnteredSomethingIntoTheCalculator(int number)
 		{
 			//TODO: implement arrange (precondition) logic
 			// For storing and retrieving scenario-specific data see http://go.specflow.org/doc-sharingdata 
@@ -22,7 +22,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		}
 
 		[When("I press add")]
-		public void WhenIPressAdd()
+		public static void WhenIPressAdd()
 		{
 			//TODO: implement act (action) logic
 
@@ -30,7 +30,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		}
 
 		[Then("the result should be (.*) on the screen")]
-		public void ThenTheResultShouldBe(int result)
+		public static void ThenTheResultShouldBe(int result)
 		{
 			//TODO: implement assert (verification) logic
 

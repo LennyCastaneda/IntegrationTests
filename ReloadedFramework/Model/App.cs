@@ -5,6 +5,7 @@ using ReloadedFramework.Model.PageObjects;
 
 using ReloadedInterface.Interfaces;
 using System.Collections.Generic;
+using ReloadedFramework.Model.ModalObjects.Filter;
 
 namespace ReloadedFramework.Model
 {
@@ -71,6 +72,14 @@ namespace ReloadedFramework.Model
 			get
 			{
 				return new ColumnPickerPartial(_driver);
+			}
+		}
+
+		public FilterPickerPartial FilterPicker
+		{
+			get
+			{
+				return new FilterPickerPartial(_driver);
 			}
 		}
 

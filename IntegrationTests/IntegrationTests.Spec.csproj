@@ -173,6 +173,7 @@
     </Compile>
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ColumnPickerSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\FilterPickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\GridViewSteps.cs" />
     <Compile Include="Tests\StepDefinitions\HomeSteps.cs" />
     <Compile Include="Tests\StepDefinitions\LoginSteps.cs" />

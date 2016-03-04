@@ -12,6 +12,20 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 
 		public FilterPickerPartial(WebDriver driver) : base(driver) { }
 
+		public bool IsVisible
+		{
+			get
+			{
+				var result = _driver.FindElement(ThisBy);
+				if (result != null && !result.GetAttribute("style").Contains("display: none"))
+				{
+					return result.IsVisible;
+				}
+				return false;
+			}
+		}
+
+
 		private WebElement This
 		{
 			get
@@ -65,14 +79,9 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 		/// </summary>
 		/// <param name="number"></param>
 		/// <returns></returns>
-		private FilterGroupPartial FilterGroup(string number)
+		public FilterGroupPartial FilterGroup(string number)
 		{
 			return new FilterGroupPartial(_driver, new FindBy(ByMethod.CssSelector, ActionsBy + ":nth-child(" + number + ")"));
-		}
-
-		public FilterPickerPartial SelectColumn(string name)
-		{
-			return this;
 		}
 	}
 }

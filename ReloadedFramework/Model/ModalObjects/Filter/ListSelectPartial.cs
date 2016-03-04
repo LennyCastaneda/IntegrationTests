@@ -23,7 +23,7 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 		{
 			_driver.FindElement(ThisBy)
 				.FindElements(ListItemsBy)
-				.Find(x => x.GetAttribute("value").Equals(name))
+				.Find(x => x.GetAttribute("value").Trim().Equals(name))
 				.Click();
 			return this;
 		}

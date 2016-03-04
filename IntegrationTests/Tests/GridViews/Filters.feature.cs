@@ -66,17 +66,98 @@ namespace IntegrationTests.Tests.GridViews
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add Filter")]
-        public virtual void AddFilter()
+        public virtual void FeatureBackground()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Filter", ((string[])(null)));
 #line 4
-this.ScenarioSetup(scenarioInfo);
 #line 5
  testRunner.Given("I open the WorkItems view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 6
- testRunner.And("I open the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("#Test# Click Apply")]
+        public virtual void TestClickApply()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("#Test# Click Apply", ((string[])(null)));
+#line 7
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 8
+ testRunner.Given("I open the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
+ testRunner.When("I click \'Apply\' in the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.Then("the Filter Picker should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("#Test# Click Cancel")]
+        public virtual void TestClickCancel()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("#Test# Click Cancel", ((string[])(null)));
+#line 12
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 13
+ testRunner.Given("I open the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 14
+ testRunner.When("I click \'Cancel\' in the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.Then("the Filter Picker should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("#Test# Click Add New Group")]
+        public virtual void TestClickAddNewGroup()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("#Test# Click Add New Group", ((string[])(null)));
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 18
+ testRunner.Given("I open the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+ testRunner.When("I click \'Add New Group\' in the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+ testRunner.Then("the Filter Picker should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("#Test# Apply a filter")]
+        public virtual void TestApplyAFilter()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("#Test# Apply a filter", ((string[])(null)));
+#line 22
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 23
+ testRunner.Given("I open the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 24
+ testRunner.When("I click \'Add New Group\' in the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
+ testRunner.And("in Filter Picker group number \'1\' filter number \'1\' I select the Field \'Action\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.And("in Filter Picker group number \'1\' filter number \'1\' I click the filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And("in Filter Picker group \'1\' filter number \'1\' in the ListFilter I search for \'Aliq" +
+                    "uet\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.And("in Filter Picker group \'1\' filter number \'1\' in the StringFilter I check \'Aliquet" +
+                    "\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.When("I click \'Apply\' in the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+ testRunner.Then("the Filter Picker should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
