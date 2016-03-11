@@ -8,7 +8,7 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 	{
 		FindBy ThisBy = new FindBy(ByMethod.CssSelector, ".persistant_tab[style='display: block;'] div[ng-controller^='gridviewController']");
 		FindBy TableBy = new FindBy(ByMethod.CssSelector, "table");
-		FindBy ColumnsBy = new FindBy(ByMethod.CssSelector, "thead tr th");
+		FindBy ColumnsBy = new FindBy(ByMethod.CssSelector, "thead tr.header");
 		FindBy ColumnHandleBy = new FindBy(ByMethod.CssSelector, ".ui-resizable-handle");
 		FindBy ColumnSortBy = new FindBy(ByMethod.CssSelector, "sup");
 		FindBy RowsBy = new FindBy(ByMethod.CssSelector, "tr:not(.subheader):not(.header)");
@@ -133,6 +133,37 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 					.FindElement(TableBy)
 					.FindElements(RowsBy).Count;
 			}
+		}
+
+		/// <summary>
+		/// Returns the row at position 'index'
+		/// </summary>
+		/// <param name="rownum"></param>
+		/// <returns></returns>
+		public WebElement GetRow(int index)
+		{
+			return _driver.FindElement(ThisBy)
+				.FindElement(TableBy)
+				.FindElements(RowsBy)[index];
+		}
+
+		/// <summary>
+		/// Get the value of the cell in row 'row' and the column 'columnname'.
+		/// </summary>
+		/// <param name="row"></param>
+		/// <param name="columnname"></param>
+		/// <returns></returns>
+		public string GetCellValue(int row, string columnname)
+		{
+			var elements = _driver.FindElement(ThisBy)
+						.FindElement(TableBy)
+						.FindElements(ColumnsBy);
+			int index = elements[0]
+						.FindElements(ByMethod.CssSelector, "th")
+						.FindIndex(x => x.Text == columnname);
+
+			var result = GetRow(row).FindElements(ByMethod.CssSelector, "td")[index].Text;
+			return result;
 		}
 
 		/// <summary>

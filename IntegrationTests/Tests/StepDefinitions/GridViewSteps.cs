@@ -54,5 +54,17 @@ namespace IntegrationTests.Tests.StepDefinitions
 		{
 			Assert.That(App.View.GridView.SubHeaderStartsWith(name));
 		}
+
+		[Then(@"the GridView Table first row column '(.*)' text should be '(.*)'")]
+		public static void GridView_Row1_Column(string columnname, string text)
+		{
+			Assert.That(App.View.GridView.GetCellValue(1, columnname) == text);
+		}
+
+		[Then(@"the GridView cell at row '(.*)' column '(.*)' should equal '(.*)'")]
+		public static void GridView_Row_Column(int row, string columnname, string text)
+		{
+			Assert.That(App.View.GridView.GetCellValue(row, columnname) == text);
+		}
 	}
 }

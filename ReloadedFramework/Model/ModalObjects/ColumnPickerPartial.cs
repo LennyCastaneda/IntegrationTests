@@ -3,33 +3,14 @@ using ReloadedInterface.Interfaces;
 
 namespace ReloadedFramework.Model.ModalObjects
 {
-	public class ColumnPickerPartial : Driver
+	public class ColumnPickerPartial : Modal
 	{
-		FindBy IsOpenBy = new FindBy(ByMethod.CssSelector, "#myModal .modal-content");
-		FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#myModal .modal-dialog[ng-controller^='ColumnPickerController'] .modal-content");
-		FindBy ApplyBy = new FindBy(ByMethod.CssSelector, ".modal-footer button[ng-click='applyColumns()']");
-		FindBy CancelBy = new FindBy(ByMethod.CssSelector, ".modal-footer button:not([ng-click])");
-		FindBy CloseBy = new FindBy(ByMethod.CssSelector, ".modal-header button");
-		FindBy DropDownBy = new FindBy(ByMethod.CssSelector, ".modal-body .addnewcol");
-		FindBy ListItemsBy = new FindBy(ByMethod.CssSelector, ".modal-body ul[ui-sortable=sortableOptions] li");
+		FindBy DropDownBy = new FindBy(ByMethod.CssSelector, ".addnewcol");
+		FindBy ListItemsBy = new FindBy(ByMethod.CssSelector, "ul[ui-sortable=sortableOptions] li");
+		FindBy TrashIconBy = new FindBy(ByMethod.CssSelector, ".mdi-delete");
+		FindBy ArrowIconBy = new FindBy(ByMethod.CssSelector, ".mdi-arrow-down");
 
 		public ColumnPickerPartial(WebDriver driver) : base(driver) { }
-
-		/// <summary>
-		/// Returns true if the Partial is visible to the user.
-		/// </summary>
-		public bool IsVisible
-		{
-			get
-			{
-				var result = _driver.FindElement(ThisBy);
-				if (result != null && _driver.FindElement(IsOpenBy) != null)
-				{
-					return result.IsVisible;
-				}
-				return false;
-			}
-		}
 
 		/// <summary>
 		/// Clicks the 'Apply' button.
@@ -37,8 +18,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial Apply()
 		{
-			_driver.FindElement(ThisBy)
-				.FindElement(ApplyBy).Click();
+			FindButton("apply").Click();
 			return this;
 		}
 
@@ -48,8 +28,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial Cancel()
 		{
-			_driver.FindElement(ThisBy)
-				.FindElement(CancelBy).Click();
+			FindButton("cancel").Click();
 			return this;
 		}
 
@@ -59,8 +38,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial Close()
 		{
-			_driver.FindElement(ThisBy)
-				.FindElement(CloseBy).Click();
+			Header.FindElement(ByMethod.CssSelector, "button").Click();
 			return this;
 		}
 
@@ -70,8 +48,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial DropDown()
 		{
-			_driver.FindElement(ThisBy)
-				.FindElement(DropDownBy).Click();
+			Body.FindElement(DropDownBy).Click();
 			return this;
 		}
 
@@ -82,8 +59,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial DropDownOption(string name)
 		{
-			_driver.FindElement(ThisBy)
-				.FindElement(DropDownBy)
+			Body.FindElement(DropDownBy)
 				.FindElement(ByMethod.CssSelector, "option[label='" + name + "']").Click();
 			return this;
 		}
@@ -95,7 +71,18 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial RemoveColumn(string name)
 		{
-			GetListItem(name).FindElement(ByMethod.CssSelector, ".mdi-delete").Click();
+			GetListItem(name).FindElement(TrashIconBy).Click();
+			return this;
+		}
+
+		/// <summary>
+		/// Clicks the arrow icon of the column (name).
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public ColumnPickerPartial SortColumn(string name)
+		{
+			GetListItem(name).FindElement(ArrowIconBy).Click();
 			return this;
 		}
 
@@ -121,7 +108,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		private WebElement GetListItem(string name)
 		{
-			return _driver.FindElements(ListItemsBy)
+			return Body.FindElements(ListItemsBy)
 				.Find(x => x.FindElement(ByMethod.CssSelector, "p").Text == name);
 		}
 

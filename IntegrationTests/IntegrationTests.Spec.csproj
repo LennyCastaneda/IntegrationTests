@@ -136,6 +136,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckWorkflow.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Feature\GridViews\DataSorting.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSorting.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\GridViews\Paging.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Paging.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Feature\OpenReloaded\OpenConfigurations1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,6 +183,7 @@
     </Compile>
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ColumnPickerSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ColumnSortPicker.cs" />
     <Compile Include="Tests\StepDefinitions\FilterPickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\GridViewSteps.cs" />
     <Compile Include="Tests\StepDefinitions\GroupPickerSteps.cs" />
@@ -243,6 +254,14 @@
     <None Include="Tests\Feature\CheckWorkflow\CheckWorkflow.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckWorkflow1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\GridViews\DataSorting.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DataSorting.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\GridViews\Paging.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Paging.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\OpenReloaded\OpenConfigurations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

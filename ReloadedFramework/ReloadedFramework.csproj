@@ -64,7 +64,6 @@
     <Compile Include="Model\ModalObjects\ColumnPickerPartial.cs" />
     <Compile Include="Model\ModalObjects\ManualPartial.cs" />
     <Compile Include="Model\ModalObjects\SaveAsPartial.cs" />
-    <Compile Include="Model\ModalObjects\SortPickerPartial.cs" />
     <Compile Include="Model\ModalObjects\ThemePickerPartial.cs" />
     <Compile Include="Model\PageObjects\Alert.cs" />
     <Compile Include="Model\PageObjects\Page.cs" />
