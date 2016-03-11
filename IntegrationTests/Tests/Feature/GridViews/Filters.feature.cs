@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace IntegrationTests.Tests.GridViews
+namespace IntegrationTests.Tests.Feature.GridViews
 {
     using TechTalk.SpecFlow;
     

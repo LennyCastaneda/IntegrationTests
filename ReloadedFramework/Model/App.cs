@@ -75,6 +75,14 @@ namespace ReloadedFramework.Model
 			}
 		}
 
+		public GroupPickerPartial GroupPicker
+		{
+			get
+			{
+				return new GroupPickerPartial(_driver);
+			}
+		}
+
 		public FilterPickerPartial FilterPicker
 		{
 			get

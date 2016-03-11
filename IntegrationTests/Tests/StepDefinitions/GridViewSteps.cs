@@ -48,5 +48,11 @@ namespace IntegrationTests.Tests.StepDefinitions
 		{
 			Assert.That(!App.View.GridView.IsColumnVisible(name));
 		}
+
+		[Then(@"the GridView should have a subheader that starts with '(.*)'")]
+		public static void GridView_SubHeader(string name)
+		{
+			Assert.That(App.View.GridView.SubHeaderStartsWith(name));
+		}
 	}
 }

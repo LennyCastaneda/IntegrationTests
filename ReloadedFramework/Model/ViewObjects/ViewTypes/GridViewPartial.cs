@@ -12,6 +12,7 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 		FindBy ColumnHandleBy = new FindBy(ByMethod.CssSelector, ".ui-resizable-handle");
 		FindBy ColumnSortBy = new FindBy(ByMethod.CssSelector, "sup");
 		FindBy RowsBy = new FindBy(ByMethod.CssSelector, "tr:not(.subheader):not(.header)");
+		FindBy SubHeadersBy = new FindBy(ByMethod.CssSelector, "");
 
 		public GridViewPartial(WebDriver driver) : base(driver) { }
 
@@ -132,6 +133,19 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 					.FindElement(TableBy)
 					.FindElements(RowsBy).Count;
 			}
+		}
+
+		/// <summary>
+		/// Returns true if the first subheader on the page starts with the specified string.
+		/// </summary>
+		/// <param name="substring"></param>
+		/// <returns></returns>
+		public bool SubHeaderStartsWith(string substring)
+		{
+			return _driver.FindElement(ThisBy)
+				.FindElement(TableBy)
+				.FindElements(ByMethod.CssSelector, "thead .subheader th")
+				.Find(x => x.Text.Trim().ToLower().StartsWith(substring.ToLower())) != null;
 		}
 	}
 }

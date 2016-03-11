@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\AbstractClasses\Driver.cs" />
+    <Compile Include="Model\AbstractClasses\Modal.cs" />
     <Compile Include="Model\AbstractClasses\Partial.cs" />
     <Compile Include="Model\App.cs" />
     <Compile Include="Model\Browser.cs" />
