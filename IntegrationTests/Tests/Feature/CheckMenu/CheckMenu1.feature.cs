@@ -106,8 +106,7 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Expand MenuItems")]
-        [NUnit.Framework.TestCaseAttribute("Configurations", null)]
-        [NUnit.Framework.TestCaseAttribute("Ungrouped views", null)]
+        [NUnit.Framework.TestCaseAttribute("Workflow Tool", null)]
         public virtual void ExpandMenuItems(string expandable, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Expand MenuItems", exampleTags);

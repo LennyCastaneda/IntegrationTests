@@ -6,8 +6,7 @@ namespace ReloadedFramework.Model
 	public class MenuPartial : Driver
 	{
 		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.sidebar");
-		private FindBy OpenBy = new FindBy(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar > div.container-fluid > div > a.reloaded-icon-button.btn.btn-flat");
-		private FindBy CloseBy = new FindBy(ByMethod.ClassName, "mdi-keyboard-backspace");
+		private FindBy MenuButtonBy = new FindBy(ByMethod.CssSelector, "#ngBody .reloaded-icon-button");
 		private FindBy MenuItemsBy = new FindBy(ByMethod.CssSelector, ".sidebar ul li");
 
 		public MenuPartial(WebDriver driver) : base(driver) {}
@@ -17,7 +16,7 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public MenuPartial Open()
 		{
-			_driver.FindElement(OpenBy).Click();
+			_driver.FindElement(MenuButtonBy).Click();
 			return this;
 		}
 
@@ -26,7 +25,7 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public MenuPartial Close()
 		{
-			_driver.FindElement(ThisBy).FindElement(CloseBy).Click();
+			_driver.FindElement(ThisBy).FindElement(MenuButtonBy).Click();
 			return this;
 		}
 
@@ -79,9 +78,10 @@ namespace ReloadedFramework.Model
 
 		public MenuPartial ClickItem(string name)
 		{
-			_driver.FindElements(MenuItemsBy)
-				.FindAll(x => x.FindElements(ByMethod.CssSelector, "a").Count > 0)
-				.Find(x => x.FindElement(ByMethod.CssSelector, "a").Text == name).Click(2000);
+			var elements = _driver.FindElements(MenuItemsBy);
+			var elA = elements.FindAll(x => x.FindElements(ByMethod.CssSelector, "a").Count > 0);
+			var res = elA.Find(x => x.FindElement(ByMethod.CssSelector, "a").Text == name);
+			res.Click(2000);
 			return this;
 		}
 

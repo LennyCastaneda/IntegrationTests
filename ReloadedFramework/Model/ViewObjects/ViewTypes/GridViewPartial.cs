@@ -1,5 +1,6 @@
 ﻿using ReloadedFramework.Model.AbstractClasses;
 using ReloadedInterface.Interfaces;
+using System;
 using System.Drawing;
 
 namespace ReloadedFramework.Model.ViewObjects.ViewTypes
@@ -36,8 +37,9 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 		{
 			return _driver.FindElement(ThisBy)
 				.FindElement(TableBy)
-				.FindElements(ColumnsBy)
-				.Find(x => x.Text == name);
+				.FindElements(ColumnsBy)[0]
+				.FindElements(ByMethod.CssSelector, "th")
+				.Find(x => StringsAreEqual(x.Text, name));
 		}
 
 		/// <summary>
@@ -160,10 +162,17 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 						.FindElements(ColumnsBy);
 			int index = elements[0]
 						.FindElements(ByMethod.CssSelector, "th")
-						.FindIndex(x => x.Text == columnname);
+						.FindIndex(x => StringsAreEqual(x.GetNodeText, columnname));
 
-			var result = GetRow(row).FindElements(ByMethod.CssSelector, "td")[index].Text;
+			var result = GetRow(row - 1).FindElements(ByMethod.CssSelector, "td")[index].Text;
 			return result;
+		}
+
+		private string GetCurrentElementText(WebElement element)
+		{
+			
+
+			return "";
 		}
 
 		/// <summary>

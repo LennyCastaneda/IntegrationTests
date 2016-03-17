@@ -25,6 +25,5 @@ Scenario Outline: Expand MenuItems
 	Then the Menu item '<Expandable>' should be expanded
 
 Examples: 
-	| Expandable      |
-	| Configurations  |
-	| Ungrouped views |
+	| Expandable    |
+	| Workflow Tool |

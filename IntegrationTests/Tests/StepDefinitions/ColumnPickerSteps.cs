@@ -21,7 +21,6 @@ namespace IntegrationTests.Tests.StepDefinitions
 		{
 			ColumnPickerSteps.ColumnPicker_DropDown();
 			ColumnPickerSteps.ColumnPicker_DropDownItem(name);
-			ColumnPickerSteps.ColumnPicker_Apply();
 		}
 
 		[When(@"I remove the Column '(.*)' from the ColumnPicker")]
@@ -29,7 +28,6 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void ColumnPicker_Column_Remove(string name)
 		{
 			ColumnPickerSteps.ColumnPicker_ColumnRemoved(name);
-			ColumnPickerSteps.ColumnPicker_Apply();
 		}
 
 		[When(@"I click Apply in the ColumnSortPicker")]
@@ -79,6 +77,12 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void ColumnPicker_ColumnMoved(int start, int finish)
 		{
 			App.ColumnPicker.DragAndDropColumn(start, finish);
+		}
+
+		[When(@"I drag the Column '(.*)' to position '(.*)' in the ColumnPicker")]
+		public static void ColumnPicker_ColumnMoveTo(string target, int position)
+		{
+			App.ColumnPicker.DragAndDropColumn(target, position);
 		}
 
 		[Then(@"the ColumnSortPicker should be visible")]

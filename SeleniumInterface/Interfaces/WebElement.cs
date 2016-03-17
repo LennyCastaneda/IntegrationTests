@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 
@@ -196,6 +197,28 @@ namespace ReloadedInterface.Interfaces
 		public void DragAndDropTo(WebDriver driver, int offsetX, int offsetY)
 		{
 			driver.DragAndDropTo(_element, offsetX, offsetY);
+		}
+
+		/// <summary>
+		/// Returns the text of the current element, with all child node text removed.
+		/// </summary>
+		/// <returns></returns>
+		public string GetNodeText
+		{
+			get
+			{
+				var result = this.Text;
+				foreach (WebElement element in this.FindElements(ByMethod.CssSelector, "*"))
+				{
+					// Must only remove first instance of each substring.
+					int index = result.IndexOf(element.Text);
+					if (index != -1)
+					{
+						result = result.Remove(index, element.Text.Length);
+					}
+				}
+				return result;
+			}
 		}
 	}
 }

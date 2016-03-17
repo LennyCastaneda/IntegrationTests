@@ -9,6 +9,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		FindBy ListItemsBy = new FindBy(ByMethod.CssSelector, "ul[ui-sortable=sortableOptions] li");
 		FindBy TrashIconBy = new FindBy(ByMethod.CssSelector, ".mdi-delete");
 		FindBy ArrowIconBy = new FindBy(ByMethod.CssSelector, ".mdi-arrow-down");
+		FindBy DragIconBy = new FindBy(ByMethod.CssSelector, ".mdi-drag-vertical");
 
 		public ColumnPickerPartial(WebDriver driver) : base(driver) { }
 
@@ -141,6 +142,21 @@ namespace ReloadedFramework.Model.ModalObjects
 			GetListItem(source).DragAndDrop(_driver, GetListItem(target));
 			return this;
 		}
+
+		public ColumnPickerPartial DragAndDropColumn(string source, int targetPosition)
+		{
+			WebElement target = _driver.FindElement(ByMethod.CssSelector,
+				".modal-body ul[ui-sortable=sortableOptions] li:nth-child(" + targetPosition + ") .mdi-drag-vertical");
+
+			// Get source from Item Name.
+			var src = GetListItem(source).FindElement(DragIconBy);
+
+			// Calculate the distance the mouse is required to move.
+			int offsetY = target.Location.Y - src.Location.Y;
+			src.DragAndDropTo(_driver, 0, offsetY);
+			return this;
+		}
+
 
 		/// <summary>
 		/// Returns true if column (name) is at (position) in the Column List.

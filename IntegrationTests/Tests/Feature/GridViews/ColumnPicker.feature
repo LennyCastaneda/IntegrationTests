@@ -7,7 +7,7 @@ Background:
 Scenario: Adding a column
 	Given the ColumnPicker is open
 	When the Column 'Body' is added
-	Then the Column 'Action' should be visible in the GridView
+	Then the Column 'Body' should be visible in the GridView
 	
 Scenario: Removing a column	
 	Given I open the ColumnPicker
@@ -16,7 +16,6 @@ Scenario: Removing a column
 	
 Scenario: Changing the order of a column
 	Given I open the ColumnPicker	
-	When I drag Column at position '1' to position '2' in the ColumnPicker
-	Then the ColumnPicker Column 'Action' should be at position '2'
-	And the ColumnPicker Column 'Created by' should be at position '1'
+	When I drag the Column 'Action' to position '1' in the ColumnPicker
+	Then the ColumnPicker Column 'Action' should be at position '1'
 		

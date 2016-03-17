@@ -14,6 +14,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 			App.Login.EnterUsername("Bons");
 			App = App.Login.Submit();
 			Page.Wait();
+			Page.Wait();
 			Page.RemoveDelay();
 		}
 	}
