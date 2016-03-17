@@ -1,5 +1,6 @@
 ﻿@Chrome
 Feature: ColumnPicker
+	Show that the Column Picker modal can be used to add, remove and reorder the visible columns in a grid view.
 
 Background: 
 	Given I open the WorkItems view

@@ -1,13 +1,12 @@
 ﻿using ReloadedFramework.Model.AbstractClasses;
 using ReloadedInterface.Interfaces;
-using System;
 using System.Drawing;
 
 namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 {
 	public class GridViewPartial : Driver
 	{
-		FindBy ThisBy = new FindBy(ByMethod.CssSelector, ".persistant_tab[style='display: block;'] div[ng-controller^='gridviewController']");
+		FindBy ThisBy = new FindBy(ByMethod.CssSelector, ".persistant_tab[style*='block'] div[ng-controller^='gridviewController']");
 		FindBy TableBy = new FindBy(ByMethod.CssSelector, "table");
 		FindBy ColumnsBy = new FindBy(ByMethod.CssSelector, "thead tr.header");
 		FindBy ColumnHandleBy = new FindBy(ByMethod.CssSelector, ".ui-resizable-handle");
@@ -166,13 +165,6 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 
 			var result = GetRow(row - 1).FindElements(ByMethod.CssSelector, "td")[index].Text;
 			return result;
-		}
-
-		private string GetCurrentElementText(WebElement element)
-		{
-			
-
-			return "";
 		}
 
 		/// <summary>

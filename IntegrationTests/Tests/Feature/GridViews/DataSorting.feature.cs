@@ -33,7 +33,9 @@ namespace IntegrationTests.Tests.Feature.GridViews
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DataSorting", "", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DataSorting", "Show that through the Column Sort Order Picker a user can change the ordering of " +
+                    "a gridview.\nAlso show the ability to add multiple concatenated sorting and chang" +
+                    "e their order.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -68,8 +70,8 @@ namespace IntegrationTests.Tests.Feature.GridViews
         
         public virtual void FeatureBackground()
         {
-#line 4
-#line 5
+#line 6
+#line 7
  testRunner.Given("I open the WorkItems view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
@@ -79,17 +81,17 @@ namespace IntegrationTests.Tests.Feature.GridViews
         public virtual void AddASortOrder()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a Sort Order", ((string[])(null)));
-#line 7
-this.ScenarioSetup(scenarioInfo);
-#line 4
-this.FeatureBackground();
-#line 8
- testRunner.Given("I have opened the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.When("I add the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 10
- testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have opened the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
+ testRunner.When("I add the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+ testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
  testRunner.Then("the GridView Table first row column \'Action\' text should be \'Purchase\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -100,19 +102,19 @@ this.FeatureBackground();
         public virtual void ChangeTheSortOrder()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change the Sort Order", ((string[])(null)));
-#line 13
-this.ScenarioSetup(scenarioInfo);
-#line 4
-this.FeatureBackground();
-#line 14
- testRunner.Given("I have opened the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
- testRunner.When("I add the column \'Subject\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 16
- testRunner.And("I click the arrow on column \'Subject\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have opened the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 17
- testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I add the column \'Subject\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
+ testRunner.And("I click the arrow on column \'Subject\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
  testRunner.Then("the GridView Table first row column \'Subject\' text should be \'Porta placerat\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -123,21 +125,21 @@ this.FeatureBackground();
         public virtual void AddMultipleSortingColumns()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add multiple sorting columns", ((string[])(null)));
-#line 20
-this.ScenarioSetup(scenarioInfo);
-#line 4
-this.FeatureBackground();
-#line 21
- testRunner.Given("I have opened the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
- testRunner.When("I add the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 23
- testRunner.And("I add the column \'Subject\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have opened the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 24
- testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I add the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
- testRunner.Then("the GridView cell at row \'1\' column \'Action\' should equal \'Purchase\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I add the column \'Subject\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
+ testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.Then("the GridView cell at row \'1\' column \'Action\' should equal \'Purchase\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 28
  testRunner.And("the GridView cell at row \'1\' column \'Subject\' should equal \'Suspendisse ipsum ris" +
                     "us,\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -149,21 +151,21 @@ this.FeatureBackground();
         public virtual void ChangeTheColumnOrderForSorting()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change the Column Order for Sorting", ((string[])(null)));
-#line 28
-this.ScenarioSetup(scenarioInfo);
-#line 4
-this.FeatureBackground();
-#line 29
- testRunner.Given("I have opened the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 30
- testRunner.When("I add the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 31
- testRunner.And("I add the column \'Subject\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have opened the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
- testRunner.And("I drag column at position \'1\' to position \'2\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I add the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
- testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I add the column \'Subject\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
+ testRunner.And("I drag column at position \'1\' to position \'2\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
  testRunner.Then("the GridView cell at row \'1\' column \'Subject\' should equal \'Suspendisse ipsum ris" +
                     "us,\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -175,19 +177,19 @@ this.FeatureBackground();
         public virtual void RemoveASortOrder()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove a sort order", ((string[])(null)));
-#line 36
-this.ScenarioSetup(scenarioInfo);
-#line 4
-this.FeatureBackground();
-#line 37
- testRunner.Given("I have opened the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 38
- testRunner.When("I add the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
 #line 39
- testRunner.And("I remove the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have opened the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 40
- testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I add the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 41
+ testRunner.And("I remove the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
  testRunner.Then("the GridView cell at row \'1\' column \'Subject\' should equal \'Porta placerat\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.GridViews
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Groups", "", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Groups", "Show that the data in a grid view can be \"Grouped\" by the available columns.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -68,8 +68,8 @@ namespace IntegrationTests.Tests.Feature.GridViews
         
         public virtual void FeatureBackground()
         {
-#line 4
 #line 5
+#line 6
  testRunner.Given("I open the WorkItems view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
@@ -79,17 +79,17 @@ namespace IntegrationTests.Tests.Feature.GridViews
         public virtual void OpenGroupPicker()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Group Picker", ((string[])(null)));
-#line 7
-this.ScenarioSetup(scenarioInfo);
-#line 4
-this.FeatureBackground();
 #line 8
- testRunner.Given("I open the GroupPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
+#line 5
+this.FeatureBackground();
 #line 9
- testRunner.When("I group by \'Action\' in the GroupPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I open the GroupPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.And("I click Apply in the GroupPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I group by \'Action\' in the GroupPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
+ testRunner.And("I click Apply in the GroupPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
  testRunner.Then("the GridView should have a subheader that starts with \'Action\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

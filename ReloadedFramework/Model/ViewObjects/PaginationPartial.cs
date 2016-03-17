@@ -5,7 +5,8 @@ namespace ReloadedFramework.Model.ViewObjects
 {
 	public class PaginationPartial : Driver
 	{
-		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "durell-paginator");
+		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, ".pagination-controls");
+		private FindBy DropDownBy = new FindBy(ByMethod.CssSelector, "#durell-paginator-itemselect");
 
 		public PaginationPartial(WebDriver driver) : base(driver) { }
 
@@ -16,13 +17,15 @@ namespace ReloadedFramework.Model.ViewObjects
 		/// <param name="parentBy"></param>
 		public PaginationPartial(WebDriver driver, FindBy parentBy) : base(driver)
 		{
-			ThisBy = new FindBy(ThisBy.Method, parentBy.Selector + ThisBy.Selector);
+			ThisBy = new FindBy(ThisBy.Method, parentBy.Selector + " " + ThisBy.Selector);
 		}
 
 		public PaginationPartial SelectItemsPerPage(string value)
 		{
-			_driver.FindElement(ThisBy).FindElement(ByMethod.CssSelector, "#durell-paginator-itemselect").Click();
-			_driver.FindElement(ThisBy).FindElement(ByMethod.CssSelector, "#durell-paginator-itemselect option[label='" + value + "']").Click();
+			var dropDown = _driver.FindElement(ThisBy).FindElement(DropDownBy);
+			dropDown.MoveToElement(_driver);
+			dropDown.Click();
+			dropDown.FindElement(ByMethod.CssSelector, "option[label='" + value + "']").Click();
 			return this;
 		}
 

@@ -21,13 +21,5 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes.Home
 			menuOptions.Find(x => x.FindElement(ByMethod.CssSelector, "a").Text == option).Click();
 			return this;
 		}
-
-		public PaginationPartial Paginator
-		{
-			get
-			{
-				return new PaginationPartial(_driver);
-			}
-		}
 	}
 }

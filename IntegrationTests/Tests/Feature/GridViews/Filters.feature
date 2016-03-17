@@ -1,5 +1,6 @@
 ﻿@Chrome
 Feature: Filters
+	Show that through the Filter Picker a user can change the data visible in the gridview.
 
 Background:
 	Given I open the WorkItems view

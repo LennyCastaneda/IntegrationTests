@@ -66,5 +66,11 @@ namespace IntegrationTests.Tests.StepDefinitions
 		{
 			Assert.That(App.View.GridView.GetCellValue(row, columnname) == text);
 		}
+
+		[Then(@"the GridView should show '(.*)' rows")]
+		public void GridView_Row_Count(int count)
+		{
+			Assert.That(App.View.GridView.RowCount == count);
+		}
 	}
 }

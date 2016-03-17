@@ -160,7 +160,6 @@ namespace ReloadedInterface.Interfaces
 			_driver.SwitchTo().Alert().Accept();
 		}
 
-
 		public void AlertDismiss()
 		{
 			_driver.SwitchTo().Alert().Dismiss();
@@ -180,6 +179,24 @@ namespace ReloadedInterface.Interfaces
 					return false;
 				}
 			}
+		}
+
+		/// <summary>
+		/// Moves the mouse to the specified element.
+		/// </summary>
+		/// <param name="element"></param>
+		protected internal void MoveToElement(IWebElement element)
+		{
+			((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(" + element.Location.X + ", " + element.Location.Y + ")");
+		}
+
+		/// <summary>
+		/// Moves the mouse to the specified element.
+		/// </summary>
+		/// <param name="element"></param>
+		public void MoveToElement(FindBy itemby)
+		{
+			MoveToElement(_driver.FindElement(Common.GetBy(itemby.Method, itemby.Selector)));
 		}
 	}
 }

@@ -1,5 +1,7 @@
 ﻿@Chrome
 Feature: DataSorting
+	Show that through the Column Sort Order Picker a user can change the ordering of a gridview.
+	Also show the ability to add multiple concatenated sorting and change their order.
 
 Background: 
 	Given I open the WorkItems view

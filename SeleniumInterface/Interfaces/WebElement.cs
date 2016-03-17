@@ -220,5 +220,10 @@ namespace ReloadedInterface.Interfaces
 				return result;
 			}
 		}
+
+		public void MoveToElement(WebDriver driver)
+		{
+			driver.MoveToElement(_element);
+		}
 	}
 }
