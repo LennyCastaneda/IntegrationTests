@@ -89,6 +89,8 @@ this.FeatureBackground();
 #line 10
  testRunner.When("the Column \'Body\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
+ testRunner.And("the ColumnPicker \'Apply\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
  testRunner.Then("the Column \'Body\' should be visible in the GridView", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -99,15 +101,17 @@ this.FeatureBackground();
         public virtual void RemovingAColumn()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Removing a column", ((string[])(null)));
-#line 13
+#line 14
 this.ScenarioSetup(scenarioInfo);
 #line 5
 this.FeatureBackground();
-#line 14
- testRunner.Given("I open the ColumnPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
- testRunner.When("the Column \'Action\' is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I open the ColumnPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 16
+ testRunner.When("the Column \'Action\' is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+ testRunner.And("the ColumnPicker \'Apply\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
  testRunner.Then("the Column \'Action\' should not be visible in the GridView", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -118,16 +122,37 @@ this.FeatureBackground();
         public virtual void ChangingTheOrderOfAColumn()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changing the order of a column", ((string[])(null)));
-#line 18
+#line 20
 this.ScenarioSetup(scenarioInfo);
 #line 5
 this.FeatureBackground();
-#line 19
- testRunner.Given("I open the ColumnPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
- testRunner.When("I drag the Column \'Action\' to position \'1\' in the ColumnPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
+ testRunner.Given("I open the ColumnPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 22
+ testRunner.When("I drag the Column \'Action\' to position \'1\' in the ColumnPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
  testRunner.Then("the ColumnPicker Column \'Action\' should be at position \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Changing the order of a column in the gridview")]
+        public virtual void ChangingTheOrderOfAColumnInTheGridview()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changing the order of a column in the gridview", ((string[])(null)));
+#line 25
+this.ScenarioSetup(scenarioInfo);
+#line 5
+this.FeatureBackground();
+#line 26
+ testRunner.Given("I open the ColumnPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 27
+ testRunner.When("I drag the Column \'Action\' to position \'1\' in the ColumnPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
+ testRunner.And("the ColumnPicker \'Apply\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.Then("the GridView Header at position \'1\' shoud be \'Action\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

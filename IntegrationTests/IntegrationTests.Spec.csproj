@@ -181,6 +181,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InteractiveGrid.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Feature\SavingViewsAndConfigs\SaveViewAs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaveViewAs.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ColumnPickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ColumnSortPicker.cs" />
@@ -290,6 +295,10 @@
     <None Include="Tests\Feature\GridViews\InteractiveGrid.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>InteractiveGrid.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\SavingViewsAndConfigs\SaveViewAs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SaveViewAs.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

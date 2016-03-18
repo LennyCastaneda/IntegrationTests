@@ -5,7 +5,7 @@ namespace ReloadedFramework.Model.ModalObjects
 {
 	public class ColumnPickerPartial : Modal
 	{
-		FindBy DropDownBy = new FindBy(ByMethod.CssSelector, ".addnewcol");
+		FindBy DropDownBy = new FindBy(ByMethod.CssSelector, ".input-holder");
 		FindBy ListItemsBy = new FindBy(ByMethod.CssSelector, "ul[ui-sortable=sortableOptions] li");
 		FindBy TrashIconBy = new FindBy(ByMethod.CssSelector, ".mdi-delete");
 		FindBy ArrowIconBy = new FindBy(ByMethod.CssSelector, ".mdi-arrow-down");
@@ -61,7 +61,9 @@ namespace ReloadedFramework.Model.ModalObjects
 		public ColumnPickerPartial DropDownOption(string name)
 		{
 			Body.FindElement(DropDownBy)
-				.FindElement(ByMethod.CssSelector, "option[label='" + name + "']").Click();
+				.FindElements(ByMethod.CssSelector, "span")
+				.Find(x => StringsAreEqual(x.FindElement(ByMethod.CssSelector, "label").GetNodeText, name))
+				.Click();
 			return this;
 		}
 

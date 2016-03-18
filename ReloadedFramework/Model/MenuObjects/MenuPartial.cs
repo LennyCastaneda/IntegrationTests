@@ -5,7 +5,7 @@ namespace ReloadedFramework.Model
 {
 	public class MenuPartial : Driver
 	{
-		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.sidebar");
+		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#ngBody nav.sidebar");
 		private FindBy MenuButtonBy = new FindBy(ByMethod.CssSelector, "#ngBody .reloaded-icon-button");
 		private FindBy MenuItemsBy = new FindBy(ByMethod.CssSelector, ".sidebar ul li");
 

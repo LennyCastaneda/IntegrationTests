@@ -5,6 +5,7 @@ namespace ReloadedFramework.Model
 {
 	public class ConfigurationMenuPartial : Driver
 	{
+		FindBy IconBy = new FindBy(ByMethod.CssSelector, "mdi-view-quilt");
 		FindBy ThisBy = new FindBy(ByMethod.CssSelector, ".configuration-menu");
 		FindBy ChooseThemeBy = new FindBy(ByMethod.CssSelector, "ul li .mdi-invert-colors");
 		FindBy SaveBy = new FindBy(ByMethod.CssSelector, "ul li .mdi-content-save");
@@ -23,7 +24,7 @@ namespace ReloadedFramework.Model
 
 		public ConfigurationMenuPartial Open()
 		{
-			_driver.FindElement(ThisBy).Click();
+			_driver.FindElement(IconBy).Click();
 			return this;
 		}
 

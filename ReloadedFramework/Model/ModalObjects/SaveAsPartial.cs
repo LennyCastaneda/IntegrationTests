@@ -3,10 +3,17 @@ using ReloadedInterface.Interfaces;
 
 namespace ReloadedFramework.Model.ModalObjects
 {
-	public class SaveAsPartial : Driver
+	public class SaveAsPartial : Modal
 	{
-		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#myModal .modal-content");
+		FindBy NameAs = new FindBy(ByMethod.CssSelector, "div input");
 
 		public SaveAsPartial(WebDriver driver) : base(driver) { }
+
+		public SaveAsPartial EnterName(string name)
+		{
+			Body.FindElement(NameAs).Clear();
+			Body.FindElement(NameAs).SendKeys(name);
+			return this;
+		}
 	}
 }

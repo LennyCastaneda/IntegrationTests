@@ -113,12 +113,15 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>
-		public int ColumnPosition(string name)
+		public int ColumnPosition(string columnname)
 		{
-			return _driver.FindElement(ThisBy)
-				.FindElement(TableBy)
-				.FindElements(ColumnsBy)
-				.FindIndex(x => x.Text == name);
+			var elements = _driver.FindElement(ThisBy)
+							.FindElement(TableBy)
+							.FindElements(ColumnsBy);
+			int index = elements[0]
+						.FindElements(ByMethod.CssSelector, "th")
+						.FindIndex(x => StringsAreEqual(x.GetNodeText, columnname));
+			return index + 1;
 		}
 
 		/// <summary>

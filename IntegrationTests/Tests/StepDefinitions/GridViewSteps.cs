@@ -55,6 +55,12 @@ namespace IntegrationTests.Tests.StepDefinitions
 			Assert.That(App.View.GridView.SubHeaderStartsWith(name));
 		}
 
+		[Then(@"the GridView Header at position '(.*)' shoud be '(.*)'")]
+		public static void GridView_Header_Name(int position, string columnname)
+		{
+			Assert.That(App.View.GridView.ColumnPosition(columnname) == position);
+		}
+
 		[Then(@"the GridView Table first row column '(.*)' text should be '(.*)'")]
 		public static void GridView_Row1_Column(string columnname, string text)
 		{

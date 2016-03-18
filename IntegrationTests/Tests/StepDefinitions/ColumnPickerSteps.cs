@@ -14,6 +14,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 			ToolBarSteps.Cog_Click();
 			ToolBarSteps.WhenTheToolBarDropdownItemIsClicked("Columns");
 		}
+
 		[When(@"I add the column '(.*)' in the ColumnSortPicker")]
 		[When(@"I add the Column '(.*)' from the ColumnPicker")]
 		[When(@"the Column '(.*)' is added")]

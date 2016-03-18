@@ -1,5 +1,5 @@
 ﻿@Chrome
-Feature: CheckConfigurationMenu
+Feature: ConfigurationMenu
 
 Scenario: the ConfigurationMenu is open
 	Given Reloaded is open

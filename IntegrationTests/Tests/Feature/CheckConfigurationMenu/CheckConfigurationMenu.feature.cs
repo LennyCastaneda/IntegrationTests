@@ -19,9 +19,9 @@ namespace IntegrationTests.Tests.Feature.CheckConfigurationMenu
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CheckConfigurationMenu")]
+    [NUnit.Framework.DescriptionAttribute("ConfigurationMenu")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class CheckConfigurationMenuFeature
+    public partial class ConfigurationMenuFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.CheckConfigurationMenu
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CheckConfigurationMenu", "", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ConfigurationMenu", "", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
