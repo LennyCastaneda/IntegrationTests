@@ -144,7 +144,7 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 		/// </summary>
 		/// <param name="rownum"></param>
 		/// <returns></returns>
-		public WebElement GetRow(int index)
+		private WebElement GetRow(int index)
 		{
 			return _driver.FindElement(ThisBy)
 				.FindElement(TableBy)
@@ -181,6 +181,12 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 				.FindElement(TableBy)
 				.FindElements(ByMethod.CssSelector, "thead .subheader th")
 				.Find(x => x.Text.Trim().ToLower().StartsWith(substring.ToLower())) != null;
+		}
+
+		public ItemViewPartial DoubleClickRow(int num)
+		{
+			GetRow(num).DoubleClick(_driver);
+			return new ItemViewPartial(_driver);
 		}
 	}
 }

@@ -19,5 +19,17 @@ namespace IntegrationTests.Tests.StepDefinitions
 		{
 			Assert.That(App.View.Loading);
 		}
+
+		[Then(@"the active view should be a GridView")]
+		public static void View_ActiveType_GridView()
+		{
+			Assert.That(App.View.GridView.IsVisible);
+		}
+
+		[Then(@"the active view should be an ItemView")]
+		public static void View_ActiveType_ItemView()
+		{
+			Assert.That(App.View.ItemView.IsVisible);
+		}
 	}
 }

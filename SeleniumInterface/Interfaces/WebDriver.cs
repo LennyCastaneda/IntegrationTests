@@ -198,5 +198,10 @@ namespace ReloadedInterface.Interfaces
 		{
 			MoveToElement(_driver.FindElement(Common.GetBy(itemby.Method, itemby.Selector)));
 		}
+
+		protected internal void DoubleClick(IWebElement element)
+		{
+			(new Actions(_driver)).DoubleClick(element).Build().Perform();
+		}
 	}
 }

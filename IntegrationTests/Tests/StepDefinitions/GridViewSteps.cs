@@ -78,5 +78,12 @@ namespace IntegrationTests.Tests.StepDefinitions
 		{
 			Assert.That(App.View.GridView.RowCount == count);
 		}
+
+		[When(@"the GridView row '(.*)' is double-clicked")]
+		[When(@"I double-click row '(.*)' in the GridView")]
+		public static void GridView_Row_Click(int row)
+		{
+			App.View.GridView.DoubleClickRow(row);
+		}
 	}
 }

@@ -79,6 +79,11 @@ namespace ReloadedInterface.Interfaces
 			Wait(500);
 		}
 
+		public void DoubleClick(WebDriver _driver)
+		{
+			_driver.DoubleClick(_element);
+		}
+
 		public void RightClick(WebDriver driver)
 		{
 			ExplicitWait(() =>

@@ -45,6 +45,14 @@ namespace ReloadedFramework.Model.ViewObjects
 			}
 		}
 
+		public ItemViewPartial ItemView
+		{
+			get
+			{
+				return new ItemViewPartial(_driver);
+			}
+		}
+
 		public bool Loading
 		{
 			get

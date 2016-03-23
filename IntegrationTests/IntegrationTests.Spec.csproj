@@ -91,21 +91,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Paging.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\OpenConfigurations1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OpenConfigurations.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\OpenMenuBar1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OpenMenuBar.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\OpenReloaded.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OpenReloaded.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\Feature\GridViews\ColumnPicker.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +110,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>InteractiveGrid.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\ItemViews\AllFields.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllFields.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\Feature\SavingViewsAndConfigs\SaveConfig.feature.cs">
       <AutoGen>True</AutoGen>
@@ -185,18 +175,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Paging.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\OpenReloaded\OpenConfigurations.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenConfigurations1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\OpenReloaded\OpenMenuBar.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenMenuBar1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\OpenReloaded\OpenReloaded.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenReloaded.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\Feature\GridViews\ColumnPicker.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnPicker.feature.cs</LastGenOutput>
@@ -212,6 +190,10 @@
     <None Include="Tests\Feature\GridViews\InteractiveGrid.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>InteractiveGrid.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\ItemViews\AllFields.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AllFields.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\SavingViewsAndConfigs\SaveConfig.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

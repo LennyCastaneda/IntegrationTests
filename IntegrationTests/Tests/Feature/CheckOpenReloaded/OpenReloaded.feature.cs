@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace IntegrationTests.Tests.Feature.OpenReloaded
+namespace IntegrationTests.Tests.Feature.CheckOpenReloaded
 {
     using TechTalk.SpecFlow;
     
