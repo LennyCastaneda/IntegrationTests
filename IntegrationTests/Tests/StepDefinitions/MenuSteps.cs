@@ -6,7 +6,23 @@ namespace IntegrationTests.Tests.StepDefinitions
 {
 	[Binding]
 	public sealed class MenuSteps : TestBase
-	{ 
+	{
+		[When("I open the '(.*)' view from the '(.*)' module")]
+		public static void Menu_Open_View(string view, string module)
+		{
+			MenuSteps.Menu_Open();
+			MenuSteps.Menu_Item_Click(module);
+			MenuSteps.Menu_SubItem_Click(view);
+		}
+
+		[Then("the view '(.*)' should be visible in the '(.*)' module")]
+		public static void Menu_Item_Exists(string view, string module)
+		{
+			MenuSteps.Menu_Open();
+			MenuSteps.Menu_Item_Click(module);
+			MenuSteps.Menu_Item_IsVisible(view);
+		}
+
 		[When("the Menu icon is clicked")]
 		public static void Menu_Open()
 		{

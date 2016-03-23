@@ -43,6 +43,11 @@ namespace ReloadedFramework.Model.ViewObjects
 			return this;
 		}
 
+		/// <summary>
+		/// Returns true if the Tab with 'name' is open.
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
 		public bool TabExists(string name)
 		{
 			var result = FindTabByName(name);

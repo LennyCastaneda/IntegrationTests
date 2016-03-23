@@ -5,7 +5,7 @@ namespace ReloadedFramework.Model
 {
 	public class ConfigurationMenuPartial : Driver
 	{
-		FindBy IconBy = new FindBy(ByMethod.CssSelector, "mdi-view-quilt");
+		FindBy IconBy = new FindBy(ByMethod.CssSelector, ".mdi-view-quilt");
 		FindBy ThisBy = new FindBy(ByMethod.CssSelector, ".configuration-menu");
 		FindBy ChooseThemeBy = new FindBy(ByMethod.CssSelector, "ul li .mdi-invert-colors");
 		FindBy SaveBy = new FindBy(ByMethod.CssSelector, "ul li .mdi-content-save");
@@ -22,27 +22,52 @@ namespace ReloadedFramework.Model
 			}
 		}
 
+		/// <summary>
+		/// Clicks the ConfigurationMenu Icon in the top right corner.
+		/// </summary>
+		/// <returns></returns>
 		public ConfigurationMenuPartial Open()
 		{
 			_driver.FindElement(IconBy).Click();
 			return this;
 		}
 
+		/// <summary>
+		/// Clicks the configuration with 'name'.
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
 		public ConfigurationMenuPartial SelectConfiguration(string name)
 		{
-			_driver.FindElement(ThisBy)
-				.FindElements(ConfigsBy)
-				.Find(x => x.Text == name)
-				.Click();
+			FindConfigByName(name).Click();
 			return this;
+		}
+
+		/// <summary>
+		/// Returns true if the configuration with 'name' exists in the ConfigurationMenu.
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public bool ConfigExists(string name)
+		{
+			return FindConfigByName(name) != null;
+		}
+
+		/// <summary>
+		/// Finds the configuration with 'name'.
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		private WebElement FindConfigByName(string name)
+		{
+			return _driver.FindElement(ThisBy)
+					.FindElements(ConfigsBy)
+					.Find(x => StringCompare(x.Text, name));
 		}
 
 		public bool ConfigurationIsActive(string name)
 		{
-			return _driver.FindElement(ThisBy)
-				.FindElements(ConfigsBy)
-				.Find(x => x.Text == name)
-				.FindElement(ByMethod.CssSelector, ".mdi-check") != null;
+			return FindConfigByName(name).FindElement(ByMethod.CssSelector, ".mdi-check") != null;
 		}
 
 		public ConfigurationMenuPartial ChooseTheme()

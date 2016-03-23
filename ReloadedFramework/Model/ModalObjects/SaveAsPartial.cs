@@ -15,5 +15,15 @@ namespace ReloadedFramework.Model.ModalObjects
 			Body.FindElement(NameAs).SendKeys(name);
 			return this;
 		}
+
+		public void Save()
+		{
+			FindButton("Save").Click();
+		}
+
+		public void Cancel()
+		{
+			FindButton("Cancel").Click();
+		}
 	}
 }

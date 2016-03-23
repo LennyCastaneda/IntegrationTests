@@ -3,33 +3,11 @@ using ReloadedInterface.Interfaces;
 
 namespace ReloadedFramework.Model.ModalObjects
 {
-	public class ThemePickerPartial : Driver
+	public class ThemePickerPartial : Modal
 	{
-		FindBy ThisBy = new FindBy(ByMethod.CssSelector, ".themes-holder");
-		FindBy IsOpenBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-body > div.themes-holder");
-		FindBy CloseBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-footer > button[ng-click='revertTheme()']");
-		FindBy ApplyToViewBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-footer > button[ng-click='applySelectedTheme(\\'view\\')']");
-		FindBy ApplyToConfigBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-footer > button[ng-click='applySelectedTheme(\\'configuration\\')']");
-		FindBy ColoursBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-body > div > div > p");
-		//FindBy AddNewBy = new FindBy(ByMethod.CssSelector, "#myModal > div.modal-dialog.ng-scope > div > div.modal-body > div > a > p");
+		FindBy ColoursBy = new FindBy(ByMethod.CssSelector, ".theme .name");
 
 		public ThemePickerPartial(WebDriver driver) : base(driver) { }
-
-		/// <summary>
-		/// Returns true if the Partial is visible to the user.
-		/// </summary>
-		public bool IsVisible
-		{
-			get
-			{
-				var result = _driver.FindElement(ThisBy);
-				if (result != null && !result.GetAttribute("style").Contains("display: none"))
-				{
-					return result.IsVisible;
-				}
-				return false;
-			}
-		}
 
 		/// <summary>
 		/// Clicks 'Cancel'.
@@ -37,7 +15,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ThemePickerPartial Cancel()
 		{
-			_driver.FindElement(CloseBy).Click();
+			FindButton("Cancel").Click();
 			return this;
 		}
 
@@ -47,7 +25,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ThemePickerPartial ApplyToView()
 		{
-			_driver.FindElement(ApplyToViewBy).Click(500);
+			FindButton("Apply to View").Click(500);
 			return this;
 		}
 
@@ -57,7 +35,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ThemePickerPartial ApplyToConfiguration()
 		{
-			_driver.FindElement(ApplyToConfigBy).Click(500);
+			FindButton("Apply to Configuration").Click(500);
 			return this;
 		}
 
@@ -68,18 +46,8 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ThemePickerPartial Colour(string colour)
 		{
-			_driver.FindElements(ColoursBy).Find(x => x.Text == colour).Click();
+			Body.FindElements(ColoursBy).Find(x => StringCompare(x.Text, colour)).Click();
 			return this;
 		}
-
-		/// <summary>
-		/// Clicks the 'Add New' colour option.
-		/// </summary>
-		/// <returns></returns>
-		//public ThemePickerPartial AddNew()
-		//{
-		//	_driver.FindElement(AddNewBy).Click();
-		//	return this;
-		//}
 	}
 }

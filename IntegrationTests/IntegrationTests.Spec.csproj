@@ -81,61 +81,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AllRecords.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckColumnPicker\CheckColumnPicker.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckColumnPicker.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckConfigurationMenu\CheckConfigurationMenu.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckConfigurationMenu.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckMenu\CheckMenu1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckMenu.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckTabContextMenu\CheckTabContextMenu.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckTabContextMenu.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckThemePicker\CheckThemePicker1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckThemePicker.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBar1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckToolBar.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckToolBarDropDowns.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckViews\CheckGridView\CheckGridView.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckGridView.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckNewsFeed.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckSystemMessages1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckSystemMessages.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\CheckWorkflow\CheckWorkflow1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckWorkflow.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\Feature\GridViews\DataSorting.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,6 +126,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InteractiveGrid.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Feature\SavingViewsAndConfigs\SaveConfig.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaveConfig.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\SavingViewsAndConfigs\SaveConfigAs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaveConfigAs.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Feature\SavingViewsAndConfigs\SaveView.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaveView.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Feature\SavingViewsAndConfigs\SaveViewAs.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,6 +162,7 @@
     <Compile Include="Tests\StepDefinitions\TemplateSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ThemePickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ToolBarSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\SaveAsSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ViewSteps.cs" />
     <Compile Include="Tests\StepDefinitions\WorkFlowToolSteps.cs" />
     <Compile Include="Tests\TestBase.cs" />
@@ -215,50 +176,6 @@
     <None Include="Tests\Feature\GridViews\AllRecords.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AllRecords.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckColumnPicker\CheckColumnPicker.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckColumnPicker.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckConfigurationMenu\CheckConfigurationMenu.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckConfigurationMenu.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckMenu\CheckMenu.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckMenu1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckTabContextMenu\CheckTabContextMenu.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckTabContextMenu.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckThemePicker\CheckThemePicker.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckThemePicker1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckToolBar\CheckToolBar.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckToolBar1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckToolBarDropDowns1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckViews\CheckGridView\CheckGridView.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckGridView.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckNewsFeed1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckViews\CheckHome\CheckSystemMessages.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckSystemMessages1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\CheckWorkflow\CheckWorkflow.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckWorkflow1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\GridViews\DataSorting.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -295,6 +212,18 @@
     <None Include="Tests\Feature\GridViews\InteractiveGrid.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>InteractiveGrid.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\SavingViewsAndConfigs\SaveConfig.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SaveConfig.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\SavingViewsAndConfigs\SaveConfigAs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SaveConfigAs.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Feature\SavingViewsAndConfigs\SaveView.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SaveView.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Feature\SavingViewsAndConfigs\SaveViewAs.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

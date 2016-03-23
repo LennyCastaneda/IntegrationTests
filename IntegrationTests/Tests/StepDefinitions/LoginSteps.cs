@@ -8,7 +8,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 	{
 		[Given("I have logged into Reloaded")]
 		[When("I have logged into Reloaded")]
-		public void LogIn()
+		public static void LogIn()
 		{
 			//App.Login.EnterPassword("Password").EnterUsername("username").Submit();
 			App.Login.EnterUsername("Bons");

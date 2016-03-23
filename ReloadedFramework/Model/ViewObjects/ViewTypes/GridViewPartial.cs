@@ -38,7 +38,7 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 				.FindElement(TableBy)
 				.FindElements(ColumnsBy)[0]
 				.FindElements(ByMethod.CssSelector, "th")
-				.Find(x => StringsAreEqual(x.Text, name));
+				.Find(x => StringCompare(x.Text, name));
 		}
 
 		/// <summary>
@@ -120,7 +120,7 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 							.FindElements(ColumnsBy);
 			int index = elements[0]
 						.FindElements(ByMethod.CssSelector, "th")
-						.FindIndex(x => StringsAreEqual(x.GetNodeText, columnname));
+						.FindIndex(x => StringCompare(x.GetNodeText, columnname));
 			return index + 1;
 		}
 
@@ -164,7 +164,7 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 						.FindElements(ColumnsBy);
 			int index = elements[0]
 						.FindElements(ByMethod.CssSelector, "th")
-						.FindIndex(x => StringsAreEqual(x.GetNodeText, columnname));
+						.FindIndex(x => StringCompare(x.GetNodeText, columnname));
 
 			var result = GetRow(row - 1).FindElements(ByMethod.CssSelector, "td")[index].Text;
 			return result;

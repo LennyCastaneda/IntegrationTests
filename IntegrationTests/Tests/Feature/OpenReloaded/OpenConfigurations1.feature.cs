@@ -19,9 +19,9 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Check Open Configurations")]
+    [NUnit.Framework.DescriptionAttribute("Open Configurations")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class CheckOpenConfigurationsFeature
+    public partial class OpenConfigurationsFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Check Open Configurations", "A user should be able to expand the \'Configurations\' option in the Menu \r\nWhen a " +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Open Configurations", "A user should be able to expand the \'Configurations\' option in the Menu \r\nWhen a " +
                     "user clicks a subitem, a corresponding list of Tabs should open.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);

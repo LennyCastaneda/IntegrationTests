@@ -1,5 +1,5 @@
 ﻿@Chrome
-Feature: Check Open Configurations
+Feature: Open Configurations
 	A user should be able to expand the 'Configurations' option in the Menu 
 	When a user clicks a subitem, a corresponding list of Tabs should open.
 

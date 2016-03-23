@@ -7,6 +7,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 	[Binding]
 	public sealed class ColumnSortPicker : TestBase
 	{
+		[Given(@"I open the ColumnSortPicker")]
 		[Given(@"I have opened the ColumnSortPicker")]
 		public static void ColumnSortPicker_Open()
 		{

@@ -21,7 +21,7 @@ namespace ReloadedFramework.Model.AbstractClasses
 		/// <param name="one"></param>
 		/// <param name="two"></param>
 		/// <returns></returns>
-		public bool StringsAreEqual(string one, string two)
+		public bool StringCompare(string one, string two)
 		{
 			return one.Trim().ToLower() == two.Trim().ToLower();
 		}

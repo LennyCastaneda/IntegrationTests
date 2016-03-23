@@ -27,6 +27,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		}
 
 		[Then(@"the Tab '(.*)' should be visible")]
+		[Then(@"the Tab '(.*)' should be open")]
 		public static void Tab_IsVisible(string name)
 		{
 			Assert.That(App.View.Tabs.TabExists(name));

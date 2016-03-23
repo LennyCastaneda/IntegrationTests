@@ -1,5 +1,5 @@
 ﻿@Chrome
-Feature: Check Open and close Menu bar
+Feature: Open and close Menu bar
 	As a user I would like to open the menu bar.
 
 Scenario: Open and Close the Menu using the icons

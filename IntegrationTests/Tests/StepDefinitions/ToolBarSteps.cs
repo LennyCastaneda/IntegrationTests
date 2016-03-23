@@ -7,6 +7,22 @@ namespace IntegrationTests.Tests.StepDefinitions
 	[Binding]
 	public sealed class ToolBarSteps : TestBase
 	{
+		[When(@"I save the current View")]
+		public static void ToolBar_SaveView()
+		{
+			ToolBarSteps.Cog_Click();
+			ToolBarSteps.WhenTheToolBarDropdownItemIsClicked("Save View");
+		}
+
+		[When(@"I save the current View as '(.*)'")]
+		public static void ToolBar_SaveViewAs(string name)
+		{
+			ToolBarSteps.Cog_Click();
+			ToolBarSteps.WhenTheToolBarDropdownItemIsClicked("Save view as");
+			SaveAsSteps.SaveAs_EnterName(name);
+			SaveAsSteps.SaveAs_Save();
+		}
+
 		[When(@"the ToolBar 'Back' button is clicked")]
 		public static void Back_Click()
 		{
@@ -38,7 +54,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		}
 
 		[Then(@"the ToolBar Settings dropdown should be visible")]
-		public void ThenTheToolBarSettingsDropdownShouldBeVisible()
+		public static void ThenTheToolBarSettingsDropdownShouldBeVisible()
 		{
 			Assert.That(App.View.ToolBar.Cog.DropDownIsVisible);
 		}

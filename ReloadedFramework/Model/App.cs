@@ -16,6 +16,8 @@ namespace ReloadedFramework.Model
 	{
 		bool LoggedIn;
 
+		private FindBy BackgroundColourBy = new FindBy(ByMethod.CssSelector, "#ngBody .reloaded-nav-bar");
+
 		/// <summary>
 		/// Store variables to share between steps.
 		/// </summary>
@@ -99,12 +101,19 @@ namespace ReloadedFramework.Model
 			}
 		}
 
+		public SaveAsPartial SaveAs
+		{
+			get
+			{
+				return new SaveAsPartial(_driver);
+			}
+		}
+
 		public string BackgroundColour
 		{
 			get
 			{
-				var colour = _driver.FindElement(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar").GetCssValue("background-color");
-				return colour;
+				return _driver.FindElement(BackgroundColourBy).GetCssValue("background-color");
 			}
 		}
 	}

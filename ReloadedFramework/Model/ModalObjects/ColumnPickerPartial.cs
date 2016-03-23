@@ -34,16 +34,6 @@ namespace ReloadedFramework.Model.ModalObjects
 		}
 
 		/// <summary>
-		/// Clicks the 'X' in the top right corner of the modal.
-		/// </summary>
-		/// <returns></returns>
-		public ColumnPickerPartial Close()
-		{
-			Header.FindElement(ByMethod.CssSelector, "button").Click();
-			return this;
-		}
-
-		/// <summary>
 		/// Clicks the dropdown menu.
 		/// </summary>
 		/// <returns></returns>
@@ -62,7 +52,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		{
 			Body.FindElement(DropDownBy)
 				.FindElements(ByMethod.CssSelector, "span")
-				.Find(x => StringsAreEqual(x.FindElement(ByMethod.CssSelector, "label").GetNodeText, name))
+				.Find(x => StringCompare(x.FindElement(ByMethod.CssSelector, "label").GetNodeText, name))
 				.Click();
 			return this;
 		}
