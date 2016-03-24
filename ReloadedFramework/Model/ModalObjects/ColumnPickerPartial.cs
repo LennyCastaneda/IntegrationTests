@@ -50,10 +50,17 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial DropDownOption(string name)
 		{
-			Body.FindElement(DropDownBy)
+			var element = Body.FindElement(DropDownBy)
 				.FindElements(ByMethod.CssSelector, "span")
-				.Find(x => StringCompare(x.FindElement(ByMethod.CssSelector, "label").GetNodeText, name))
-				.Click();
+				.Find(x => StringCompare(x.FindElement(ByMethod.CssSelector, "label").GetNodeText, name));
+			if (element != null)
+			{
+				element.Click();
+			}
+			else
+			{
+				DropDown();
+			}
 			return this;
 		}
 

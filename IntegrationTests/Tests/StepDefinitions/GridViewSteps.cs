@@ -21,6 +21,13 @@ namespace IntegrationTests.Tests.StepDefinitions
 			App.View.GridView.ResizeColumn(name, -100);
 		}
 
+		[When(@"the GridView row '(.*)' is double-clicked")]
+		[When(@"I double-click row '(.*)' in the GridView")]
+		public static void GridView_Row_Click(int row)
+		{
+			App.View.GridView.DoubleClickRow(row);
+		}
+
 		[Then(@"the GridView Column '(.*)' width should have increased")]
 		public static void GridView_ColumnWidth_Increased(string name)
 		{
@@ -73,17 +80,16 @@ namespace IntegrationTests.Tests.StepDefinitions
 			Assert.That(App.View.GridView.GetCellValue(row, columnname) == text);
 		}
 
+		[Then(@"the GridView cell at row '(.*)' column '(.*)' should start with '(.*)'")]
+		public static void GridView_Row_Column_StartsWith(int row, string columnname, string text)
+		{
+			Assert.That(App.View.GridView.GetCellValue(row, columnname).StartsWith(text));
+		}
+
 		[Then(@"the GridView should show '(.*)' rows")]
 		public static void GridView_Row_Count(int count)
 		{
 			Assert.That(App.View.GridView.RowCount == count);
-		}
-
-		[When(@"the GridView row '(.*)' is double-clicked")]
-		[When(@"I double-click row '(.*)' in the GridView")]
-		public static void GridView_Row_Click(int row)
-		{
-			App.View.GridView.DoubleClickRow(row);
 		}
 	}
 }

@@ -109,6 +109,22 @@ namespace ReloadedFramework.Model
 			}
 		}
 
+		public DateSelectPartial DateSelectFilter
+		{
+			get
+			{
+				return new DateSelectPartial(_driver);
+			}
+		}
+
+		public StringSelectPartial StringSelectFilter
+		{
+			get
+			{
+				return new StringSelectPartial(_driver);
+			}
+		}
+
 		public string BackgroundColour
 		{
 			get

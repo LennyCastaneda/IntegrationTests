@@ -7,28 +7,38 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 	public class FilterPartial : Driver
 	{
 		private FindBy ThisBy;
-		private FindBy FieldBy = new FindBy(ByMethod.CssSelector, ".field-body .field select");
-		private FindBy FilterBy = new FindBy(ByMethod.CssSelector, ".field-body .output");
-		private FindBy OptionsBy = new FindBy(ByMethod.CssSelector, ".toolbar-buttons .mdi-dots-vertical");
+		private FindBy DropDownBy = new FindBy(".field-body");
+		private FindBy FieldItemsBy = new FindBy(".field .multi-dropdown-option-menu span.option-line label.ng-binding");
+		private FindBy FilterBy = new FindBy(".field-body .output");
+		private FindBy OptionsBy = new FindBy(".toolbar-buttons .mdi-dots-vertical");
 
 		public FilterPartial(WebDriver driver, FindBy findBy) : base(driver)
 		{
 			ThisBy = findBy;
 		}
 
+		/// <summary>
+		/// Clicks the DropDownMenu.
+		/// </summary>
+		/// <returns></returns>
 		public FilterPartial Field()
 		{
 			_driver.FindElement(ThisBy)
-				.FindElement(FieldBy)
+				.FindElement(DropDownBy)
 				.Click();
 			return this;
 		}
 
+		/// <summary>
+		/// Selects the Field 'name' from the DropDownMenu.
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
 		public FilterPartial SelectField(string name)
 		{
 			_driver.FindElement(ThisBy)
-				.FindElement(FieldBy)
-				.FindElement(ByMethod.CssSelector, "option[label='" + name + "']")
+				.FindElements(FieldItemsBy)
+				.Find(x => StringCompare(x.Text, name))
 				.Click();
 			return this;
 		}
@@ -43,35 +53,48 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 			return this;
 		}
 
+		/// <summary>
+		/// Control used when the Filter is a StringSelect.
+		/// </summary>
 		public StringSelectPartial StringSelectFilter
 		{
 			get
 			{
-				return new StringSelectPartial(_driver, FilterBy);
+				return new StringSelectPartial(_driver);
 			}
 		}
 
-		public ListSelectPartial ListSelectFilter
+		/// <summary>
+		/// Control used when the Filter is a ListSelect.
+		/// </summary>
+		public CheckedListPartial CheckedListFilter
 		{
 			get
 			{
-				return new ListSelectPartial(_driver, FilterBy);
+				return new CheckedListPartial(_driver, FilterBy);
 			}
 		}
 
+		/// <summary>
+		/// Control used when the Filter is a DateSelect.
+		/// </summary>
 		public DateSelectPartial DateSelectFilter
 		{
 			get
 			{
-				return new DateSelectPartial(_driver, FilterBy);
+				return new DateSelectPartial(_driver);
 			}
 		}
 
+		/// <summary>
+		/// Control used for the Options menu of this Filter.
+		/// </summary>
 		public ToolBarButtonPartial Options
 		{
 			get
 			{
-				return new ToolBarButtonPartial(_driver, new FindBy(OptionsBy.Method, ThisBy.Selector + OptionsBy.Selector));
+				var newFindBy = new FindBy(ThisBy.Selector + OptionsBy.Selector);
+				return new ToolBarButtonPartial(_driver, newFindBy);
 			}
 		}
 	}

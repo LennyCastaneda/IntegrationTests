@@ -29,6 +29,16 @@ namespace ReloadedInterface.Interfaces
 			Method = method;
 			Selector = selector;
 		}
+
+		/// <summary>
+		/// Defaults to ByMethod.CssSelector.
+		/// </summary>
+		/// <param name="selector"></param>
+		public FindBy(string selector)
+		{
+			Method = ByMethod.CssSelector;
+			Selector = selector;
+		}
 	}
 
 	public class Common

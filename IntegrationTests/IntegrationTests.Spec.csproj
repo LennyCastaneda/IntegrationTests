@@ -139,6 +139,7 @@
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ColumnPickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ColumnSortPicker.cs" />
+    <Compile Include="Tests\StepDefinitions\DateSelectFilterSteps.cs" />
     <Compile Include="Tests\StepDefinitions\FilterPickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\GridViewSteps.cs" />
     <Compile Include="Tests\StepDefinitions\GroupPickerSteps.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Tests\StepDefinitions\MenuSteps.cs" />
     <Compile Include="Tests\StepDefinitions\PaginationSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ConfigurationSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\StringSelectFilterSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabContextMenuSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TemplateSteps.cs" />

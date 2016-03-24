@@ -3,13 +3,18 @@ using ReloadedInterface.Interfaces;
 
 namespace ReloadedFramework.Model.ModalObjects.Filter
 {
-	public class ListSelectPartial : Driver
+	/// <summary>
+	/// Provides a search field and a list with checkboxes.
+	/// </summary>
+	/// <param name="driver"></param>
+	/// <param name="thisBy"></param>
+	public class CheckedListPartial : Driver
 	{
 		private FindBy ThisBy;
 		private FindBy ListItemsBy = new FindBy(ByMethod.CssSelector, "input[type='checkbox']");
 		private FindBy SearchBoxBy = new FindBy(ByMethod.CssSelector, "input[type='search']");
 
-		public ListSelectPartial(WebDriver driver, FindBy thisBy) : base(driver)
+		public CheckedListPartial(WebDriver driver, FindBy thisBy) : base(driver)
 		{
 			ThisBy = thisBy;
 		}
@@ -19,7 +24,7 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>
-		public ListSelectPartial SelectByName(string name)
+		public CheckedListPartial SelectByName(string name)
 		{
 			_driver.FindElement(ThisBy)
 				.FindElements(ListItemsBy)
@@ -33,11 +38,14 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>
-		public ListSelectPartial SearchFor(string name)
+		public CheckedListPartial SearchFor(string name)
 		{
 			var element = _driver.FindElement(ThisBy).FindElement(SearchBoxBy);
-			element.Clear();
-			element.SendKeys(name);
+			if (element.IsVisible)
+			{
+				element.Clear();
+				element.SendKeys(name);
+			}
 			return this;
 		}
 	}

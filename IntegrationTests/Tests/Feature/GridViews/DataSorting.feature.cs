@@ -90,7 +90,7 @@ this.FeatureBackground();
 #line 11
  testRunner.When("I add the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click \'Apply\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
  testRunner.Then("the GridView Table first row column \'Action\' text should be \'Purchase\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -113,7 +113,7 @@ this.FeatureBackground();
 #line 18
  testRunner.And("I click the arrow on column \'Subject\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click \'Apply\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
  testRunner.Then("the GridView Table first row column \'Subject\' text should be \'Porta placerat\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -136,7 +136,7 @@ this.FeatureBackground();
 #line 25
  testRunner.And("I add the column \'Subject\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click \'Apply\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
  testRunner.Then("the GridView cell at row \'1\' column \'Action\' should equal \'Purchase\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
@@ -164,7 +164,7 @@ this.FeatureBackground();
 #line 34
  testRunner.And("I drag column at position \'1\' to position \'2\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click \'Apply\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
  testRunner.Then("the GridView cell at row \'1\' column \'Subject\' should equal \'Suspendisse ipsum ris" +
                     "us,\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -188,7 +188,7 @@ this.FeatureBackground();
 #line 41
  testRunner.And("I remove the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
- testRunner.And("I click Apply in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click \'Apply\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
  testRunner.Then("the GridView cell at row \'1\' column \'Subject\' should equal \'Porta placerat\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

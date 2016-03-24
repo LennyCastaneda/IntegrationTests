@@ -46,19 +46,19 @@ namespace IntegrationTests.Tests.StepDefinitions
 			App.ConfigMenu.Open();
 		}
 
-		[When(@"the ConfigurationMenu Choose Theme is clicked")]
+		[When(@"the ConfigurationMenu 'Choose Theme' is clicked")]
 		public static void ConfigMenu_ChooseTheme()
 		{
 			App.ConfigMenu.ChooseTheme();
 		}
 
-		[When(@"the ConfigurationMenu Save is clicked")]
+		[When(@"the ConfigurationMenu 'Save' is clicked")]
 		public static void ConfigMenu_Save()
 		{
 			App.ConfigMenu.Save();
 		}
 
-		[When(@"the ConfigurationMenu Save As is clicked")]
+		[When(@"the ConfigurationMenu 'Save As' is clicked")]
 		public static void ConfigMenu_SaveAs()
 		{
 			App.ConfigMenu.SaveAs();

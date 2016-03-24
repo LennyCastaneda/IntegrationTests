@@ -72,33 +72,24 @@ namespace IntegrationTests.Tests.Feature.GridViews
 #line 5
 #line 6
  testRunner.Given("I open the WorkItems view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("#Test# Click Apply")]
-        public virtual void TestClickApply()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("#Test# Click Apply", ((string[])(null)));
+#line 7
+ testRunner.Given("the ColumnPicker is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
-this.ScenarioSetup(scenarioInfo);
-#line 5
-this.FeatureBackground();
+ testRunner.When("I add the column \'Action\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.Given("I open the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.And("I add the column \'Body\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.When("I click \'Apply\' in the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I add the column \'Created date\' in the ColumnSortPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("the Filter Picker should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I click \'Apply\' in the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("#Test# Click Cancel")]
-        public virtual void TestClickCancel()
+        [NUnit.Framework.DescriptionAttribute("Click Cancel")]
+        public virtual void ClickCancel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("#Test# Click Cancel", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click Cancel", ((string[])(null)));
 #line 13
 this.ScenarioSetup(scenarioInfo);
 #line 5
@@ -114,10 +105,10 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("#Test# Click Add New Group")]
-        public virtual void TestClickAddNewGroup()
+        [NUnit.Framework.DescriptionAttribute("Click Add New Group")]
+        public virtual void ClickAddNewGroup()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("#Test# Click Add New Group", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click Add New Group", ((string[])(null)));
 #line 18
 this.ScenarioSetup(scenarioInfo);
 #line 5
@@ -133,10 +124,10 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("#Test# Apply a filter")]
-        public virtual void TestApplyAFilter()
+        [NUnit.Framework.DescriptionAttribute("Filter by Checklist")]
+        public virtual void FilterByChecklist()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("#Test# Apply a filter", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Filter by Checklist", ((string[])(null)));
 #line 23
 this.ScenarioSetup(scenarioInfo);
 #line 5
@@ -144,21 +135,70 @@ this.FeatureBackground();
 #line 24
  testRunner.Given("I open the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 25
- testRunner.When("I click \'Add New Group\' in the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("in Filter Picker group number \'1\' filter number \'1\' I select the Field \'Action\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
- testRunner.And("in Filter Picker group number \'1\' filter number \'1\' I select the Field \'Action\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 27
  testRunner.And("in Filter Picker group number \'1\' filter number \'1\' I click the filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And("in Filter Picker group \'1\' filter number \'1\' in the CheckedList I search for \'Pur" +
+                    "chase\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.And("in Filter Picker group \'1\' filter number \'1\' in the ListFilter I search for \'Aliq" +
-                    "uet\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the Filter Picker group \'1\' filter number \'1\' checkbox item \'Purchase\' is clicked" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.And("in Filter Picker group \'1\' filter number \'1\' in the StringFilter I check \'Aliquet" +
-                    "\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click \'Apply\' in the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.When("I click \'Apply\' in the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
  testRunner.Then("the Filter Picker should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Filter by Date Filter")]
+        public virtual void FilterByDateFilter()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Filter by Date Filter", ((string[])(null)));
+#line 32
+this.ScenarioSetup(scenarioInfo);
+#line 5
+this.FeatureBackground();
+#line 33
+ testRunner.Given("I open the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 34
+ testRunner.When("in Filter Picker group number \'1\' filter number \'1\' I select the Field \'Created d" +
+                    "ate\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+ testRunner.And("in Filter Picker group number \'1\' filter number \'1\' I click the filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.And("I check the \'Between\' radio button in the DateSelectFilter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.And("I enter the start date \'26/04/2015\' into the DateSelectFilter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+ testRunner.And("I enter the end date \'03/08/2015\' into the DateSelectFilter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Filter by String Comparison")]
+        public virtual void FilterByStringComparison()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Filter by String Comparison", ((string[])(null)));
+#line 41
+this.ScenarioSetup(scenarioInfo);
+#line 5
+this.FeatureBackground();
+#line 42
+ testRunner.Given("I open the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 43
+ testRunner.When("in Filter Picker group number \'1\' filter number \'1\' I select the Field \'Body\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 44
+ testRunner.And("in Filter Picker group number \'1\' filter number \'1\' I click the filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.And("I enter \'Odio\' into \'Starts With\' in the StringSelectFilter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+ testRunner.And("I click \'Apply\' in the Filter Picker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.Then("the GridView cell at row \'1\' column \'Body\' should start with \'Odio\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -7,19 +7,19 @@ namespace IntegrationTests.Tests.StepDefinitions
 	[Binding]
 	public sealed class SaveAsSteps : TestBase
 	{
-		[When(@"I click Save in the SaveAs modal")]
+		[When(@"I click 'Save' in the SaveAs modal")]
 		public static void SaveAs_Save()
 		{
 			App.SaveAs.Save();
 		}
 
-		[When(@"I click Cancel in the SaveAs modal")]
+		[When(@"I click 'Cancel' in the SaveAs modal")]
 		public static void SaveAs_Cancel()
 		{
 			App.SaveAs.Cancel();
 		}
 
-		[When(@"I Close in the SaveAs modal")]
+		[When(@"I Close the SaveAs modal")]
 		public static void SaveAs_Close()
 		{
 			App.SaveAs.Close();

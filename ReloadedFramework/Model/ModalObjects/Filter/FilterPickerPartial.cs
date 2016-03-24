@@ -3,63 +3,36 @@ using ReloadedInterface.Interfaces;
 
 namespace ReloadedFramework.Model.ModalObjects.Filter
 {
-	public class FilterPickerPartial : Driver
+	public class FilterPickerPartial : Modal
 	{
-		private FindBy ThisBy = new FindBy(ByMethod.CssSelector, "#myModal .modal-content");
-		private FindBy ButtonsBy = new FindBy(ByMethod.CssSelector, ".modal-footer button");
-		private FindBy TabsBy = new FindBy(ByMethod.CssSelector, ".modal-tabs a");
-		private FindBy ActionsBy = new FindBy(ByMethod.CssSelector, "#myModal .modal-content .action-group");
+		private FindBy ButtonsBy = new FindBy(".modal-footer button");
+		private FindBy TabsBy = new FindBy(".modal-tab-holder a");
 
 		public FilterPickerPartial(WebDriver driver) : base(driver) { }
 
-		public bool IsVisible
-		{
-			get
-			{
-				var result = _driver.FindElement(ThisBy);
-				if (result != null && !result.GetAttribute("style").Contains("display: none"))
-				{
-					return result.IsVisible;
-				}
-				return false;
-			}
-		}
-
-
-		private WebElement This
-		{
-			get
-			{
-				return _driver.FindElement(ThisBy);
-			}
-		}
-
-		private WebElement FindButton(string name)
-		{
-			return This.FindElements(ButtonsBy).Find(x => x.Text.ToLower() == name.ToLower());
-		}
-
 		public FilterPickerPartial AddNew()
 		{
-			FindButton("add new group").Click();
+			FindButton("Add new group").Click();
 			return this;
 		}
 
 		public FilterPickerPartial Apply()
 		{
-			FindButton("apply").Click();
+			// first click the header on the modal to ensure no dropdowns are open.
+			Header.Click();
+			FindButton("Apply").Click();
 			return this;
 		}
 
 		public FilterPickerPartial Cancel()
 		{
-			FindButton("cancel").Click();
+			FindButton("Cancel").Click();
 			return this;
 		}
 
 		private WebElement FindTab(string name)
 		{
-			return This.FindElements(TabsBy).Find(x => x.Text.ToLower() == name.ToLower());
+			return ModalContainer.FindElements(TabsBy).Find(x => StringCompare(x.Text, name));
 		}
 
 		public FilterPickerPartial Simple()
@@ -81,7 +54,7 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 		/// <returns></returns>
 		public FilterGroupPartial FilterGroup(string number)
 		{
-			return new FilterGroupPartial(_driver, new FindBy(ByMethod.CssSelector, ActionsBy + ":nth-child(" + number + ")"));
+			return new FilterGroupPartial(_driver, new FindBy("#myModal .modal-content .action-group:nth-child(" + number + ")"));
 		}
 	}
 }

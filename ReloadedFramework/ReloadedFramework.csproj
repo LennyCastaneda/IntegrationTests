@@ -56,7 +56,7 @@
     <Compile Include="Model\ModalObjects\Filter\FilterGroupPartial.cs" />
     <Compile Include="Model\ModalObjects\Filter\FilterPartial.cs" />
     <Compile Include="Model\ModalObjects\Filter\FilterPickerPartial.cs" />
-    <Compile Include="Model\ModalObjects\Filter\ListSelectPartial.cs" />
+    <Compile Include="Model\ModalObjects\Filter\CheckedListPartial.cs" />
     <Compile Include="Model\ModalObjects\Filter\StringSelectPartial.cs" />
     <Compile Include="Model\ModalObjects\GroupPickerPartial.cs" />
     <Compile Include="Model\ModalObjects\LoginPagePartial.cs" />

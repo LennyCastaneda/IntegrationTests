@@ -12,7 +12,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void ColumnPicker_Open()
 		{
 			ToolBarSteps.Cog_Click();
-			ToolBarSteps.WhenTheToolBarDropdownItemIsClicked("Columns");
+			ToolBarSteps.Cog_DropDownItem_Click("Columns");
 		}
 
 		[When(@"I add the column '(.*)' in the ColumnSortPicker")]
@@ -31,7 +31,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 			ColumnPickerSteps.ColumnPicker_ColumnRemoved(name);
 		}
 
-		[When(@"I click Apply in the ColumnSortPicker")]
+		[When(@"I click 'Apply' in the ColumnSortPicker")]
 		[When(@"the ColumnPicker 'Apply' button is clicked")]
 		public static void ColumnPicker_Apply()
 		{
@@ -44,7 +44,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 			App.ColumnPicker.Close();
 		}
 
-		[When(@"I click Cancel in the ColumnSortPicker")]
+		[When(@"I click 'Cancel' in the ColumnSortPicker")]
 		[When(@"the ColumnPicker 'Cancel' button is clicked")]
 		public static void ColumnPicker_Cancel()
 		{

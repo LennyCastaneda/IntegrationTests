@@ -11,7 +11,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		private static void FilterPicker_Open()
 		{
 			ToolBarSteps.Cog_Click();
-			ToolBarSteps.WhenTheToolBarDropdownItemIsClicked("Filter");
+			ToolBarSteps.Cog_DropDownItem_Click("Filter");
 		}
 
 		[When(@"I click 'Apply' in the Filter Picker")]
@@ -44,18 +44,17 @@ namespace IntegrationTests.Tests.StepDefinitions
 			App.FilterPicker.FilterGroup(groupnum).Filter(filternum).Filter();
 		}
 
-		[When(@"in Filter Picker group '(.*)' filter number '(.*)' in the ListFilter I search for '(.*)'")]
-		public static void FilterPicker_ListFilter_Search(string groupnum, string filternum, string name)
+		[When(@"in Filter Picker group '(.*)' filter number '(.*)' in the CheckedList I search for '(.*)'")]
+		public static void FilterPicker_CheckedList_Search(string groupnum, string filternum, string name)
 		{
-			App.FilterPicker.FilterGroup(groupnum).Filter(filternum).ListSelectFilter.SearchFor(name);
+			App.FilterPicker.FilterGroup(groupnum).Filter(filternum).CheckedListFilter.SearchFor(name);
 			Page.Wait();
 		}
 
-		[When(@"the Filter Picker group '(.*)' filter number '(.*)' StringFilter '(.*)' is checked")]
-		[When(@"in Filter Picker group '(.*)' filter number '(.*)' in the StringFilter I check '(.*)'")]
-		public static void WhenTheFilterPickerGroupFilterNumberStringFilterIsChecked(string groupnum, string filternum, string name)
+		[When(@"the Filter Picker group '(.*)' filter number '(.*)' checkbox item '(.*)' is clicked")]
+		public static void FilterPickerGroup_FilterNumber_CheckedList_Option(string groupnum, string filternum, string name)
 		{
-			App.FilterPicker.FilterGroup(groupnum).Filter(filternum).ListSelectFilter.SelectByName(name);
+			App.FilterPicker.FilterGroup(groupnum).Filter(filternum).CheckedListFilter.SelectByName(name);
 		}
 
 		[Then(@"the Filter Picker should be visible")]

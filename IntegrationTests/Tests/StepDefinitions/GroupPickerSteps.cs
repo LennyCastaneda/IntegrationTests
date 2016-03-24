@@ -12,7 +12,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void ColumnPicker_Open()
 		{
 			ToolBarSteps.Cog_Click();
-			ToolBarSteps.WhenTheToolBarDropdownItemIsClicked("Grouping");
+			ToolBarSteps.Cog_DropDownItem_Click("Grouping");
 		}
 
 		[When(@"I close the GroupPicker")]
@@ -21,13 +21,13 @@ namespace IntegrationTests.Tests.StepDefinitions
 			App.GroupPicker.Close();
 		}
 
-		[When(@"I click Apply in the GroupPicker")]
+		[When(@"I click 'Apply' in the GroupPicker")]
 		public static void GroupPicker_Apply()
 		{
 			App.GroupPicker.Apply();
 		}
 
-		[When(@"I click Cancel in the GroupPicker")]
+		[When(@"I click 'Cancel' in the GroupPicker")]
 		public static void GroupPicker_Cancel()
 		{
 			App.GroupPicker.Cancel();

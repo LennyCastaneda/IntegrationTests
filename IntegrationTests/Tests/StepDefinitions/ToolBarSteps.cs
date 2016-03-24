@@ -11,14 +11,14 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void ToolBar_SaveView()
 		{
 			ToolBarSteps.Cog_Click();
-			ToolBarSteps.WhenTheToolBarDropdownItemIsClicked("Save View");
+			ToolBarSteps.Cog_DropDownItem_Click("Save View");
 		}
 
 		[When(@"I save the current View as '(.*)'")]
 		public static void ToolBar_SaveViewAs(string name)
 		{
 			ToolBarSteps.Cog_Click();
-			ToolBarSteps.WhenTheToolBarDropdownItemIsClicked("Save view as");
+			ToolBarSteps.Cog_DropDownItem_Click("Save view as");
 			SaveAsSteps.SaveAs_EnterName(name);
 			SaveAsSteps.SaveAs_Save();
 		}
@@ -36,7 +36,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		}
 
 		[When(@"the ToolBar Settings item '(.*)' is clicked")]
-		public static void WhenTheToolBarDropdownItemIsClicked(string name)
+		public static void Cog_DropDownItem_Click(string name)
 		{
 			App.View.ToolBar.Cog.ClickItem(name);
 		}

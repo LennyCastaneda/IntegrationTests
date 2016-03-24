@@ -88,7 +88,7 @@ this.FeatureBackground();
 #line 10
  testRunner.When("I group by \'Action\' in the GroupPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.And("I click Apply in the GroupPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click \'Apply\' in the GroupPicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
  testRunner.Then("the GridView should have a subheader that starts with \'Action\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

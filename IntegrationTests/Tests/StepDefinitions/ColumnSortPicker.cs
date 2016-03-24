@@ -12,7 +12,7 @@ namespace IntegrationTests.Tests.StepDefinitions
 		public static void ColumnSortPicker_Open()
 		{
 			ToolBarSteps.Cog_Click();
-			ToolBarSteps.WhenTheToolBarDropdownItemIsClicked("Sort");
+			ToolBarSteps.Cog_DropDownItem_Click("Sort");
 		}
 
 		[When("I click the arrow on column '(.*)' in the ColumnSortPicker")]
