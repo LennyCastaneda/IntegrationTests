@@ -59,7 +59,7 @@ namespace ReloadedFramework.Model.ModalObjects
 			}
 			else
 			{
-				DropDown();
+				Header.Click();
 			}
 			return this;
 		}

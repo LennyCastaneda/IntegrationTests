@@ -44,6 +44,19 @@ namespace ReloadedFramework.Model.ViewObjects
 		}
 
 		/// <summary>
+		/// Performs a right mouse click on the currently active tab.
+		/// </summary>
+		/// <returns></returns>
+		public TabPartial RightClickActiveTab()
+		{
+			_driver.FindElement(ThisBy)
+						.FindElements(TabsBy)
+						.Find(x => x.GetAttribute("class").Contains("active"))
+						.RightClick(_driver);
+			return this;
+		}
+
+		/// <summary>
 		/// Returns true if the Tab with 'name' is open.
 		/// </summary>
 		/// <param name="name"></param>
@@ -63,7 +76,7 @@ namespace ReloadedFramework.Model.ViewObjects
 			var result = FindTabByName(name);
 			if (result != null)
 			{
-				return FindTabByName(name).GetAttribute("ng-class").Contains("active");
+				return FindTabByName(name).GetAttribute("class").Contains("active");
 			}
 			return false;
 		}

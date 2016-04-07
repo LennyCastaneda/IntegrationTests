@@ -91,5 +91,17 @@ namespace IntegrationTests.Tests.StepDefinitions
 		{
 			Assert.That(App.View.GridView.RowCount == count);
 		}
+
+		[Then(@"the GridView Column '(.*)' should contain '(.*)'")]
+		public static void GridView_Column_Contains(string columnname, string value)
+		{
+			Assert.That(App.View.GridView.ColumnContains(columnname, value));
+		}
+
+		[Then(@"the GridView Column '(.*)' should not contain '(.*)'")]
+		public static void GridView_Column_DoesNot_Contain(string columnname, string value)
+		{
+			Assert.That(!App.View.GridView.ColumnContains(columnname, value));
+		}
 	}
 }

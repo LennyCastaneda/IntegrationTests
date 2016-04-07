@@ -14,6 +14,12 @@ namespace IntegrationTests.Tests.StepDefinitions
 			App.View.Tabs.ClickTab(name);
 		}
 
+		[When(@"the Tab ContextMenu is right-clicked")]
+		public static void Tab_Current_RightClicked()
+		{
+			App.View.Tabs.RightClickActiveTab();
+		}
+
 		[When(@"the Tab '(.*)' is right-clicked")]
 		public static void Tab_RightClick(string name)
 		{

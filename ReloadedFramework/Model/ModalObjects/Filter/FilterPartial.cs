@@ -71,7 +71,7 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 		{
 			get
 			{
-				return new CheckedListPartial(_driver, FilterBy);
+				return new CheckedListPartial(_driver, new FindBy(ThisBy.Selector + " " + FilterBy.Selector));
 			}
 		}
 

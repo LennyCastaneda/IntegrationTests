@@ -8,11 +8,11 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 	/// </summary>
 	public class DateSelectPartial : Driver
 	{
-		private FindBy ThisBy = new FindBy("multi-dropdown-option-menu.date-options.visible");
+		private FindBy ThisBy = new FindBy(".multi-dropdown-option-menu.date-options.visible");
 		private FindBy BetweenBy = new FindBy(".date-option-between");
-		private FindBy BetweenRadioBy = new FindBy("input[value='between']");
+		private FindBy BetweenRadioBy = new FindBy(".date-option-between span.check");
 		private FindBy RangeBy = new FindBy(".date-option-range");
-		private FindBy RangeRadioBy = new FindBy("input[value='range']");
+		private FindBy RangeRadioBy = new FindBy(".date-option-range span.check");
 		private FindBy SelectorsBy = new FindBy("input[type='text']");
 
 		public DateSelectPartial(WebDriver driver) : base(driver){}

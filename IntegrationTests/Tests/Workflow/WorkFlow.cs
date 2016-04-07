@@ -9,8 +9,7 @@ namespace IntegrationTests.Tests.Workflow
 		public void OpenReloaded()
 		{
 			Given("the Browser exists");
-			//When("the Browser is pointed to 'http://dev.durellreloaded.co.uk/'");
-			When("the Browser is pointed to 'http://localhost:52755/#/config/'");
+			When("the Browser is pointed to 'http://dev.durellreloaded.co.uk/'");
 			And("I have logged into Reloaded");
 			Then("the Browser title should be 'Reloaded'");
 		}

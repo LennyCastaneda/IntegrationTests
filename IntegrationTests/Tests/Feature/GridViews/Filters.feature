@@ -15,11 +15,19 @@ Scenario: Click Cancel
 	When I click 'Cancel' in the Filter Picker
 	Then the Filter Picker should not be visible
 
-Scenario: Click Add New Group
+Scenario: Apply two filter groups
 	Given I open the Filter Picker
+	When in Filter Picker group number '1' filter number '1' I select the Field 'Action'
+	And in Filter Picker group number '1' filter number '1' I click the filter
+	And the Filter Picker group '1' filter number '1' checkbox item 'Purchase' is clicked
 	When I click 'Add New Group' in the Filter Picker
-	Then the Filter Picker should be visible
-
+	When in Filter Picker group number '2' filter number '1' I select the Field 'Category'
+	And in Filter Picker group number '2' filter number '1' I click the filter
+	And the Filter Picker group '2' filter number '1' checkbox item 'Work Item' is clicked
+	And I click 'Apply' in the Filter Picker
+	Then the GridView Column 'Action' should not contain 'Chase Up'
+	And the GridView Column 'Category' should not contain 'Task'
+	
 Scenario: Filter by Checklist
 	Given I open the Filter Picker
 	When in Filter Picker group number '1' filter number '1' I select the Field 'Action'
@@ -28,6 +36,7 @@ Scenario: Filter by Checklist
 	And the Filter Picker group '1' filter number '1' checkbox item 'Purchase' is clicked
 	And I click 'Apply' in the Filter Picker
 	Then the Filter Picker should not be visible
+	And the GridView Column 'Action' should not contain 'Chase Up'
 
 Scenario: Filter by Date Filter
 	Given I open the Filter Picker

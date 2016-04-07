@@ -8,6 +8,14 @@ namespace IntegrationTests.Tests.StepDefinitions
 	[Binding]
 	public sealed class ThemePickerSteps : TestBase
 	{
+		[Given(@"I open the ThemePicker")]
+		[Given(@"I have opened the ThemePicker")]
+		public static void ThemePicker_Open()
+		{
+			ToolBarSteps.Cog_Click();
+			ToolBarSteps.Cog_DropDownItem_Click("Choose theme");
+		}
+
 		[When(@"the ThemePicker colour '(.*)' is clicked")]
 		public static void ThemePicker_Colour(string colour)
 		{

@@ -1,5 +1,6 @@
 ﻿using ReloadedFramework.Model.AbstractClasses;
 using ReloadedInterface.Interfaces;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace ReloadedFramework.Model.ViewObjects.ViewTypes
@@ -168,6 +169,39 @@ namespace ReloadedFramework.Model.ViewObjects.ViewTypes
 
 			var result = GetRow(row - 1).FindElements(ByMethod.CssSelector, "td")[index].Text;
 			return result;
+		}
+
+		/// <summary>
+		/// Returns an enumerable list of each value in the column described.
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		private List<string> GetAllValuesOfColumn(string name)
+		{
+			var result = new List<string>();
+
+			var colPos = ColumnPosition(name);
+
+			var rows = _driver.FindElement(ThisBy)
+					.FindElement(TableBy)
+					.FindElements(RowsBy);
+
+			foreach(WebElement element in rows)
+			{
+				result.Add(element.FindElements(ByMethod.CssSelector, "td")[colPos].Text);
+			}
+
+			return result;
+		}
+
+		/// <summary>
+		/// Returns true if the Column contains a Cell with 'value'.
+		/// </summary>
+		/// <param name="input"></param>
+		/// <returns></returns>
+		public bool ColumnContains(string columnname, string value)
+		{
+			return GetAllValuesOfColumn(columnname).Contains(value);
 		}
 
 		/// <summary>
