@@ -6,26 +6,25 @@ namespace ReloadedFramework.Tests
 	[Binding]
 	public class TestBase : Browser
 	{
-		[BeforeFeature("Chrome")]
+		[BeforeScenario("Chrome")]
 		public static void SetupChrome()
 		{
 			Init("Chrome");
 		}
 
-		[BeforeFeature("Firefox")]
+		[BeforeScenario("Firefox")]
 		public static void SetupFireFox()
 		{
 			Init("Firefox");
 		}
 
-		[BeforeFeature("Edge")]
+		[BeforeScenario("Edge")]
 		public static void SetupEdge()
 		{
 			Init("Edge");
 		}
 
-		[AfterTestRun]
-		[After]
+		[AfterScenario]
 		public static void After()
 		{
 			Page.Quit();
