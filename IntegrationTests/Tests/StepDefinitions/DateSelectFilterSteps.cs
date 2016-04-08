@@ -42,5 +42,35 @@ namespace IntegrationTests.Tests.StepDefinitions
 		{
 			App.DateSelectFilter.InRangeEndSpan(input);
 		}
+
+		[When(@"I click the 'Start' field in the DateSelectFilter")]
+		public static void DateSelectFilter_BetweenFrom_Click()
+		{
+			App.DateSelectFilter.BetweenStartDate("");
+		}
+
+		[When(@"I click the 'End' field in the DateSelectFilter")]
+		public static void DateSelectFilter_BetweenTo_Click()
+		{
+			App.DateSelectFilter.BetweenEndDate("");
+		}
+
+		[When(@"I click 'Next' month in the DatePicker")]
+		public static void DatePicker_Next()
+		{
+			App.DateSelectFilter.DatePicker.NextMonth();
+		}
+
+		[When(@"I click 'Previous' month in the DatePicker")]
+		public static void DatePicker_Previous()
+		{
+			App.DateSelectFilter.DatePicker.PreviousMonth();
+		}
+
+		[When(@"I select the date '(.*)' in the DatePicker")]
+		public static void DatePicker_Date(int date)
+		{
+			App.DateSelectFilter.DatePicker.SelectDate(date);
+		}
 	}
 }

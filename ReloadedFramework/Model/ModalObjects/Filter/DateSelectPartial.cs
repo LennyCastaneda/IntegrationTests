@@ -71,5 +71,16 @@ namespace ReloadedFramework.Model.ModalObjects.Filter
 		{
 			return SendKeysToField(RangeBy, 1, endspan);
 		}
+
+		/// <summary>
+		/// <see cref="DatePickerPartial()"/>
+		/// </summary>
+		public DatePickerPartial DatePicker
+		{
+			get
+			{
+				return new DatePickerPartial(_driver);
+			}
+		}
 	}
 }

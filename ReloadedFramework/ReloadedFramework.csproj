@@ -52,6 +52,7 @@
     <Compile Include="Model\Browser.cs" />
     <Compile Include="Model\ConfigurationMenuPartial.cs" />
     <Compile Include="Model\HelperClasses\Colour.cs" />
+    <Compile Include="Model\ModalObjects\Filter\DatePickerPartial.cs" />
     <Compile Include="Model\ModalObjects\Filter\DateSelectPartial.cs" />
     <Compile Include="Model\ModalObjects\Filter\FilterGroupPartial.cs" />
     <Compile Include="Model\ModalObjects\Filter\FilterPartial.cs" />

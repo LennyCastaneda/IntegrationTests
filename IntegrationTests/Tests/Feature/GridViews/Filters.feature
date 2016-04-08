@@ -38,7 +38,7 @@ Scenario: Filter by Checklist
 	Then the Filter Picker should not be visible
 	And the GridView Column 'Action' should not contain 'Chase Up'
 
-Scenario: Filter by Date Filter
+Scenario: Filter by Date Filter inserting text
 	Given I open the Filter Picker
 	When in Filter Picker group number '1' filter number '1' I select the Field 'Created date'
 	And in Filter Picker group number '1' filter number '1' I click the filter
@@ -46,6 +46,18 @@ Scenario: Filter by Date Filter
 	And I enter the start date '26/04/2015' into the DateSelectFilter
 	And I enter the end date '03/08/2015' into the DateSelectFilter
 	# does not yet work due to backend (Ed) issues.
+
+Scenario: Filter by DatePicker using controls
+	Given I open the Filter Picker
+	When in Filter Picker group number '1' filter number '1' I select the Field 'Created date'
+	And in Filter Picker group number '1' filter number '1' I click the filter
+	And I check the 'Between' radio button in the DateSelectFilter
+	When I click the 'Start' field in the DateSelectFilter
+	And I select the date '5' in the DatePicker
+	When I click the 'End' field in the DateSelectFilter
+	And I select the date '7' in the DatePicker
+	And I click 'Apply' in the Filter Picker
+	Then the Filter Picker should not be visible
 
 Scenario: Filter by String Comparison
 	Given I open the Filter Picker
