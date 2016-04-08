@@ -1,7 +1,11 @@
 ﻿using ReloadedFramework.Model.AbstractClasses;
 using ReloadedFramework.Model.ModalObjects;
 using ReloadedFramework.Model.ViewObjects;
+using ReloadedFramework.Model.PageObjects;
+
 using ReloadedInterface.Interfaces;
+using System.Collections.Generic;
+using ReloadedFramework.Model.ModalObjects.Filter;
 
 namespace ReloadedFramework.Model
 {
@@ -12,8 +16,17 @@ namespace ReloadedFramework.Model
 	{
 		bool LoggedIn;
 
-		public App(WebDriver driver, bool loggedIn) : base(driver) {
+		private FindBy BackgroundColourBy = new FindBy(ByMethod.CssSelector, "#ngBody .reloaded-nav-bar");
+
+		/// <summary>
+		/// Store variables to share between steps.
+		/// </summary>
+		public Dictionary<string, object> SharedInfo { get; set; }
+
+		public App(WebDriver driver, bool loggedIn) : base(driver)
+		{
 			LoggedIn = loggedIn;
+			SharedInfo = new Dictionary<string, object>();
 		}
 
 		public LoginPagePartial Login
@@ -64,12 +77,59 @@ namespace ReloadedFramework.Model
 			}
 		}
 
+		public GroupPickerPartial GroupPicker
+		{
+			get
+			{
+				return new GroupPickerPartial(_driver);
+			}
+		}
+
+		public FilterPickerPartial FilterPicker
+		{
+			get
+			{
+				return new FilterPickerPartial(_driver);
+			}
+		}
+
+		public ConfigurationMenuPartial ConfigMenu
+		{
+			get
+			{
+				return new ConfigurationMenuPartial(_driver);
+			}
+		}
+
+		public SaveAsPartial SaveAs
+		{
+			get
+			{
+				return new SaveAsPartial(_driver);
+			}
+		}
+
+		public DateSelectPartial DateSelectFilter
+		{
+			get
+			{
+				return new DateSelectPartial(_driver);
+			}
+		}
+
+		public StringSelectPartial StringSelectFilter
+		{
+			get
+			{
+				return new StringSelectPartial(_driver);
+			}
+		}
+
 		public string BackgroundColour
 		{
 			get
 			{
-				var colour = _driver.FindElement(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar").GetCssValue("background-color");
-				return colour;
+				return _driver.FindElement(BackgroundColourBy).GetCssValue("background-color");
 			}
 		}
 	}

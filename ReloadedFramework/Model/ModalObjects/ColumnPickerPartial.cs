@@ -1,36 +1,17 @@
-﻿using ReloadedInterface.Interfaces;
-using ReloadedFramework.Model.AbstractClasses;
-using System.Drawing;
+﻿using ReloadedFramework.Model.AbstractClasses;
+using ReloadedInterface.Interfaces;
 
 namespace ReloadedFramework.Model.ModalObjects
 {
-	public class ColumnPickerPartial : Driver
+	public class ColumnPickerPartial : Modal
 	{
-		FindBy IsOpenBy = new FindBy(ByMethod.CssSelector, ".modal[style='display: block;']");
-		FindBy ThisBy = new FindBy(ByMethod.CssSelector, ".modal .modal-dialog[ng-controller^='ColumnPickerController'] .modal-content");
-		FindBy ApplyBy = new FindBy(ByMethod.CssSelector, ".modal-footer button[ng-click='applyColumns()']");
-		FindBy CancelBy = new FindBy(ByMethod.CssSelector, ".modal-footer button:not([ng-click])");
-		FindBy CloseBy = new FindBy(ByMethod.CssSelector, ".modal-header button");
-		FindBy DropDownBy = new FindBy(ByMethod.CssSelector, ".modal-body .addnewcol");
-		FindBy ListItemsBy = new FindBy(ByMethod.CssSelector, ".modal-body ul[ui-sortable=sortableOptions] li");
+		FindBy DropDownBy = new FindBy(ByMethod.CssSelector, ".input-holder");
+		FindBy ListItemsBy = new FindBy(ByMethod.CssSelector, "ul[ui-sortable=sortableOptions] li");
+		FindBy TrashIconBy = new FindBy(ByMethod.CssSelector, ".mdi-delete");
+		FindBy ArrowIconBy = new FindBy(ByMethod.CssSelector, ".mdi-arrow-down");
+		FindBy DragIconBy = new FindBy(ByMethod.CssSelector, ".mdi-drag-vertical");
 
 		public ColumnPickerPartial(WebDriver driver) : base(driver) { }
-
-		/// <summary>
-		/// Returns true if the Partial is visible to the user.
-		/// </summary>
-		public bool IsVisible
-		{
-			get
-			{
-				var result = _driver.FindElement(ThisBy);
-				if (result != null && _driver.FindElement(IsOpenBy) != null)
-				{
-					return result.IsVisible;
-				}
-				return false;
-			}
-		}
 
 		/// <summary>
 		/// Clicks the 'Apply' button.
@@ -38,8 +19,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial Apply()
 		{
-			_driver.FindElement(ThisBy)
-				.FindElement(ApplyBy).Click();
+			FindButton("apply").Click();
 			return this;
 		}
 
@@ -49,19 +29,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial Cancel()
 		{
-			_driver.FindElement(ThisBy)
-				.FindElement(CancelBy).Click();
-			return this;
-		}
-
-		/// <summary>
-		/// Clicks the 'X' in the top right corner of the modal.
-		/// </summary>
-		/// <returns></returns>
-		public ColumnPickerPartial Close()
-		{
-			_driver.FindElement(ThisBy)
-				.FindElement(CloseBy).Click();
+			FindButton("cancel").Click();
 			return this;
 		}
 
@@ -71,8 +39,7 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial DropDown()
 		{
-			_driver.FindElement(ThisBy)
-				.FindElement(DropDownBy).Click();
+			Body.FindElement(DropDownBy).Click();
 			return this;
 		}
 
@@ -83,9 +50,17 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial DropDownOption(string name)
 		{
-			_driver.FindElement(ThisBy)
-				.FindElement(DropDownBy)
-				.FindElement(ByMethod.CssSelector, "option[label='" + name + "']").Click();
+			var element = Body.FindElement(DropDownBy)
+				.FindElements(ByMethod.CssSelector, "span")
+				.Find(x => StringCompare(x.FindElement(ByMethod.CssSelector, "label").GetNodeText, name));
+			if (element != null)
+			{
+				element.Click();
+			}
+			else
+			{
+				Header.Click();
+			}
 			return this;
 		}
 
@@ -96,7 +71,18 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		public ColumnPickerPartial RemoveColumn(string name)
 		{
-			GetListItem(name).FindElement(ByMethod.CssSelector, ".mdi-delete").Click();
+			GetListItem(name).FindElement(TrashIconBy).Click();
+			return this;
+		}
+
+		/// <summary>
+		/// Clicks the arrow icon of the column (name).
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public ColumnPickerPartial SortColumn(string name)
+		{
+			GetListItem(name).FindElement(ArrowIconBy).Click();
 			return this;
 		}
 
@@ -122,29 +108,54 @@ namespace ReloadedFramework.Model.ModalObjects
 		/// <returns></returns>
 		private WebElement GetListItem(string name)
 		{
-			return _driver.FindElements(ListItemsBy)
+			return Body.FindElements(ListItemsBy)
 				.Find(x => x.FindElement(ByMethod.CssSelector, "p").Text == name);
 		}
 
 		/// <summary>
-		/// Drag and drop the column at (sourcePosition) and move it to (targetPosition)
+		/// Drag and drop the column at (sourcePosition) and move it to (targetPosition).
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>
 		public ColumnPickerPartial DragAndDropColumn(int sourcePosition, int targetPosition)
 		{
-			FindBy sourceBy = new FindBy(ByMethod.CssSelector, 
+			WebElement source = _driver.FindElement(ByMethod.CssSelector, 
 				".modal-body ul[ui-sortable=sortableOptions] li:nth-child(" + sourcePosition + ") .mdi-drag-vertical");
 
-			Point source = _driver.FindElement(sourceBy).Location;
-			Point target = _driver.FindElement(ByMethod.CssSelector, 
-				".modal-body ul[ui-sortable=sortableOptions] li:nth-child(" + targetPosition + ") .mdi-drag-vertical").Location;
+			WebElement target = _driver.FindElement(ByMethod.CssSelector,
+				".modal-body ul[ui-sortable=sortableOptions] li:nth-child(" + targetPosition + ") .mdi-drag-vertical");
 
-			int offsetY = target.Y - source.Y;
-
-			_driver.DragAndDropToOffset(sourceBy, 0, offsetY + 10);
+			int offsetY = target.Location.Y - source.Location.Y;
+			source.DragAndDropTo(_driver, 0, offsetY + 10);
 			return this;
 		}
+
+		/// <summary>
+		/// Drag and drop the column (source) and move it to (target).
+		/// <para>No offset so may not be useful for reordering elements in a list.</para>
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public ColumnPickerPartial DragAndDropColumn(string source, string target)
+		{
+			GetListItem(source).DragAndDrop(_driver, GetListItem(target));
+			return this;
+		}
+
+		public ColumnPickerPartial DragAndDropColumn(string source, int targetPosition)
+		{
+			WebElement target = _driver.FindElement(ByMethod.CssSelector,
+				".modal-body ul[ui-sortable=sortableOptions] li:nth-child(" + targetPosition + ") .mdi-drag-vertical");
+
+			// Get source from Item Name.
+			var src = GetListItem(source).FindElement(DragIconBy);
+
+			// Calculate the distance the mouse is required to move.
+			int offsetY = target.Location.Y - src.Location.Y;
+			src.DragAndDropTo(_driver, 0, offsetY);
+			return this;
+		}
+
 
 		/// <summary>
 		/// Returns true if column (name) is at (position) in the Column List.

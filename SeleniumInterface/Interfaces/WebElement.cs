@@ -79,6 +79,20 @@ namespace ReloadedInterface.Interfaces
 			Wait(500);
 		}
 
+		public void DoubleClick(WebDriver _driver)
+		{
+			_driver.DoubleClick(_element);
+		}
+
+		public void RightClick(WebDriver driver)
+		{
+			ExplicitWait(() =>
+			{
+				driver.RightClick(_element);
+			});
+			Wait(500);
+		}
+
 		/// <summary>
 		/// Clicks element then waits for the designated amount of milliseconds before continiuing.
 		/// </summary>
@@ -157,6 +171,64 @@ namespace ReloadedInterface.Interfaces
 		public List<WebElement> FindElements(FindBy findby)
 		{
 			return FindElements(findby.Method, findby.Selector);
+		}
+
+		/// <summary>
+		/// Drag and Drop this element to target.
+		/// </summary>
+		/// <param name="driver"></param>
+		/// <param name="target"></param>
+		public void DragAndDrop(WebDriver driver, WebElement target)
+		{
+			target.DragDropEnd(driver, _element);
+		}
+
+		/// <summary>
+		/// Takes IWebElement from source.DragDropStart() and performs action in target.DragDropEnd().
+		/// </summary>
+		/// <param name="driver"></param>
+		/// <param name="source"></param>
+		private void DragDropEnd(WebDriver driver, IWebElement source)
+		{
+			driver.Drag(source, _element);
+		}
+
+		/// <summary>
+		/// Drag and Drop element by offsetX and offsetY.
+		/// </summary>
+		/// <param name="sourceBy"></param>
+		/// <param name="offsetX"></param>
+		/// <param name="offsetY"></param>
+		public void DragAndDropTo(WebDriver driver, int offsetX, int offsetY)
+		{
+			driver.DragAndDropTo(_element, offsetX, offsetY);
+		}
+
+		/// <summary>
+		/// Returns the text of the current element, with all child node text removed.
+		/// </summary>
+		/// <returns></returns>
+		public string GetNodeText
+		{
+			get
+			{
+				var result = this.Text;
+				foreach (WebElement element in this.FindElements(ByMethod.CssSelector, "*"))
+				{
+					// Must only remove first instance of each substring.
+					int index = result.IndexOf(element.Text);
+					if (index != -1)
+					{
+						result = result.Remove(index, element.Text.Length);
+					}
+				}
+				return result;
+			}
+		}
+
+		public void MoveToElement(WebDriver driver)
+		{
+			driver.MoveToElement(_element);
 		}
 	}
 }

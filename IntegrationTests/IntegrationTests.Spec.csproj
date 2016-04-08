@@ -76,81 +76,87 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\Feature\CheckColumnPicker\CheckColumnPicker.feature.cs">
+    <Compile Include="Tests\Feature\GridViews\AllRecords.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CheckColumnPicker.feature</DependentUpon>
+      <DependentUpon>AllRecords.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckMenu\CheckMenu1.feature.cs">
+    <Compile Include="Tests\Feature\GridViews\DataSorting.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CheckMenu.feature</DependentUpon>
+      <DependentUpon>DataSorting.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckMenu\Menu.feature.cs">
+    <Compile Include="Tests\Feature\GridViews\Paging.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Menu.feature</DependentUpon>
+      <DependentUpon>Paging.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckThemePicker\CheckThemePicker1.feature.cs">
+    <Compile Include="Tests\Feature\GridViews\ColumnPicker.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CheckThemePicker.feature</DependentUpon>
+      <DependentUpon>ColumnPicker.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBar1.feature.cs">
+    <Compile Include="Tests\Feature\GridViews\Filters.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CheckToolBar.feature</DependentUpon>
+      <DependentUpon>Filters.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns1.feature.cs">
+    <Compile Include="Tests\Feature\GridViews\Groups.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CheckToolBarDropDowns.feature</DependentUpon>
+      <DependentUpon>Groups.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed1.feature.cs">
+    <Compile Include="Tests\Feature\GridViews\InteractiveGrid.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CheckNewsFeed.feature</DependentUpon>
+      <DependentUpon>InteractiveGrid.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckViews\CheckHome\CheckSystemMessages1.feature.cs">
+    <Compile Include="Tests\Feature\ItemViews\AllFields.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CheckSystemMessages.feature</DependentUpon>
+      <DependentUpon>AllFields.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\CheckWorkflow\CheckWorkflow1.feature.cs">
+    <Compile Include="Tests\Feature\SavingViewsAndConfigs\SaveConfig.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CheckWorkflow.feature</DependentUpon>
+      <DependentUpon>SaveConfig.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\OpenGoogle\OpenGoogleOutline1.feature.cs">
+    <Compile Include="Tests\Feature\SavingViewsAndConfigs\SaveConfigAs.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OpenGoogleOutline.feature</DependentUpon>
+      <DependentUpon>SaveConfigAs.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\OpenConfigurations1.feature.cs">
+    <Compile Include="Tests\Feature\SavingViewsAndConfigs\SaveView.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OpenConfigurations.feature</DependentUpon>
+      <DependentUpon>SaveView.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\OpenMenuBar1.feature.cs">
+    <Compile Include="Tests\Feature\SavingViewsAndConfigs\SaveViewAs.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OpenMenuBar.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Feature\OpenReloaded\OpenReloaded.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OpenReloaded.feature</DependentUpon>
+      <DependentUpon>SaveViewAs.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\StepDefinitions\BrowserSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ColumnPickerSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ColumnSortPicker.cs" />
+    <Compile Include="Tests\StepDefinitions\DateSelectFilterSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\FilterPickerSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\GridViewSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\GroupPickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\HomeSteps.cs" />
     <Compile Include="Tests\StepDefinitions\LoginSteps.cs" />
     <Compile Include="Tests\StepDefinitions\MenuSteps.cs" />
     <Compile Include="Tests\StepDefinitions\PaginationSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\ConfigurationSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\StringSelectFilterSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\TabContextMenuSteps.cs" />
     <Compile Include="Tests\StepDefinitions\TabSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\TemplateSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ThemePickerSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ToolBarSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\SaveAsSteps.cs" />
     <Compile Include="Tests\StepDefinitions\ViewSteps.cs" />
+    <Compile Include="Tests\StepDefinitions\WorkFlowToolSteps.cs" />
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Tests\Workflow\WorkFlow.cs" />
   </ItemGroup>
@@ -159,57 +165,53 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Tests\Feature\CheckColumnPicker\CheckColumnPicker.feature">
+    <None Include="Tests\Feature\GridViews\AllRecords.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckColumnPicker.feature.cs</LastGenOutput>
+      <LastGenOutput>AllRecords.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\CheckMenu\CheckMenu.feature">
+    <None Include="Tests\Feature\GridViews\DataSorting.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckMenu1.feature.cs</LastGenOutput>
+      <LastGenOutput>DataSorting.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\CheckMenu\Menu.feature">
+    <None Include="Tests\Feature\GridViews\Paging.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Menu.feature.cs</LastGenOutput>
+      <LastGenOutput>Paging.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\CheckThemePicker\CheckThemePicker.feature">
+    <None Include="Tests\Feature\GridViews\ColumnPicker.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckThemePicker1.feature.cs</LastGenOutput>
+      <LastGenOutput>ColumnPicker.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\CheckToolBar\CheckToolBar.feature">
+    <None Include="Tests\Feature\GridViews\Filters.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckToolBar1.feature.cs</LastGenOutput>
+      <LastGenOutput>Filters.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\CheckToolBar\CheckToolBarDropDowns.feature">
+    <None Include="Tests\Feature\GridViews\Groups.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckToolBarDropDowns1.feature.cs</LastGenOutput>
+      <LastGenOutput>Groups.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\CheckViews\CheckHome\CheckNewsFeed.feature">
+    <None Include="Tests\Feature\GridViews\InteractiveGrid.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckNewsFeed1.feature.cs</LastGenOutput>
+      <LastGenOutput>InteractiveGrid.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\CheckViews\CheckHome\CheckSystemMessages.feature">
+    <None Include="Tests\Feature\ItemViews\AllFields.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckSystemMessages1.feature.cs</LastGenOutput>
+      <LastGenOutput>AllFields.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\CheckWorkflow\CheckWorkflow.feature">
+    <None Include="Tests\Feature\SavingViewsAndConfigs\SaveConfig.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckWorkflow1.feature.cs</LastGenOutput>
+      <LastGenOutput>SaveConfig.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\OpenGoogle\OpenGoogleOutline.feature">
+    <None Include="Tests\Feature\SavingViewsAndConfigs\SaveConfigAs.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenGoogleOutline1.feature.cs</LastGenOutput>
+      <LastGenOutput>SaveConfigAs.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\OpenReloaded\OpenConfigurations.feature">
+    <None Include="Tests\Feature\SavingViewsAndConfigs\SaveView.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenConfigurations1.feature.cs</LastGenOutput>
+      <LastGenOutput>SaveView.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Feature\OpenReloaded\OpenMenuBar.feature">
+    <None Include="Tests\Feature\SavingViewsAndConfigs\SaveViewAs.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenMenuBar1.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\Feature\OpenReloaded\OpenReloaded.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>OpenReloaded.feature.cs</LastGenOutput>
+      <LastGenOutput>SaveViewAs.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Interactions;
-using System;
 using System.Collections.Generic;
 
 namespace ReloadedInterface.Interfaces
@@ -126,11 +125,9 @@ namespace ReloadedInterface.Interfaces
 		/// </summary>
 		/// <param name="elementBy"></param>
 		/// <param name="targetBy"></param>
-		public void DragAndDrop(FindBy sourceBy, FindBy targetBy)
+		protected internal void Drag(IWebElement source, IWebElement target)
 		{
-			IWebElement element = _driver.FindElement(GetBy(sourceBy.Method, sourceBy.Selector));
-			IWebElement target = _driver.FindElement(GetBy(targetBy.Method, targetBy.Selector));
-			(new Actions(_driver)).DragAndDrop(element, target).Perform();
+			(new Actions(_driver)).DragAndDrop(source, target).Perform();
 		}
 
 		/// <summary>
@@ -139,10 +136,74 @@ namespace ReloadedInterface.Interfaces
 		/// <param name="sourceBy"></param>
 		/// <param name="offsetX"></param>
 		/// <param name="offsetY"></param>
-		public void DragAndDropToOffset(FindBy sourceBy, int offsetX, int offsetY)
+		protected internal void DragAndDropTo(IWebElement element, int offsetX, int offsetY)
 		{
-			IWebElement source = _driver.FindElement(GetBy(sourceBy.Method, sourceBy.Selector));
-			(new Actions(_driver)).DragAndDropToOffset(source, offsetX, offsetY).Perform();
+			(new Actions(_driver)).DragAndDropToOffset(element, offsetX, offsetY).Build().Perform();
+		}
+
+		/// <summary>
+		/// Right click the IWebElement target.
+		/// </summary>
+		/// <param name="target"></param>
+		protected internal void RightClick(IWebElement target)
+		{
+			(new Actions(_driver)).ContextClick(target).Build().Perform();
+		}
+
+		public void AlertSendKeys(string keys)
+		{ 
+			_driver.SwitchTo().Alert().SendKeys(keys);
+		}
+
+		public void AlertAccept()
+		{
+			_driver.SwitchTo().Alert().Accept();
+		}
+
+		public void AlertDismiss()
+		{
+			_driver.SwitchTo().Alert().Dismiss();
+		}
+
+		public bool AlertIsVisible
+		{
+			get
+			{
+				try
+				{
+					_driver.SwitchTo().Alert();
+					return true;
+				}
+				catch (NoAlertPresentException)
+				{
+					return false;
+				}
+			}
+		}
+
+		/// <summary>
+		/// Moves the mouse to the specified element.
+		/// </summary>
+		/// <param name="element"></param>
+		protected internal void MoveToElement(IWebElement element)
+		{
+			((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(" + element.Location.X + ", " + element.Location.Y + ")");
+		}
+
+		/// <summary>
+		/// Moves the mouse to the specified element.
+		/// </summary>
+		/// <param name="element"></param>
+		public void MoveToElement(FindBy itemby)
+		{
+			MoveToElement(_driver.FindElement(Common.GetBy(itemby.Method, itemby.Selector)));
+			Wait(1000);
+		}
+
+		protected internal void DoubleClick(IWebElement element)
+		{
+			(new Actions(_driver)).DoubleClick(element).Build().Perform();
+			Wait(1000);
 		}
 	}
 }

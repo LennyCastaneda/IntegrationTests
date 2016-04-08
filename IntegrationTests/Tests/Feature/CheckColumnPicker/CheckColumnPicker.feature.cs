@@ -76,9 +76,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
  testRunner.Given("a \'GridView\' is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.And("the ToolBar \'Settings\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the ToolBar \'Settings\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
- testRunner.When("the ToolBar Settings item \'Column Picker\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("the ToolBar Settings item \'Columns\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
  testRunner.Then("the ColumnPicker should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -146,11 +146,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 27
  testRunner.Given("the ColumnPicker is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 28
- testRunner.When("the ColumnPicker DropDown is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the ColumnPicker Column \'Action\' is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29
- testRunner.And("the ColumnPicker Column \'singleton\' is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
- testRunner.Then("the ColumnPicker Column \'singleton\' should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the ColumnPicker Column \'Action\' should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -160,16 +158,16 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void TheColumn_IsAdded()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the Column \'(.*)\' is added", ((string[])(null)));
-#line 32
+#line 31
 this.ScenarioSetup(scenarioInfo);
+#line 32
+ testRunner.Given("the Column \'Action\' is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 33
- testRunner.Given("the Column \'singleton\' is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 34
  testRunner.When("the ColumnPicker DropDown is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
+ testRunner.And("the ColumnPicker DropDown item \'Action\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.And("the ColumnPicker DropDown item \'singleton\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
- testRunner.Then("the ColumnPicker Column \'singleton\' should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the ColumnPicker Column \'Action\' should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -179,12 +177,14 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void RemoveAColumn()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove a column", ((string[])(null)));
-#line 38
+#line 37
 this.ScenarioSetup(scenarioInfo);
+#line 38
+ testRunner.Given("the Column \'Action\' is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 39
- testRunner.Given("the Column \'singleton\' is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 40
  testRunner.When("the ColumnPicker \'Apply\' button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+ testRunner.Then("the GridView Column \'Action\' should not be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -194,16 +194,16 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void DragAndDropAColumn()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("DragAndDrop a Column", ((string[])(null)));
-#line 43
+#line 42
 this.ScenarioSetup(scenarioInfo);
-#line 44
+#line 43
  testRunner.Given("the ColumnPicker is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 45
+#line 44
  testRunner.When("the ColumnPicker Column at position \'1\' is moved to position \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 45
+ testRunner.Then("the ColumnPicker Column \'Action\' should be at position \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 46
- testRunner.Then("the ColumnPicker Column \'name\' should be at position \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 47
- testRunner.And("the ColumnPicker Column \'singleton\' should be at position \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the ColumnPicker Column \'Created by\' should be at position \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -19,9 +19,9 @@ namespace IntegrationTests.Tests.Feature.CheckViews.CheckHome
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("NewsFeed")]
+    [NUnit.Framework.DescriptionAttribute("Check NewsFeed")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class NewsFeedFeature
+    public partial class CheckNewsFeedFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.CheckViews.CheckHome
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "NewsFeed", "Check the NewsFeed UI works.", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Check NewsFeed", "Check the NewsFeed UI works.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -66,14 +66,21 @@ namespace IntegrationTests.Tests.Feature.CheckViews.CheckHome
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("the \'Home\' Tab is open")]
+        public virtual void TheHomeTabIsOpen()
         {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("the \'Home\' Tab is open", ((string[])(null)));
 #line 5
+this.ScenarioSetup(scenarioInfo);
 #line 6
- testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the Menu is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
+ testRunner.When("the Menu item \'Home\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 8
  testRunner.Then("the Tab \'Home\' should be active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+            this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
@@ -81,16 +88,12 @@ namespace IntegrationTests.Tests.Feature.CheckViews.CheckHome
         public virtual void ExpandANewsFeedMessage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Expand a NewsFeed Message", ((string[])(null)));
-#line 9
-this.ScenarioSetup(scenarioInfo);
-#line 5
-this.FeatureBackground();
 #line 10
- testRunner.Given("the NewsFeed is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 11
- testRunner.And("the NewsFeed Message number \'1\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("the \'Home\' Tab is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
- testRunner.When("the NewsFeed Message number \'1\' is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the NewsFeed Message number \'1\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.And("the NewsFeed Message number \'1\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
@@ -100,24 +103,22 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Change NewsFeed Options")]
+        [NUnit.Framework.DescriptionAttribute("Change NewsFeed Filters")]
         [NUnit.Framework.TestCaseAttribute("Oldest first", null)]
         [NUnit.Framework.TestCaseAttribute("Category", null)]
         [NUnit.Framework.TestCaseAttribute("Title", null)]
         [NUnit.Framework.TestCaseAttribute("Newest first", null)]
-        public virtual void ChangeNewsFeedOptions(string newsFeedOption, string[] exampleTags)
+        public virtual void ChangeNewsFeedFilters(string newsFeedOption, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change NewsFeed Options", exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change NewsFeed Filters", exampleTags);
 #line 16
 this.ScenarioSetup(scenarioInfo);
-#line 5
-this.FeatureBackground();
 #line 17
- testRunner.Given("the NewsFeed is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the \'Home\' Tab is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 18
- testRunner.And("the NewsFeed Options is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the NewsFeed Filter Icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
- testRunner.Then(string.Format("the NewsFeed Option: \'{0}\' is clicked", newsFeedOption), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And(string.Format("the NewsFeed Filter: \'{0}\' is clicked", newsFeedOption), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -127,16 +128,14 @@ this.FeatureBackground();
         public virtual void CheckPaginationDropdown()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Pagination Dropdown", ((string[])(null)));
-#line 28
-this.ScenarioSetup(scenarioInfo);
-#line 5
-this.FeatureBackground();
 #line 29
- testRunner.Given("the NewsFeed is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 30
- testRunner.And("the Pagination dropdown \'10\' is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("the \'Home\' Tab is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 31
- testRunner.Then("the Pagination Status should read \'1-10 of 16\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the NewsFeed Pagination dropdown \'10\' is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.Then("the NewsFeed Pagination Status should read \'1-10\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -146,20 +145,18 @@ this.FeatureBackground();
         public virtual void CheckPaginationNextPrevious()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Pagination Next/Previous", ((string[])(null)));
-#line 33
-this.ScenarioSetup(scenarioInfo);
-#line 5
-this.FeatureBackground();
 #line 34
- testRunner.Given("the NewsFeed is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 35
- testRunner.And("the Pagination dropdown \'3\' is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("the \'Home\' Tab is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 36
- testRunner.When("the Pagination Next Page button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the NewsFeed Pagination dropdown \'3\' is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
- testRunner.And("the Pagination Previous Page button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the NewsFeed Pagination Next Page button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
- testRunner.Then("the Pagination Status should read \'1-3 of 16\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("the NewsFeed Pagination Previous Page button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.Then("the NewsFeed Pagination Status should read \'1-3\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

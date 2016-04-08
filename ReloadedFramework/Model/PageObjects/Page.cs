@@ -1,6 +1,5 @@
 ﻿using ReloadedFramework.Model.AbstractClasses;
 using ReloadedInterface.Interfaces;
-using System.Threading;
 
 namespace ReloadedFramework.Model.PageObjects
 {
@@ -38,18 +37,6 @@ namespace ReloadedFramework.Model.PageObjects
 		public void GoTo(string url)
 		{
 			_driver.Navigate(url);
-
-			if (url == "http://durell.co.uk:1024/#/config/1" || url == "http://localhost:52755/index.html#/config/1")
-			{
-				Common.ExplicitWait(() =>
-				{
-					_driver.FindElement(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar > div.container-fluid > div > a.reloaded-icon-button.btn.btn-flat");
-					if(!_driver.FindElement(ByMethod.CssSelector, "#ngBody > div:nth-child(1) > nav.navbar-fixed-top.reloaded-nav-bar > durell-tabs > div > div > div > a.tab.ng-binding.ng-scope.locked.active").IsVisible)
-					{
-						throw new System.Exception();
-					}
-				}, 5000);
-			}
 		}
 
 		public void ClosePage()
@@ -78,10 +65,7 @@ namespace ReloadedFramework.Model.PageObjects
 
 		public void RemoveDelay()
 		{
-			if (Title == "Reloaded")
-			{
-				_driver.RemoveAnimationDelay();
-			}
+			_driver.RemoveAnimationDelay();
 		}
 	}
 }

@@ -5,13 +5,15 @@ using System.Linq;
 
 namespace ReloadedFramework.Model.ViewObjects.ToolBarObjects
 {
+	/// <summary>
+	/// Object representing a basic DropDown menu.
+	/// </summary>
 	public class ToolBarButtonPartial : Driver
 	{
 		private FindBy ThisBy;
 
 		public ToolBarButtonPartial(WebDriver driver, FindBy findBy) : base(driver)
 		{
-			_driver = driver;
 			ThisBy = findBy;
 		}
 

@@ -19,7 +19,7 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CheckToolBar")]
+    [NUnit.Framework.DescriptionAttribute("Check ToolBar")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
     public partial class CheckToolBarFeature
     {
@@ -33,7 +33,7 @@ namespace IntegrationTests.Tests.Feature.CheckToolBar
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CheckToolBar", "As a user I would like to open the toolbar.", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Check ToolBar", "As a user I would like to open the toolbar.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }

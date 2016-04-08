@@ -1,8 +1,13 @@
 ﻿@Chrome
-Feature: Check Menu
+Feature: CheckMenu
 	A user should see a fully loaded Menu with specific items shown. 
 	The expandable options should expand when clicked.
 	The non-expandable root-options should open tabs. 
+
+Scenario: Menu Exists
+	Given Reloaded is open
+	When the Menu icon is clicked
+	Then the Menu should be visible
 
 Scenario Outline: Open Tabs from Menu
 	Given the Menu is open
@@ -20,6 +25,5 @@ Scenario Outline: Expand MenuItems
 	Then the Menu item '<Expandable>' should be expanded
 
 Examples: 
-	| Expandable      |
-	| Configurations  |
-	| Ungrouped views |
+	| Expandable    |
+	| Workflow Tool |

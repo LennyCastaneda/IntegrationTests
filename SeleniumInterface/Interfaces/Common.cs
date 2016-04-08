@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Threading;
 using System.Diagnostics;
+using System.Threading;
 
 namespace ReloadedInterface.Interfaces
 {
@@ -27,6 +27,16 @@ namespace ReloadedInterface.Interfaces
 		public FindBy(ByMethod method, string selector)
 		{
 			Method = method;
+			Selector = selector;
+		}
+
+		/// <summary>
+		/// Defaults to ByMethod.CssSelector.
+		/// </summary>
+		/// <param name="selector"></param>
+		public FindBy(string selector)
+		{
+			Method = ByMethod.CssSelector;
 			Selector = selector;
 		}
 	}

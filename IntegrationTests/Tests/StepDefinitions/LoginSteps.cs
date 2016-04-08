@@ -7,9 +7,15 @@ namespace IntegrationTests.Tests.StepDefinitions
 	public sealed class LoginSteps : TestBase
 	{
 		[Given("I have logged into Reloaded")]
-		public void LogIntoReloaded()
+		[When("I have logged into Reloaded")]
+		public static void LogIn()
 		{
-			App.Login.EnterPassword("Password").EnterUsername("username").Submit();
+			//App.Login.EnterPassword("Password").EnterUsername("username").Submit();
+			App.Login.EnterUsername("Bons");
+			App = App.Login.Submit();
+			Page.Wait();
+			Page.Wait();
+			Page.RemoveDelay();
 		}
 	}
 }

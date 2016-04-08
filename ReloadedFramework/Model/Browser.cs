@@ -11,7 +11,7 @@ namespace ReloadedFramework.Model
 		/// </summary>
 		public static WebDriver _driver;
 		public static Page Page { get; private set; }
-		public static App App { get; private set; } 
+		public static App App { get; set; }
 
 		public static void Init(string driverName)
 		{

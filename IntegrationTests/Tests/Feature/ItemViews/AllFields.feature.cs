@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace IntegrationTests.Tests.Feature.OpenReloaded
+namespace IntegrationTests.Tests.Feature.ItemViews
 {
     using TechTalk.SpecFlow;
     
@@ -19,22 +19,21 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("OpenReloaded")]
+    [NUnit.Framework.DescriptionAttribute("AllFields")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class OpenReloadedFeature
+    public partial class AllFieldsFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "OpenReloaded.feature"
+#line 1 "AllFields.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "OpenReloaded", "In order to go to the home page\r\nAs a user\r\nI want to open a browser and navigate" +
-                    " to", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AllFields", "Show that in a GridView, when a user double clicks a row, it opens an Item View.", ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -68,18 +67,18 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Open Reloaded in Chrome")]
-        public virtual void OpenReloadedInChrome()
+        [NUnit.Framework.DescriptionAttribute("Double Click GridView row")]
+        public virtual void DoubleClickGridViewRow()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Reloaded in Chrome", ((string[])(null)));
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Double Click GridView row", ((string[])(null)));
+#line 5
 this.ScenarioSetup(scenarioInfo);
+#line 6
+ testRunner.Given("I open the WorkItems view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 7
+ testRunner.When("I double-click row \'2\' in the GridView", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
- testRunner.Given("the Browser exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
- testRunner.When("the Browser is pointed to \'http://localhost:52755/index.html\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.Then("the Browser title should be \'Reloaded\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the active view should be an ItemView", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

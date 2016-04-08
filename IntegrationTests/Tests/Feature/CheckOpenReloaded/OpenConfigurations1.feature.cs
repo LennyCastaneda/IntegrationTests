@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace IntegrationTests.Tests.Feature.OpenReloaded
+namespace IntegrationTests.Tests.Feature.CheckOpenReloaded
 {
     using TechTalk.SpecFlow;
     
@@ -67,33 +67,23 @@ namespace IntegrationTests.Tests.Feature.OpenReloaded
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 6
-#line 7
- testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
- testRunner.When("the Menu icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
- testRunner.Then("the Menu should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-        }
-        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Open Configurations")]
         [NUnit.Framework.TestCaseAttribute("Default", "1", null)]
         public virtual void OpenConfigurations(string config, string tabCount, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Configurations", exampleTags);
-#line 11
-this.ScenarioSetup(scenarioInfo);
 #line 6
-this.FeatureBackground();
-#line 12
- testRunner.Given("the Menu item \'Configurations\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
- testRunner.When(string.Format("the Menu SubItem \'{0}\' is clicked", config), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
+this.ScenarioSetup(scenarioInfo);
+#line 7
+ testRunner.Given("Reloaded is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
+ testRunner.When("the Menu icon is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 9
+ testRunner.And("the Menu item \'Configurations\' is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.And(string.Format("the Menu SubItem \'{0}\' is clicked", config), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
  testRunner.Then(string.Format("the Tab count should be \'{0}\'", tabCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
